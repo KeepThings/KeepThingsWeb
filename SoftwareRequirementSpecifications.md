@@ -26,7 +26,7 @@ N.A.
 The following chapters gives an overall description about our vision of the project.
 
 
-### 2. Overall Description
+## 2. Overall Description
 The idea of KeepThings is to lend things as fast and easy as possible to other people. The user will be able to do this with just a few clicks. He will also be able to keep track of all things he lent.
 
 The API can push entries from the applications into an Online-Database and information from the database to the applications. The entries contain all information about the thing that is going to be lend. It can also push a Contact-List from the Mobile-Application into the database, so the Web-Application has access to it.
