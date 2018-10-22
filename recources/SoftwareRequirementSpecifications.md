@@ -38,6 +38,8 @@ The API can push entries from the applications into an Online-Database and infor
 
 The Web-Application/Mobile-Application is going to be accessed with a User-Account. It contains the name, email of the user and a password. This account is stored in the database. After the login or registration, the user is able to make new entries to lend things to other people. A dashboard shows the user all information about the things he lent to others. Furthermore, in the Mobile-Application the user is able to import his local Contact-List into the database and send reminders to persons he lent something.
 
+![Alt-Text](/recources/UCD-KeepThings.svg)
+
 
 ## 3. Specific Requirements
 
