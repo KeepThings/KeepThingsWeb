@@ -1,6 +1,13 @@
 # Software Requirements Specification
 
 
+|       Date | Version | Description |                       Author |
+|-----------:|--------:|------------:|-----------------------------:|
+| 2018-10-21 |     1.0 | First entry | Benedikt Lampert, Lukas Göbl |
+|            |         |             |                              |
+|            |         |             |                              |
+
+
 ## 1. Introduction
 
 ### 1.1	Purpose
