@@ -8,14 +8,14 @@ Shows all lent out items of the user and the marketplace items in a list. One it
 
 Mockup:
 
-![Alt-Text](/recources/DashboardWebMokup-01.svg)
+![Alt-Text](DashboardWebMokup-01.svg)
 
 
 ## 2.                  Flow of Events
 
 ### 2.1               Basic Flow
 
-![Alt-Text](/recources/DahboardWebDiagram.svg)
+![Alt-Text](DahboardWebDiagram.svg)
 	
 	
 ## 3.                  Special Requirements
