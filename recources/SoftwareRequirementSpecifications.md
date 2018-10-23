@@ -1,7 +1,6 @@
 # Software Requirements Specification
 
 
-
 ## 1. Introduction
 
 ### 1.1	Purpose
@@ -15,7 +14,6 @@ The API serves as an interface between the Web-Application/Mobile-Application an
 The Web-Application contains a dashboard that shows all things the user lent to others with their respective information. It is also possible to lend new things to others. 
 
 The Mobile-Application has all the features of the Web-Application. Furthermore, in the Mobile-Application the user is able to send a message to the person he lent something.
-
 
 ### 1.3	Definitions, Acronyms, and Abbreviations
 tbd
@@ -71,6 +69,7 @@ tbd
 
 ### 3.12 Applicable Standards
 tbd
+
 
 ## 4. Supporting Information
 tbd
