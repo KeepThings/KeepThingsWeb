@@ -1,10 +1,6 @@
 # Software Requirements Specification
 
 
-|       Date | Version | Description |                       Author |
-|------------|--------:|------------:|------------------------------|
-| 2018-10-21 |     1.0 | First entry | Benedikt Lampert, Lukas Göbl |
-
 
 ## 1. Introduction
 
@@ -22,10 +18,10 @@ The Mobile-Application has all the features of the Web-Application. Furthermore,
 
 
 ### 1.3	Definitions, Acronyms, and Abbreviations
-N.A.
+tbd
 
 ### 1.4	References
-N.A.
+tbd
 
 ### 1.5	Overview
 The following chapters gives an overall description about our vision of the project.
@@ -44,37 +40,37 @@ The Web-Application/Mobile-Application is going to be accessed with a User-Accou
 ## 3. Specific Requirements
 
 ### 3.1	Functionality
-N.A.
+tbd
 
 ### 3.2	Usability 
-N.A.
+tbd
 
 ### 3.4	Performance
-N.A.
+tbd
 
 ### 3.5	Supportability
-N.A.
+tbd
 
 ### 3.6	Design Constraints
-N.A.
+tbd
 
 ### 3.7	On-line User Documentation and Help System Requirements
-N.A.
+tbd
 
 ### 3.8	Purchased Components
-N.A.
+tbd
 
 ### 3.9	Interfaces
-N.A.
+tbd
 
 ### 3.10 Licensing Requirements
-N.A.
+tbd
 
 ### 3.11 Legal, Copyright, and Other Notices
-N.A.
+tbd
 
 ### 3.12 Applicable Standards
-N.A.
+tbd
 
 ## 4. Supporting Information
-N.A.
+tbd
