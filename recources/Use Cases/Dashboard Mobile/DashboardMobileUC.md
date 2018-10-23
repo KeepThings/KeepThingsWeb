@@ -9,14 +9,14 @@ Shows all lent out items of the user in a list. One item contains the name of th
 Mockup:
 
 
-![Alt-Text](/AndroidMobileVersionWithSmartphone-01.svg)
+![Alt-Text](AndroidMobileVersionWithSmartphone-01.svg)
 
 
 ## 2. Flow of Events
 
 ### 2.1 Basic Flow
 
-![Alt-Text](/DashboardAndroidDiagram.svg)
+![Alt-Text](DashboardAndroidDiagram.svg)
 
 	
 ## 3. Special Requirements
