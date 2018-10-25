@@ -14,7 +14,9 @@ function dbSelect($dbQuery){
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
 		exit();
-	}
+	}else{
+	    pintf("Command successful");
+    }
 	if ($result = $mysqli->query($dbQuery)) {
 		
 		return $result;
