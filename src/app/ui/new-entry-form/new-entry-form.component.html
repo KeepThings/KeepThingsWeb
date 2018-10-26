@@ -1,0 +1,30 @@
+<div class="newEntryDiv">
+  <div class="newEntryHeadline">
+    <span><mat-icon id="newEntryIcon">playlist_add</mat-icon></span><span id="newEntryHeadlineText">new Entry</span>
+  </div>
+  <div class="newEntryForm">
+    <form (ngSubmit)="onSubmit()" #newEntryForm="ngForm" >
+      <mat-form-field>
+        <mat-label class="newEntryFormLabel">Title</mat-label>
+        <input matNativeControl class="newEntryInput">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newEntryFormLabel">Description</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newEntryFormLabel">Person</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newEntryFormLabel">From</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newEntryFormLabel">To</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+    </form>
+  </div>
+
+</div>

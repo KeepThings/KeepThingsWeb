@@ -10,7 +10,6 @@ import {UserService} from '../../user.service';
 })
 export class NavComponent implements OnInit {
     user: User;
-    user = new User(1, "test", "da",  "asd",  12,  "asd",  "asd",  true);
     LogoImageUrl = '/assets/images/Logo_KeepThings.svg';
   constructor(private userService: UserService) { }
 

@@ -8,12 +8,17 @@ import {UserService} from './user.service';
 import {UserItemsService} from './user-items.service';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { LoginComponent } from './ui/login/login.component';
+import {NewEntryFormComponent} from './ui/new-entry-form/new-entry-form.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './ui/nav/nav.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import {LayoutComponent} from './ui/layout/layout.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
+import {NewRequestFormComponent} from './ui/new-request-form/new-request-form.component';
+import {MarketplaceComponent} from './ui/marketplace/marketplace.component';
+import {LentOutComponent} from './ui/lent-out/lent-out.component';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatFormField} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule} from '
     LoginComponent,
     NavComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    NewEntryFormComponent,
+    NewRequestFormComponent,
+    MarketplaceComponent,
+    LentOutComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,11 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule} from '
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+
   ],
   providers: [TestService, UserItemsService, UserService],
   bootstrap: [AppComponent]

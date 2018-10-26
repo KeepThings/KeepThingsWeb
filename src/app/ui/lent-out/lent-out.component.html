@@ -1,0 +1,27 @@
+<div class="userItemsDiv">
+  <div class="userItemsHeadline">
+    <span><mat-icon id="lentOutIcon">view_list</mat-icon></span><span id="lentOutHeadlineText">Lent out</span>
+  </div>
+  <ul class="userItemsList">
+    <li *ngFor="let userItem of userItems" class="lendOutList">
+      <div class="lentOutListItem">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="userItemListSmallNormal">{{userItem.ITEM_NAME}}</span>
+          </div>
+          <div class="col-md-6">
+            <span class="userItemListSmallNormal">{{userItem.DATE_TO | date}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <span class="userItemListSmallText">{{userItem.BORROWER}}</span>
+          </div>
+          <div class="col-md-6">
+            <span class="userItemListSmallText">{{userItem.DATE_FROM | date}}</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

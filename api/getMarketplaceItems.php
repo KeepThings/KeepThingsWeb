@@ -11,7 +11,7 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
 	"ITEM_ID"=>$dsatz->ITEM_ID,
 	"ITEM_NAME"=>$dsatz->ITEM_NAME,
 	"ITEM_DESC"=>$dsatz->ITEM_DESC,
-	"USERNAME"=>$dsatz->UserIdToName($dsatz->USER_ID),
+	"USERNAME"=>UserIdToName($dsatz->USER_ID),
 	"BORROWER"=>$dsatz->BORROWER,
 	"DATE_FROM"=>$dsatz->DATE_FROM,
 	"DATE_TO"=>$dsatz->DATE_TO,
@@ -19,26 +19,27 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
 	);
 	echo json_encode(array('result'=>$result));
 	}
-}else if(isset($_GET['ALL']) && $_GET['ALL'] == "true"){
-	$res = dbSelect("SELECT * FROM Marketplace_Items");
-	$result = array();
-	$rows = $res->num_rows;
-	if($rows==0 || null){
-		echo '"result": {"success": false}';
-	} else{
-	while($dsatz = $res->fetch_object()){
-		array_push($result,array(
-		"ITEM_ID"=>$dsatz->ITEM_ID,
-		"ITEM_NAME"=>$dsatz->ITEM_NAME,
-		"ITEM_DESC"=>$dsatz->ITEM_DESC,
-		"USERNAME"=>$dsatz->UserIdToName($dsatz->USER_ID),
-		"BORROWER"=>$dsatz->BORROWER,
-		"DATE_FROM"=>$dsatz->DATE_FROM,
-		"DATE_TO"=>$dsatz->DATE_TO
-		));
-	}
-	array_push($result,array("success"=>true));
-	echo json_encode(array('result'=>$result));
-	}
+}else if(isset($_GET['ALL']) && $_GET['ALL'] == true){
+    $res = dbSelect("SELECT * FROM Marketplace_Items");
+    $rows = $res->num_rows;
+    $result = array();
+    if($rows == 0 || null){
+        echo '{"result": {"success": false} }';
+    }else {
+        while ($dsatz = $res->fetch_object()) {
+            array_push($result, array(
+                "ITEM_ID" => $dsatz->ITEM_ID,
+                "ITEM_NAME" => $dsatz->ITEM_NAME,
+                "ITEM_DESC" => $dsatz->ITEM_DESC,
+                "OWNER" => UserIdToName($dsatz->USER_ID),
+                "BORROWER" => $dsatz->BORROWER,
+                "DATE_FROM" => $dsatz->DATE_FROM,
+                "DATE_TO" => $dsatz->DATE_TO
+
+            ));
+        }
+
+        echo json_encode(array('result' => $result));
+
+    }
 }
-?>

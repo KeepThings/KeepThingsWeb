@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../user';
 import {UserItem} from '../../user-item';
+import {MarketplaceItems} from '../../marketplace-items';
 import {TestService} from '../../test.service';
 import {UserService} from '../../user.service';
 import {UserItemsService} from '../../user-items.service';
+import {MarketplaceService} from '../../marketplace.service';
+import {NewEntryFormComponent} from '../new-entry-form/new-entry-form.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,23 +16,13 @@ import {UserItemsService} from '../../user-items.service';
 export class DashboardComponent implements OnInit {
     title = 'KeepThings';
     user: User;
-    userItems: UserItem;
     error = '';
     success = '';
-    constructor(private test: TestService, private userService: UserService, private userItemsService: UserItemsService) {}
+    constructor(private userService: UserService, ) {}
 
     ngOnInit() {
 
         this.getUser();
-        this.getUserItems();
-    }
-
-    getUserItems(): void {
-        this.userItemsService.getUserItems().subscribe(
-            (res: UserItem) => {
-                this.userItems = res;
-            }
-        );
     }
     getUser(): void {
         this.userService.getUserById().subscribe(

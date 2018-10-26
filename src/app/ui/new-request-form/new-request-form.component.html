@@ -1,0 +1,25 @@
+<div class="newRequestDiv">
+  <div class="newRequestHeadline">
+    <span><mat-icon id="newRequestIcon">playlist_add</mat-icon></span><span id="newRequestHeadlineText">new Request</span>
+  </div>
+  <div class="newRequestForm">
+    <form (ngSubmit)="onSubmit()" #newRequestForm="ngForm" >
+      <mat-form-field>
+        <mat-label class="newRequestFormLabel">Title</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newRequestFormLabel">Description</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newRequestFormLabel">From</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="newRequestFormLabel">To</mat-label>
+        <input matNativeControl>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

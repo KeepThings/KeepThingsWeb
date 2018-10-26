@@ -1,0 +1,38 @@
+.newEntryDiv{
+    background-color: white;
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    width: 100%;
+    height: 100%;
+}
+#newEntryHeadlineText{
+    vertical-align: middle;
+    display: inline-flex;
+    font-size: 35px;
+    color: #9A0000;
+}
+#newEntryIcon{
+    font-size: 35px;
+    padding-right: 50px;
+    vertical-align: middle;
+    display: inline-flex;
+    height: 35px;
+    width: 35px;
+    color: #004669;
+}
+.newEntryHeadline{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.newEntryForm{
+    margin-left: 10px;
+
+}
+.newEntryInput{
+    position: relative;
+    width: 100%;
+}
+.newEntryFormLabel{
+    color: #004669;
+}
