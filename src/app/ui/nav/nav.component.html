@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar custom-nav">
+    <a class="navbar-brand" href="#"><img class="logo" src="{{LogoImageUrl}}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="nav-right list-inline">
+            <li class="nav-item active list-inline-item">
+                <a class="nav-link" href="#"><span class="iconSpan"><mat-icon id="calendarIcon">calendar_today</mat-icon></span></a>
+            </li>
+            <li class="nav-item list-inline-item">
+                <a class="nav-link" href="#"><span class="iconSpan"><mat-icon id="messageIcon">email</mat-icon></span></a>
+            </li>
+            <li class="nav-item list-inline-item" >
+                <a class="nav-link" href="#" id="username"><span class="iconSpan" id="UserIconSpan"><mat-icon id="userIcon">account_circle</mat-icon></span>{{user.USERNAME}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="navLine"></div>

@@ -1,6 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 function connectToDB(){
-	$mysqli = new mysqli("localhost", "keepthings", "KeepThingsnlbmysql**", "keepthings");
+	$mysqli = new mysqli("localhost", "root", "", "keepthings");
 	/* check connection */
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -9,13 +10,13 @@ function connectToDB(){
 }
 
 function dbSelect($dbQuery){
-	$mysqli = new mysqli("localhost", "keepthings", "KeepThingsnlbmysql**", "keepthings");
+	$mysqli = new mysqli("localhost", "root", "", "keepthings");
 	/* check connection */
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
 		exit();
 	}else{
-	    pintf("Command successful");
+
     }
 	if ($result = $mysqli->query($dbQuery)) {
 		

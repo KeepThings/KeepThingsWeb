@@ -1,8 +1,10 @@
-<?php 
+<?php
+
 include("commands.php");
 if(isset($_GET['UID']) && $_GET['UID'] != ""){
 	$res = dbSelect("SELECT * FROM User WHERE USER_ID = '".$_GET['UID']."'");
 	$dsatz = $res->fetch_object();
+	$rows = $res->num_rows;
 	if($rows==0 || null){
 		echo '"result": {"success": false}';
 	} else{
@@ -10,7 +12,7 @@ if(isset($_GET['UID']) && $_GET['UID'] != ""){
 	"USER_ID"=>$dsatz->USER_ID,
 	"NAME"=>$dsatz->NAME,
 	"FIRST_NAME"=>$dsatz->FIRST_NAME,
-	"E-MAIL"=>$dsatz->E-MAIL,
+	"E-MAIL"=>$dsatz->EMAIL,
 	"TEL_NR"=>$dsatz->TEL_NR,
 	"USERNAME"=>$dsatz->USERNAME,
 	"TYPE"=>$dsatz->TYPE,

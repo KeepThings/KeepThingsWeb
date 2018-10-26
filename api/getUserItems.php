@@ -3,7 +3,7 @@ include("commands.php");
 
 if(isset($_GET['IID']) && $_GET['IID'] != ""){
 	$res = dbSelect("SELECT * FROM User_Items WHERE ITEM_ID = '".$_GET['IID']."'");
-	$rows = $res->num_rows();
+    $rows = $res->num_rows;
 	if($rows == 0 || null){
         echo '{"result": {"success": false} }';
     }else{
@@ -24,8 +24,8 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
 	
 }else if(isset($_GET['UID']) && $_GET['UID'] != ""){
 	$res = dbSelect("SELECT * FROM User_Items WHERE OWNER = '".$_GET['UID']."'");
+    $rows = $res->num_rows;
 	$result = array();
-    $rows = $res->num_rows();
     if($rows == 0 || null){
         echo '{"result": {"success": false} }';
     }else {
@@ -41,8 +41,9 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
 
             ));
         }
-        array_push($result, array("success"=>true));
+
         echo json_encode(array('result' => $result));
+
     }
 }
 

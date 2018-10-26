@@ -1,0 +1,17 @@
+.footer{
+    background-color:#004669;
+    border-top: 2px solid #003854;
+    position:fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.list-inline-item a{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.list-inline{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
