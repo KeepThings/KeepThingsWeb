@@ -18,7 +18,7 @@ import {FormsModule} from '@angular/forms';
 import {NewRequestFormComponent} from './ui/new-request-form/new-request-form.component';
 import {MarketplaceComponent} from './ui/marketplace/marketplace.component';
 import {LentOutComponent} from './ui/lent-out/lent-out.component';
-import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatFormField} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFor
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatListModule
 
   ],
   providers: [TestService, UserItemsService, UserService],

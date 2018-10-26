@@ -23,8 +23,8 @@
     background-color: white;
     border-radius: 10px ;
     border: 2px solid #004669;
+    display: inline-block;
     width: 100%;
-    height: 100%;
 }
 .marketplacesDiv{
     background-color: white;
@@ -48,4 +48,11 @@
 }
 .marketplaceListSmallNormal{
     font-size: 18px;
+}
+.listAlignRight{
+    float: right;
+}
+.partingLine{
+    height: 1px;
+    background-color: #004669;
 }
