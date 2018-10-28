@@ -1,4 +1,4 @@
-Feature: Load dashboardWeb
+Feature: DashboardWeb
   Scenario: User has no lent out items
     When Dashboard has finished loading
     And User has no data in UserItems table in database

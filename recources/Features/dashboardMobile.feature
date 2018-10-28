@@ -1,4 +1,4 @@
-Feature: Load dashboardMobile
+Feature: DashboardMobile
 
   Scenario: User has no lent out items
     When Dashboard has finished loading
