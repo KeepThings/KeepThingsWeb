@@ -6,17 +6,17 @@
 ### 1.1               Brief Description
 Shows all lent out items of the user and the marketplace items in a list. One item of the lent-out list contains the name of the lent item, person who borrowed the item, the date it was borrowed and the date it should be returned. One item of the marketplace list contains the name of the item someone wants to borrow and the date it is needed. On the right side of the dashboard the user can create new entries and requests.
 
-Mockup:
-
-![Alt-Text](DashboardWebMokup-01.svg)
-
 
 ## 2.                  Flow of Events
 
 ### 2.1               Basic Flow
 
+#### Activity Diagram
+![Alt-Text](DashboardWebMokup-01.svg)
+#### Feature
+[/Features/dashboardWeb.feature](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardWeb.feature)
+#### Mockup
 ![Alt-Text](DahboardWebDiagram.svg)
-	
 	
 ## 3.                  Special Requirements
 n/a
