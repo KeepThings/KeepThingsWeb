@@ -15,7 +15,7 @@ Shows all lent out items of the user in a list. One item contains the name of th
 #### Activity Diagram
 ![Alt-Text](DashboardAndroidDiagram.svg)
 #### Feature
-![Alt-Text](../../Features/dashboardMobile.feature)
+[I'm an inline-style link](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardMobile.feature)
 #### Mockup
 ![Alt-Text](AndroidMobileVersionWithSmartphone-01.svg)
 
