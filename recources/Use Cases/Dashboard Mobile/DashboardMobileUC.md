@@ -6,19 +6,19 @@
 ### 1.1 Brief Description
 Shows all lent out items of the user in a list. One item contains the name of the lent item, person who borrowed the item, the date it was borrowed and the date it should be returned. 
 
-Mockup:
-
-
-![Alt-Text](AndroidMobileVersionWithSmartphone-01.svg)
 
 
 ## 2. Flow of Events
 
 ### 2.1 Basic Flow
 
+#### Activity Diagram
 ![Alt-Text](DashboardAndroidDiagram.svg)
+#### Feature
+![Alt-Text](../../Features/dashboardMobile.feature)
+#### Mockup
+![Alt-Text](AndroidMobileVersionWithSmartphone-01.svg)
 
-	
 ## 3. Special Requirements
 
 n/a
