@@ -3,7 +3,9 @@
     <span><mat-icon id="lentOutIcon">view_list</mat-icon></span><span id="lentOutHeadlineText">Lent out</span>
   </div>
   <ul class="userItemsList">
+
     <li *ngFor="let userItem of userItems" class="lendOutList">
+      <div *ngIf="userItem.success">
       <div class="lentOutListItem">
         <div class="row">
           <div class="col-md-6">
@@ -18,11 +20,16 @@
             <span class="userItemListSmallText">{{userItem.BORROWER}}</span>
           </div>
           <div class="col-md-6">
-            <span class="userItemListSmallText listAlignRight">{{userItem.DATE_FROM | date}}</span>
+            <span class="userItemListSmallText listAlignRight">{{userItem.success}}</span>
           </div>
         </div>
       </div>
       <div class="partingLine"></div>
+      </div>
+      <div *ngIf="!userItem.success">
+        <span>No User Items lent out</span>
+      </div>
     </li>
+
   </ul>
 </div>

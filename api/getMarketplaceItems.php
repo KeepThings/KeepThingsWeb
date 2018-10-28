@@ -24,7 +24,16 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
     $rows = $res->num_rows;
     $result = array();
     if($rows == 0 || null){
-        echo '{"result": {"success": false} }';
+        array_push($result, array(
+            "ITEM_ID" => null,
+            "ITEM_NAME" => null,
+            "ITEM_DESC" => null,
+            "OWNER" => null,
+            "BORROWER" => null,
+            "DATE_FROM" => null,
+            "DATE_TO" => null,
+            "success"=>true
+        ));
     }else {
         while ($dsatz = $res->fetch_object()) {
             array_push($result, array(
@@ -34,8 +43,8 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
                 "OWNER" => UserIdToName($dsatz->USER_ID),
                 "BORROWER" => $dsatz->BORROWER,
                 "DATE_FROM" => $dsatz->DATE_FROM,
-                "DATE_TO" => $dsatz->DATE_TO
-
+                "DATE_TO" => $dsatz->DATE_TO,
+                "success"=>true
             ));
         }
 

@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserItemsService {
-    baseURL = '/api/getUserItems.php?UID=1';
+    baseURL = '/api/getUserItems.php?UID=2';
     userItems: UserItem[];
     constructor(private http: HttpClient) {}
     getUserItems(): Observable<UserItem[]> {

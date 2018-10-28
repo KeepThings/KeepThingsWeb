@@ -1,5 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+
 function connectToDB(){
 	$mysqli = new mysqli("localhost", "root", "", "keepthings");
 	/* check connection */

@@ -9,6 +9,7 @@ import {UserItemsService} from '../../user-items.service';
 })
 export class LentOutComponent implements OnInit {
     userItems: UserItem;
+
   constructor(private userItemsService: UserItemsService) { }
 
   ngOnInit() {
