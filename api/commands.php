@@ -1,6 +1,5 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-
 function connectToDB(){
 	$mysqli = new mysqli("localhost", "root", "", "keepthings");
 	/* check connection */
@@ -9,7 +8,6 @@ function connectToDB(){
 		exit();
 	}
 }
-
 function dbSelect($dbQuery){
 	$mysqli = new mysqli("localhost", "root", "", "keepthings");
 	/* check connection */
@@ -17,7 +15,6 @@ function dbSelect($dbQuery){
 		printf("Connect failed: %s\n", $mysqli->connect_error);
 		exit();
 	}else{
-
     }
 	if ($result = $mysqli->query($dbQuery)) {
 		
@@ -25,6 +22,17 @@ function dbSelect($dbQuery){
 	}else{
 		return null;
 	}
+}
+function dbUpdate($dbQuery){
+	$mysqli = new mysqli("localhost", "root", "", "keepthings");
+	/* check connection */
+	if ($mysqli->connect_errno) {
+		printf("Connect failed: %s\n", $mysqli->connect_error);
+		exit();
+	}else{
+    }
+	$mysqli->query($dbQuery));
+		
 }
 function UserIdToName($id){
 	$res = dbSelect("SELECT USERNAME FROM User WHERE USER_ID = '".$id."'");
