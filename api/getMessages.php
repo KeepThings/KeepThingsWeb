@@ -17,7 +17,7 @@ if(isset($_GET['MID']) && $_GET['MID'] != ""){
 	);
 	echo json_encode(array('result'=>$result));
 	}
-}else if(isset($_GET['SID']) && $_GET['RID']) && $_GET['SID'] != "" && $_GET['ALL'] != ""){
+}else if(isset($_GET['SID']) && $_GET['RID']) && $_GET['SID'] != "" && $_GET['ALL'] != "") {
 	$res = dbSelect("SELECT * FROM Messages WHERE SENDER_ID = '".$_GET['SID']."' AND RECEIVER_ID = '".$_GET['RID']."'");
 	$result = array();
 	$rows = $res->num_rows;
