@@ -4,9 +4,14 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
+interface insertResponse{
+    success: boolean;
+}
+
 @Injectable({
     providedIn: 'root'
 })
+
 export class MarketplaceService {
     baseURL = '/api/getMarketplaceItems.php?ALL=true';
     marketplaceItems: MarketplaceItems[];
@@ -17,5 +22,9 @@ export class MarketplaceService {
                 this.marketplaceItems = res['result'];
                 return this.marketplaceItems;
             }));
+    }
+
+    addMarketplaceItem(ITEM_NAME, ITEM_DESC, USER_ID, DATE_FROM, DATE_TO) {
+        return this.http.get<insertResponse>('/api/addRequest.php?ITEM_NAME=' + ITEM_NAME + '&ITEM_DESC=' + ITEM_DESC + '&USER_ID=' + USER_ID + '&DATE_FROM=' + DATE_FROM + '&DATE_TO=' + DATE_TO);
     }
 }

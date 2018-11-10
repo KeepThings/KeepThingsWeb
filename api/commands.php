@@ -1,5 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+
 function connectToDB(){
 	$mysqli = new mysqli("localhost", "root", "", "keepthings");
 	/* check connection */
@@ -31,7 +32,7 @@ function dbUpdate($dbQuery){
 		exit();
 	}else{
     }
-	$mysqli->query($dbQuery));
+	$mysqli->query($dbQuery);
 		
 }
 function UserIdToName($id){
@@ -39,4 +40,18 @@ function UserIdToName($id){
 	$dsatz = $res->fetch_object();
 	return $dsatz->USERNAME;
 }
-?>
+
+function dbRowInsert($table_name, $form_data)
+{
+    $mysqli = new mysqli("localhost", "root", "", "keepthings");
+    // retrieve the keys of the array (column titles)
+    $fields = array_keys($form_data);
+
+    // build the query
+    $sql = "INSERT INTO ".$table_name."
+    (`".implode('`,`', $fields)."`)
+    VALUES('".implode("','", $form_data)."')";
+
+    // run and return the query result resource
+    return $mysqli->query($sql);
+}

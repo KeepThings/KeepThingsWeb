@@ -4,19 +4,29 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
+
+interface isLoggedIn {
+    status: boolean;
+}
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-    baseURL = '/api/getUsers.php?UID=1';
     user: User;
     constructor(private http: HttpClient) {}
-    getUserById(): Observable<User> {
-        return this.http.get(`${this.baseURL}`).pipe(
+    getUserById(UID): Observable<User> {
+        return this.http.get('/api/getUsers.php?UID=' + UID).pipe(
             map((res) => {
                 this.user = res['result'];
                 return this.user;
             }));
+    }
+
+    isLoggedIn(): Observable<isLoggedIn> {
+        return this.http.get<isLoggedIn>('/api/isloggedin.php');
+    }
+    getUsername() {
+        return this.user.USERNAME;
     }
 }

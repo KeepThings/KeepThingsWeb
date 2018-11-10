@@ -1,3 +1,12 @@
 export class User {
-    constructor(id: number, name: string, firstName: string, eMail: string, telNr: number, username: string, type: string, verified: boolean) {}
+    ID: number;
+    NAME: string;
+    FIST_NAME: string;
+    PASSWORD: string;
+    EMAIL: string;
+    TEL_NR: number;
+    USERNAME: string;
+    TYPE: string;
+    VERIFIED: boolean;
+
 }

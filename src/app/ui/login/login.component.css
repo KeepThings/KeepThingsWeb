@@ -1,0 +1,46 @@
+.loginFormField{
+    display: flex;
+    justify-content: center;
+}
+.loginDiv{
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    width: 400px;
+    position: absolute;
+    right:50%;
+    left: 40%;
+    margin-top: 10%;
+    background-color: white;
+}
+.loginDivHeadline{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 30px;
+}
+.loginForm{
+    padding: 30px;
+}
+#loginHeadlineText{
+    vertical-align: middle;
+    display: inline-flex;
+    font-size: 35px;
+    color: #9A0000;
+}
+#loginIcon{
+    font-size: 50px;
+    padding-right: 60px;
+    vertical-align: middle;
+    display: inline-flex;
+    height: 50px;
+    width: 50px;
+    color: #004669;
+}
+#loginButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
+#buttonWrapper{
+    display: flex;
+    justify-content: center;
+}

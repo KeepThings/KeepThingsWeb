@@ -36,3 +36,15 @@
 .newEntryFormLabel{
     color: #004669;
 }
+.newEntryFormField{
+    width: 90%;
+}
+#entryButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
+#buttonWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}

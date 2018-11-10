@@ -36,3 +36,17 @@
 .newRequestFormLabel{
     color: #004669;
 }
+
+.newRequestFormField{
+    width: 90%;
+}
+#requestButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
+#buttonWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}

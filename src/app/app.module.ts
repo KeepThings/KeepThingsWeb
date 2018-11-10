@@ -7,19 +7,21 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './user.service';
 import {UserItemsService} from './user-items.service';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
-import { LoginComponent } from './ui/login/login.component';
+import { LoginComponent} from './ui/login/login.component';
+import {LoginErrorComponent} from './ui/login/login-error/login-error.component';
 import {NewEntryFormComponent} from './ui/new-entry-form/new-entry-form.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './ui/nav/nav.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import {LayoutComponent} from './ui/layout/layout.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NewRequestFormComponent} from './ui/new-request-form/new-request-form.component';
 import {MarketplaceComponent} from './ui/marketplace/marketplace.component';
 import {LentOutComponent} from './ui/lent-out/lent-out.component';
-import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatListModule} from '@angular/material';
-
+import {AuthGuard} from './auth.guard';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule, NativeDateAdapter } from '@angular/material';
+import {DatePipe} from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFor
     NewEntryFormComponent,
     NewRequestFormComponent,
     MarketplaceComponent,
-    LentOutComponent
+    LentOutComponent,
+    LoginErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,11 +49,15 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFor
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatListModule
-
+    MatListModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
   ],
-  providers: [TestService, UserItemsService, UserService],
-  bootstrap: [AppComponent]
+  providers: [TestService, UserItemsService, UserService, AuthGuard, NavComponent, DatePipe],
+  bootstrap: [AppComponent],
+  entryComponents: [LoginErrorComponent]
 })
 export class AppModule {
 

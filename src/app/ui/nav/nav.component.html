@@ -9,7 +9,7 @@
                 <a class="nav-link" href="#"><span class="iconSpan"><mat-icon class="navIcons">email</mat-icon></span></a>
             </li>
             <li class="nav-item list-inline-item" >
-                <a class="nav-link" href="#" id="username"><span class="iconSpan" id="UserIconSpan"><mat-icon class="navIcons">account_circle</mat-icon></span>{{user.USERNAME}}</a>
+                <a *ngIf="username != undefined" class="nav-link" href="#" id="username"><span class="iconSpan" id="UserIconSpan"><mat-icon class="navIcons">account_circle</mat-icon></span>{{username}}</a>
             </li>
         </ul>
     </div>

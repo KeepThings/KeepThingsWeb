@@ -4,22 +4,41 @@
   </div>
   <div class="newRequestForm">
     <form (ngSubmit)="onSubmit()" #newRequestForm="ngForm" >
-      <mat-form-field>
-        <mat-label class="newRequestFormLabel">Title</mat-label>
-        <input matNativeControl>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label class="newRequestFormLabel">Description</mat-label>
-        <input matNativeControl>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label class="newRequestFormLabel">From</mat-label>
-        <input matNativeControl>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label class="newRequestFormLabel">To</mat-label>
-        <input matNativeControl>
-      </mat-form-field>
+        <mat-form-field class="newRequestFormField">
+            <mat-label class="newRequestFormLabel">Title</mat-label>
+            <input matNativeControl [formControl]="titleFormControl" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="titleFormControl.hasError('required')">
+                Title is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="newRequestFormField">
+            <mat-label class="newRequestFormLabel">Description</mat-label>
+            <input matNativeControl [formControl]="descFormControl" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="descFormControl.hasError('required')" >
+                Description is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="newRequestFormField">
+            <mat-label class="newRequestFormLabel">From</mat-label>
+            <input matInput [matDatepicker]="pickerFrom" [formControl]="fromFormControl" placeholder="Choose a date" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="fromFormControl.hasError('required')">
+                Start date <strong>required</strong>
+            </mat-error>
+            <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFrom></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="newRequestFormField">
+            <mat-label class="newRequestFormLabel">To</mat-label>
+            <input matInput [matDatepicker]="pickerTo" [formControl]="toFormControl" placeholder="Choose a date" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="toFormControl.hasError('required')">
+                End date is <strong>required</strong>
+            </mat-error>
+            <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+            <mat-datepicker #pickerTo></mat-datepicker>
+        </mat-form-field>
+        <div id="buttonWrapper">
+            <button mat-raised-button id="requestButton" type="submit">create new Request</button>
+        </div>
     </form>
   </div>
 </div>

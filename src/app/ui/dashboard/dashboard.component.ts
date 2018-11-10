@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../user';
-import {UserItem} from '../../user-item';
-import {MarketplaceItems} from '../../marketplace-items';
-import {TestService} from '../../test.service';
 import {UserService} from '../../user.service';
-import {UserItemsService} from '../../user-items.service';
-import {MarketplaceService} from '../../marketplace.service';
-import {NewEntryFormComponent} from '../new-entry-form/new-entry-form.component';
+import {AuthenticationService} from '../../authentication.service';
+import {NavComponent} from '../nav/nav.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,19 +12,22 @@ import {NewEntryFormComponent} from '../new-entry-form/new-entry-form.component'
 export class DashboardComponent implements OnInit {
     title = 'KeepThings';
     user: User;
-    error = '';
-    success = '';
-    constructor(private userService: UserService, ) {}
+    constructor(private userService: UserService, private auth: AuthenticationService, private nav: NavComponent ) {}
 
     ngOnInit() {
 
-        this.getUser();
+            this.getUser(localStorage.getItem('userID'));
+            this.nav.setUsername("noob");
+
     }
-    getUser(): void {
-        this.userService.getUserById().subscribe(
+
+    getUser(id): void {
+
+        this.userService.getUserById(id).subscribe(
             (res: User) => {
                 this.user = res;
             }
         );
+
     }
 }
