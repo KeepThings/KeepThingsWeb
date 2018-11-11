@@ -6,7 +6,7 @@
 
     <li *ngFor="let userItem of userItems" class="lendOutList">
       <div *ngIf="userItems">
-      <div class="lentOutListItem" (click)="details(2)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
+      <div class="lentOutListItem" (click)="details(userItem.ITEM_ID)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
         <div class="row">
           <div class="col-md-6">
             <span class="userItemListSmallNormal">{{userItem.ITEM_NAME}}</span>
