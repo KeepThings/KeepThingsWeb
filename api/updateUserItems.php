@@ -13,7 +13,7 @@ if(isset($_GET['IID']) && $_GET['IID'] != ""){
 		
         ITEM_NAME ='".$_GET['ITEM_NAME']."',
         ITEM_DESC ='".$_GET['ITEM_DESC']."',
-        OWNER ='".$_GET['OWNER']."',
+        OWNER ='".$_GET['USER_ID']."',
 		BORROWER ='".$_GET['BORROWER']."',
 		DATE_FROM ='".$_GET['DATE_FROM']."',
 		DATE_TO ='".$_GET['DATE_TO']."',
