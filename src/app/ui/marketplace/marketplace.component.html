@@ -4,8 +4,8 @@
 </div>
 <ul class="marketplaceItemsList">
   <li *ngFor="let marketplaceItem of marketplaceItems" class="marketplaceList">
-    <div *ngIf="marketplaceItem.success">
-    <div class="marketplaceListItem">
+    <div *ngIf="marketplaceItems">
+    <div class="marketplaceListItem" (click)="details(marketplaceItem.ITEM_ID)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
       <div class="row">
         <div class="col-md-6">
           <span class="marketplaceListSmallNormal">{{marketplaceItem.ITEM_NAME}}</span>
@@ -25,8 +25,8 @@
     </div>
     <div class="partingLine"></div>
     </div>
-    <div *ngIf="!marketplaceItem.success">
-      <span>No Marketplace Items available</span>
+    <div *ngIf="!marketplaceItems">
+      <span>No Marketplace Items available </span>
     </div>
   </li>
 </ul>

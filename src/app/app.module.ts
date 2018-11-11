@@ -20,8 +20,11 @@ import {NewRequestFormComponent} from './ui/new-request-form/new-request-form.co
 import {MarketplaceComponent} from './ui/marketplace/marketplace.component';
 import {LentOutComponent} from './ui/lent-out/lent-out.component';
 import {AuthGuard} from './auth.guard';
-import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule, NativeDateAdapter } from '@angular/material';
+import {UIDetailsComponent} from './ui/u-idetails/u-idetails.component';
+import {MIDetailsComponent} from './ui/m-idetails/m-idetails.component';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule, NativeDateAdapter, MatDialogModule } from '@angular/material';
 import {DatePipe} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,8 @@ import {DatePipe} from '@angular/common';
     MarketplaceComponent,
     LentOutComponent,
     LoginErrorComponent,
+    UIDetailsComponent,
+      MIDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,10 +59,11 @@ import {DatePipe} from '@angular/common';
     MatSnackBarModule,
       MatDatepickerModule,
       MatNativeDateModule,
+      MatDialogModule,
   ],
   providers: [TestService, UserItemsService, UserService, AuthGuard, NavComponent, DatePipe],
   bootstrap: [AppComponent],
-  entryComponents: [LoginErrorComponent]
+  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent]
 })
 export class AppModule {
 

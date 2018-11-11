@@ -8,12 +8,14 @@ import { NewRequestFormComponent } from './new-request-form/new-request-form.com
 import { LentOutComponent } from './lent-out/lent-out.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { LoginErrorComponent } from './login/login-error/login-error.component';
+import { UIDetailsComponent } from './u-idetails/u-idetails.component';
+import { MIDetailsComponent } from './m-idetails/m-idetails.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [LayoutComponent, LoginComponent, FooterComponent, NewEntryFormComponent, NewRequestFormComponent, LentOutComponent, MarketplaceComponent, LoginErrorComponent],
+  declarations: [LayoutComponent, LoginComponent, FooterComponent, NewEntryFormComponent, NewRequestFormComponent, LentOutComponent, MarketplaceComponent, LoginErrorComponent, UIDetailsComponent, MIDetailsComponent],
   exports: [LayoutComponent]
 })
 export class UiModule { }

@@ -1,0 +1,50 @@
+.newEntryDiv{
+    background-color: white;
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    display: inline-block;
+    width: 100%;
+}
+#newEntryHeadlineText{
+    vertical-align: middle;
+    display: inline-flex;
+    font-size: 28px;
+    color: #9A0000;
+}
+#newEntryIcon{
+    font-size: 28px;
+    padding-right: 30px;
+    vertical-align: middle;
+    display: inline-flex;
+    height: 28px;
+    width: 28px;
+    color: #004669;
+}
+.newEntryHeadline{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.newEntryForm{
+    margin-left: 10px;
+
+}
+.newEntryInput{
+    position: relative;
+    width: 100%;
+}
+.newEntryFormLabel{
+    color: #004669;
+}
+.newEntryFormField{
+    width: 90%;
+}
+#entryButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
+#buttonWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}

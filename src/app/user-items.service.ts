@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {UserItem} from './user-item';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {USER_ITEMS} from './mock-user-items';
 
 interface insertResponse{
     success: boolean;
@@ -23,5 +24,12 @@ export class UserItemsService {
     }
     addUserItem(ITEM_NAME, ITEM_DESC, USER_ID, BORROWER, DATE_FROM, DATE_TO) {
         return this.http.get<insertResponse>('/api/addEntry.php?ITEM_NAME=' + ITEM_NAME + '&ITEM_DESC=' + ITEM_DESC + '&USER_ID=' + USER_ID + '&BORROWER=' + BORROWER + '&DATE_FROM=' + DATE_FROM + '&DATE_TO=' + DATE_TO);
+    }
+    getUserItemsMock(): Observable<UserItem[]> {
+        return of(USER_ITEMS);
+    }
+
+    getUserItemMock(id: number): Observable<UserItem> {
+        return of(USER_ITEMS.find(UserItem => UserItem.ITEM_ID === id));
     }
 }

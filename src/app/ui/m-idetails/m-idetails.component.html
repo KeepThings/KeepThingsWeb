@@ -1,0 +1,56 @@
+<div class="newEntryDiv">
+  <div class="newEntryHeadline">
+    <span><mat-icon id="newEntryIcon">business</mat-icon></span><span id="newEntryHeadlineText">Marketplace Details View</span>
+  </div>
+  <div class="newEntryForm">
+    <form (ngSubmit)="onSubmit()" #newEntryForm="ngForm" >
+      <mat-form-field class="newEntryFormField">
+        <mat-label class="newEntryFormLabel">Title</mat-label>
+        <input matNativeControl [formControl]="titleFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="titleFormControl.hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="newEntryFormField">
+        <mat-label class="newEntryFormLabel">Description</mat-label>
+        <input matNativeControl [formControl]="descFormControl" [(ngModel)]="marketplaceItem.ITEM_DESC" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="descFormControl.hasError('required')">
+          Description is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="newEntryFormField">
+        <mat-label class="newEntryFormLabel">Owner</mat-label>
+        <input matNativeControl [formControl]="ownerFormControl" [(ngModel)]="marketplaceItem.OWNER" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="ownerFormControl.hasError('required')">
+          Person is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="newEntryFormField">
+        <mat-label class="newEntryFormLabel">Borrower</mat-label>
+        <input matNativeControl [formControl]="borrowerFormControl" [(ngModel)]="marketplaceItem.BORROWER" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="borrowerFormControl.hasError('required')">
+          Person is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="newEntryFormField">
+        <mat-label class="newEntryFormLabel">From</mat-label>
+        <input matInput [matDatepicker]="pickerFrom" [formControl]="fromFormControl" placeholder="Choose a date" [(ngModel)]="marketplaceItem.DATE_FROM" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="fromFormControl.hasError('required')">
+          Start date <strong>required</strong>
+        </mat-error>
+        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFrom></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="newEntryFormField">
+        <mat-label class="newEntryFormLabel">To</mat-label>
+        <input matInput [matDatepicker]="pickerTo" [formControl]="toFormControl" placeholder="Choose a date" [(ngModel)]="marketplaceItem.DATE_TO" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="toFormControl.hasError('required')">
+          End date is <strong>required</strong>
+        </mat-error>
+        <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+        <mat-datepicker #pickerTo></mat-datepicker>
+      </mat-form-field>
+    </form>
+  </div>
+
+</div>
