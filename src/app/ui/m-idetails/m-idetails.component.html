@@ -6,7 +6,7 @@
     <form (ngSubmit)="onSubmit()" #newEntryForm="ngForm" >
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">Title</mat-label>
-        <input matNativeControl [formControl]="titleFormControl" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="titleFormControl" [(ngModel)]="marketplaceItem.ITEM_NAME"[errorStateMatcher]="matcher">
         <mat-error *ngIf="titleFormControl.hasError('required')">
           Title is <strong>required</strong>
         </mat-error>

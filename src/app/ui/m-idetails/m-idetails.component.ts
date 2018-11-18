@@ -39,7 +39,6 @@ export class MIDetailsComponent implements OnInit {
 
   ngOnInit() {
       this.getMarketplaceItem(this.data.ITEM_ID);
-      this.titleFormControl.setValue(this.marketplaceItem.ITEM_NAME);
   }
     getMarketplaceItem(id): void {
         this.marketplaceService.getMarketplaceItem(id).subscribe(userItem => this.marketplaceItem = userItem);

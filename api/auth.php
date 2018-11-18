@@ -6,7 +6,7 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 if(isset($_POST)){
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $res = dbSelect("SELECT * FROM User WHERE EMAIL = '".$email."' ");
+    $res = dbSelect("SELECT * FROM user WHERE EMAIL = '".$email."' ");
     $rows = $res->num_rows;
     $dsatz = $res->fetch_object();
     if (($rows != 0 || null) && $dsatz->PASSWORD == $password) {

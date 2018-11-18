@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 
 function connectToDB(){
-	$mysqli = new mysqli("localhost", "root", "", "keepthings");
+	$mysqli = new mysqli("185.244.195.51", "keepthings", "KeepThingsnlbmysql**", "keepthings");
 	/* check connection */
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -10,7 +10,7 @@ function connectToDB(){
 	}
 }
 function dbSelect($dbQuery){
-	$mysqli = new mysqli("localhost", "root", "", "keepthings");
+	$mysqli = new mysqli("185.244.195.51", "keepthings", "KeepThingsnlbmysql**", "keepthings");
 	/* check connection */
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -25,7 +25,7 @@ function dbSelect($dbQuery){
 	}
 }
 function dbUpdate($dbQuery){
-	$mysqli = new mysqli("localhost", "root", "", "keepthings");
+	$mysqli = new mysqli("185.244.195.51", "keepthings", "KeepThingsnlbmysql**", "keepthings");
 	/* check connection */
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -43,7 +43,7 @@ function UserIdToName($id){
 
 function dbRowInsert($table_name, $form_data)
 {
-    $mysqli = new mysqli("localhost", "root", "", "keepthings");
+    $mysqli = new mysqli("185.244.195.51", "keepthings", "KeepThingsnlbmysql**", "keepthings");
     // retrieve the keys of the array (column titles)
     $fields = array_keys($form_data);
 

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {TestService} from './test.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -61,7 +60,7 @@ import {DatePipe} from '@angular/common';
     MatNativeDateModule,
     MatDialogModule,
   ],
-  providers: [TestService, UserItemsService, UserService, AuthGuard, NavComponent, DatePipe],
+  providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent]
 })

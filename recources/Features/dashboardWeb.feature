@@ -18,3 +18,5 @@ Feature: DashboardWeb
     When Dashboard has finished loading
     And Data in Marketplace_Items table in database
     Then Display all marketplace items in a list in the Marketplace Widget
+
+    //behave or behat selenium-cucumber

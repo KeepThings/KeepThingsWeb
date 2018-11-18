@@ -2,7 +2,7 @@
 <div class="marketplaceHeadline">
   <span><mat-icon id="marketplaceIcon">business</mat-icon></span><span id="marketplaceHeadlineText">Marketplace</span>
 </div>
-<ul class="marketplaceItemsList">
+<ul *ngIf="marketplaceItems" class="marketplaceItemsList">
   <li *ngFor="let marketplaceItem of marketplaceItems" class="marketplaceList">
     <div *ngIf="marketplaceItems">
     <div class="marketplaceListItem" (click)="details(marketplaceItem.ITEM_ID)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
