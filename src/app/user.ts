@@ -1,7 +1,7 @@
 export class User {
     ID: number;
     NAME: string;
-    FIST_NAME: string;
+    FIRST_NAME: string;
     PASSWORD: string;
     EMAIL: string;
     TEL_NR: number;

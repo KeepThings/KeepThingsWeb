@@ -45,8 +45,7 @@ export class MarketplaceComponent implements OnInit {
         this.dialog.open(MIDetailsComponent, {data: {ITEM_ID: this.marketplaceItem.ITEM_ID, ITEM_NAME: this.marketplaceItem.ITEM_NAME,
                 ITEM_DESC: this.marketplaceItem.ITEM_DESC, OWNER: this.marketplaceItem.OWNER, BORROWER: this.marketplaceItem.BORROWER, DATE_FROM: this.marketplaceItem.DATE_FROM,
                 DATE_TO: this.marketplaceItem.DATE_TO,
-            }, width: '60%',
-            height: '52%',
+            }
         }) ;
 
     }

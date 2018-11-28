@@ -22,6 +22,7 @@ export class AuthenticationService {
   setUID(uid) {
       this.uid = uid;
       localStorage.setItem('userID', this.uid );
+      console.log(localStorage.getItem('userID'));
   }
   get UID() {
       return this.uid;

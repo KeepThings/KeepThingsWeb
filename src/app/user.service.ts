@@ -16,7 +16,7 @@ export class UserService {
     user: User;
     constructor(private http: HttpClient) {}
     getUserById(UID): Observable<User> {
-        return this.http.get('/api/getUsers.php?UID=' + UID).pipe(
+        return this.http.get<User>('/api/getUsers.php?UID=' + UID).pipe(
             map((res) => {
                 this.user = res['result'];
                 return this.user;

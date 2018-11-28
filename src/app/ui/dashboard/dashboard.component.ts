@@ -16,8 +16,9 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit() {
 
-            this.getUser(localStorage.getItem('userID'));
-            this.nav.setUsername("noob");
+        console.log(localStorage.getItem('userID'));
+            console.log(this.getUser(2));
+
 
     }
 

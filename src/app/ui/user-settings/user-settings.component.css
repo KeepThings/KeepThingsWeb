@@ -1,0 +1,42 @@
+.userSettingsDiv{
+    background-color: white;
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    display: inline-block;
+    width: 100%;
+}
+#userSettingsHeadlineText{
+    vertical-align: middle;
+    display: inline-flex;
+    font-size: 28px;
+    color: #9A0000;
+}
+#userSettingsIcon{
+    font-size: 28px;
+    padding-right: 30px;
+    vertical-align: middle;
+    display: inline-flex;
+    height: 28px;
+    width: 28px;
+    color: #004669;
+}
+.userSettingsHeadline{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.userSettingsForm{
+    margin-left: 10px;
+
+}
+.userSettingsInput{
+    position: relative;
+    width: 100%;
+}
+.userSettingsFormLabel{
+    color: #004669;
+}
+.userSettingsFormField{
+    width: 60%;
+    margin-left: 20px;
+}

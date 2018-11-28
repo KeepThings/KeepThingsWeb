@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
                 this.snackBar.dismiss();
                 this.router.navigate(['dashboard']);
                 this.Auth.setLoggedIn(true);
+                console.log(data.uid);
                 this.Auth.setUID(data.uid);
             } else {
                 this.snackBar.openFromComponent(LoginErrorComponent);

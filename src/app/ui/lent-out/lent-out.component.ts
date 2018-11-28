@@ -47,8 +47,7 @@ export class LentOutComponent implements OnInit {
       this.dialog.open(UIDetailsComponent, {data: {ITEM_ID: this.userItem.ITEM_ID, ITEM_NAME: this.userItem.ITEM_NAME,
       ITEM_DESC: this.userItem.ITEM_DESC, OWNER: this.userItem.OWNER, BORROWER: this.userItem.BORROWER, DATE_FROM: this.userItem.DATE_FROM,
       DATE_TO: this.userItem.DATE_TO,
-          }, width: '60%',
-          height: '52%',
+          }
       }) ;
 
 

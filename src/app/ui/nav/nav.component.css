@@ -19,10 +19,6 @@
     height: 3px;
     background-color: #004669;
 }
-#username{
-    color: #9A0000;
-    font-size: 30px;
-}
 #UserIconSpan{
     padding-right: 20px;
 }
@@ -30,16 +26,21 @@
     color: #003854;
 
 }
-.nav-item a{
+.nav-item span{
     display: inline-flex;
     vertical-align: middle;
     height: 50px;
     margin-right: 20px;
+    margin-top: 20px;
 }
 .navIcons{
     font-size: 40px;
     height:40px;
     width: 40px;
 
+}
+#userName{
+    color: #9A0000;
+    font-size: 30px;
 }
 
