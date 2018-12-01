@@ -1,18 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar custom-nav">
-    <a class="navbar-brand"><img class="logo" src="{{LogoImageUrl}}"></a>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+<nav class="navBar navBar-expand-lg navbar custom-nav">
+    <a class="navBar-brand"><img alt="no Image loading" class="logo" src="{{LogoImageUrl}}"></a>
+    <div class="collapse navBar-collapse" id="navBarNavDropdown">
         <ul class="nav-right list-inline">
-            <li class="nav-item active list-inline-item">
+            <li (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" class="nav-item active list-inline-item">
                 <span class="iconSpan"><mat-icon class="navIcons">calendar_today</mat-icon></span>
             </li>
-            <li class="nav-item list-inline-item">
+            <li (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" class="nav-item list-inline-item">
                 <span class="iconSpan"><mat-icon class="navIcons">email</mat-icon></span>
             </li>
-            <li class="nav-item list-inline-item"(click)="userSettings()" >
+            <li (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" class="nav-item list-inline-item" (click)="userSettings()" >
                   <span class="iconSpan" id="UserIconSpan"><mat-icon class="navIcons">account_circle</mat-icon></span>
             </li>
             <li *ngIf="user" class="nav-item list-inline-item">
                 <span id="userName">{{user.USERNAME}}</span>
+            </li>
+            <li *ngIf="user" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" (click)="logout()" class="nav-item list-inline-item">
+                <span class="iconSpan"><mat-icon class="navIcons">arrow_forward</mat-icon></span>
             </li>
         </ul>
     </div>

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {UserItem} from './user-item';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {USER_ITEMS} from './mock-user-items';
+import {DatePipe} from '@angular/common';
 
-interface insertResponse{
+interface InsertResponse {
     success: boolean;
 }
 
@@ -14,22 +14,49 @@ interface insertResponse{
 })
 export class UserItemsService {
     userItems: UserItem[];
-    constructor(private http: HttpClient) {}
+    userItem: UserItem;
+    update = false;
+    constructor(private http: HttpClient, private datepipe: DatePipe) {}
+
     getUserItems(UID): Observable<UserItem[]> {
-        return this.http.get('/api/getUserItems.php?UID=' + UID).pipe(
+        return this.http.get<UserItem>('/api/getUserItems.php?UID=' + UID).pipe(
             map((res) => {
                 this.userItems = res['result'];
                 return this.userItems;
             }));
     }
-    addUserItem(ITEM_NAME, ITEM_DESC, USER_ID, BORROWER, DATE_FROM, DATE_TO) {
-        return this.http.get<insertResponse>('/api/addEntry.php?ITEM_NAME=' + ITEM_NAME + '&ITEM_DESC=' + ITEM_DESC + '&USER_ID=' + USER_ID + '&BORROWER=' + BORROWER + '&DATE_FROM=' + DATE_FROM + '&DATE_TO=' + DATE_TO);
+    getUserItem(id: number): Observable<UserItem> {
+        return this.http.get<UserItem>('/api/getUserItems.php?IID=' + id).pipe(
+            map((res) => {
+                this.userItem = res['result'];
+                return this.userItem;
+            }));
     }
-    getUserItemsMock(): Observable<UserItem[]> {
-        return of(USER_ITEMS);
+    addUserItem(ITEM_NAME, ITEM_DESC, USER_ID, BORROWER, DATE_FROM, DATE_TO) {
+        return this.http.get<InsertResponse>('/api/addEntry.php?ITEM_NAME=' + ITEM_NAME + '&ITEM_DESC='
+            + ITEM_DESC + '&USER_ID=' + USER_ID + '&BORROWER=' + BORROWER + '&DATE_FROM=' + DATE_FROM + '&DATE_TO=' + DATE_TO);
     }
 
-    getUserItemMock(id: number): Observable<UserItem> {
-        return of(USER_ITEMS.find(UserItem => UserItem.ITEM_ID === id));
+    transformDate(date) {
+        return this.datepipe.transform(date, 'yyyy-MM-dd');
+    }
+
+    updateUserItem(userItem: UserItem) {
+        this.setUpdate(true);
+        return this.http.get<InsertResponse>('/api/updateUserItems.php?IID=' + userItem.ITEM_ID
+            + '&ITEM_NAME=' + userItem.ITEM_NAME
+            + '&ITEM_DESC=' + userItem.ITEM_DESC
+            + '&USERNAME=' + userItem.OWNER
+            + '&BORROWER=' + userItem.BORROWER
+            + '&DATE_FROM=' + this.transformDate(userItem.DATE_FROM)
+            + '&DATE_TO=' + this.transformDate(userItem.DATE_TO));
+
+    }
+    setUpdate(bool) {
+        this.update = bool;
+    }
+
+    needUpdate(): boolean {
+        return this.update;
     }
 }

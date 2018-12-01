@@ -1,4 +1,4 @@
-<div class="userSettingsDiv">
+<div *ngIf="user" class="userSettingsDiv">
   <div class="userSettingsHeadline">
     <span><mat-icon id="userSettingsIcon">settings</mat-icon></span><span id="userSettingsHeadlineText">Hello {{user.FIRST_NAME}} {{user.NAME}}, here you can edit your User Settings</span>
   </div>
@@ -33,6 +33,9 @@
           TelNr is <strong>required</strong>
         </mat-error>
       </mat-form-field>
+      <div id="buttonWrapper">
+        <button mat-raised-button id="entryButton" type="submit">Save</button>
+      </div>
     </form>
   </div>
 </div>

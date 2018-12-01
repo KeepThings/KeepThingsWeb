@@ -42,9 +42,12 @@ export class NewRequestFormComponent implements OnInit {
               this.snackBar.dismiss();
           }, 5000);
       } else {
-          this.marketplaceService.addMarketplaceItem(this.titleFormControl.value, this.descFormControl.value, localStorage.getItem('userID'), this.transformDate(this.fromFormControl.value), this.transformDate(this.toFormControl.value)).subscribe(data => {
+          this.marketplaceService.addMarketplaceItem(this.titleFormControl.value, this.descFormControl.value,
+              localStorage.getItem('userID'), this.transformDate(this.fromFormControl.value),
+              this.transformDate(this.toFormControl.value)).subscribe(data => {
               if (data.success) {
                   this.snackBar.open('Request creation successful!');
+                  this.marketplaceService.setUpdate(true);
                   this.titleFormControl.setValue(' ');
                   this.descFormControl.setValue(' ');
                   this.fromFormControl.setValue(' ');

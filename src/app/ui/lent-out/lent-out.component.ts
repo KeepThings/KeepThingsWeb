@@ -4,6 +4,7 @@ import {UserItemsService} from '../../user-items.service';
 import {AuthenticationService} from '../../authentication.service';
 import {UIDetailsComponent} from '../u-idetails/u-idetails.component';
 import {MatDialog} from '@angular/material';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-lent-out',
@@ -13,43 +14,35 @@ import {MatDialog} from '@angular/material';
 export class LentOutComponent implements OnInit {
     userItems: UserItem[];
     userItem: UserItem;
+    sub: Subscription;
   constructor(private userItemsService: UserItemsService, private auth: AuthenticationService, private dialog: MatDialog) { }
 
   ngOnInit() {
-      //this.getUserItems(localStorage.getItem('userID'));
-      this.getMockUserItems();
-  }
-    /*getUserItems(id): void {
-        this.userItemsService.getUserItems(id).subscribe(
-            (res: UserItem) => {
-                this.userItems = res;
-            }
-        );
-    } */
+      this.getUserItems();
+      this.sub = Observable.interval(1000)
+          .subscribe((val) => {
+              if (this.userItemsService.needUpdate()) {
+                  this.getUserItems();
+                  this.userItemsService.setUpdate(false);
 
+              }
+          });
+  }
     changeCursor(value: boolean) {
-        if(value){
+        if (value) {
             document.body.style.cursor = 'pointer';
-        }else if(!value){
+        } else if (!value) {
             document.body.style.cursor = 'default';
         }
     }
-    getMockUserItems(): void {
-      this.userItemsService.getUserItemsMock().subscribe(userItems => this.userItems = userItems);
-    }
-
-    getMockUserItem(id): void {
-      this.userItemsService.getUserItemMock(id).subscribe(userItem => this.userItem = userItem);
+    getUserItems(): void {
+        this.userItemsService.getUserItems(localStorage.getItem('userID')).subscribe(userItems => this.userItems = userItems);
     }
 
     details(id: number): void {
-        this.getMockUserItem(id);
-      this.dialog.open(UIDetailsComponent, {data: {ITEM_ID: this.userItem.ITEM_ID, ITEM_NAME: this.userItem.ITEM_NAME,
-      ITEM_DESC: this.userItem.ITEM_DESC, OWNER: this.userItem.OWNER, BORROWER: this.userItem.BORROWER, DATE_FROM: this.userItem.DATE_FROM,
-      DATE_TO: this.userItem.DATE_TO,
-          }
-      }) ;
-
+        this.dialog.open(UIDetailsComponent, {data: {ITEM_ID: id
+            }
+        }) ;
 
     }
 }

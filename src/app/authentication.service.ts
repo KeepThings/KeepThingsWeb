@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 
-interface myData {
+interface Data {
     success: boolean;
     uid: number;
+}
+interface Response {
+    success: boolean;
 }
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,6 @@ export class AuthenticationService {
   setUID(uid) {
       this.uid = uid;
       localStorage.setItem('userID', this.uid );
-      console.log(localStorage.getItem('userID'));
   }
   get UID() {
       return this.uid;
@@ -31,8 +32,14 @@ export class AuthenticationService {
       return this.loggedInStatus;
   }
   getUserDetails(email, password) {
-  return this.http.post<myData>('/api/auth.php', {
-      email, password
+  return this.http.post<Data>('/api/auth.php', {
+      responseType: 'text', email, password
   });
+  }
+  logout() {
+      this.setLoggedIn(false);
+      localStorage.removeItem('userID');
+      this.uid = null;
+      return this.http.get<Response>('/api/logout.php');
   }
 }

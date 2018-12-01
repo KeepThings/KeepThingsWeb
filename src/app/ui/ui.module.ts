@@ -11,13 +11,14 @@ import { LoginErrorComponent } from './login/login-error/login-error.component';
 import { UIDetailsComponent } from './u-idetails/u-idetails.component';
 import { MIDetailsComponent } from './m-idetails/m-idetails.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
-import { AsComponent } from './as/as.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [LayoutComponent, LoginComponent, FooterComponent, NewEntryFormComponent, NewRequestFormComponent, LentOutComponent, MarketplaceComponent, LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent, AsComponent],
+  declarations: [LayoutComponent, LoginComponent, FooterComponent, NewEntryFormComponent,
+      NewRequestFormComponent, LentOutComponent, MarketplaceComponent, LoginErrorComponent,
+      UIDetailsComponent, MIDetailsComponent, UserSettingsComponent],
   exports: [LayoutComponent]
 })
 export class UiModule { }

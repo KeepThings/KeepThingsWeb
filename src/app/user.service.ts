@@ -5,8 +5,11 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 
-interface isLoggedIn {
+interface IsLoggedIn {
     status: boolean;
+}
+interface UpdateResponse {
+    success: boolean;
 }
 @Injectable({
   providedIn: 'root'
@@ -14,6 +17,7 @@ interface isLoggedIn {
 export class UserService {
 
     user: User;
+    update = false;
     constructor(private http: HttpClient) {}
     getUserById(UID): Observable<User> {
         return this.http.get<User>('/api/getUsers.php?UID=' + UID).pipe(
@@ -23,10 +27,25 @@ export class UserService {
             }));
     }
 
-    isLoggedIn(): Observable<isLoggedIn> {
-        return this.http.get<isLoggedIn>('/api/isloggedin.php');
+    isLoggedIn(): Observable<IsLoggedIn> {
+        return this.http.get<IsLoggedIn>('/api/isloggedin.php');
     }
-    getUsername() {
-        return this.user.USERNAME;
+    updateUser(user: User) {
+        this.setUpdate(true);
+        return this.http.get<UpdateResponse>('/api/updateUsers.php?UID=' + user.USER_ID
+            + '&NAME=' + user.NAME
+            + '&FIRST_NAME=' + user.FIRST_NAME
+            + '&PASSWORD=' + user.PASSWORD
+            + '&USERNAME=' + user.USERNAME
+            + '&VERIFIED=' + user.VERIFIED
+            + '&TEL_NR=' + user.TEL_NR
+            + '&EMAIL=' + user.EMAIL
+            + '&TYPE=' + user.TYPE);
+    }
+    setUpdate(bool) {
+        this.update = bool;
+    }
+    needUpdate(): boolean {
+        return this.update;
     }
 }

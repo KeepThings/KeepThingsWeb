@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../user.service';
 import {User} from '../../user';
-import {Observable} from 'rxjs';
 import {FormControl, Validators} from '@angular/forms';
 import {MyErrorStateMatcher2} from '../new-entry-form/new-entry-form.component';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-user-settings',
@@ -25,13 +25,33 @@ export class UserSettingsComponent implements OnInit {
         Validators.required,
     ]);
     matcher = new MyErrorStateMatcher2();
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getUser();
   }
   getUser() {
-     return this.userService.getUserById(localStorage.getItem('userID')).subscribe(user => this.user = user);
+      this.userService.getUserById(localStorage.getItem('userID')).subscribe(user => this.user = user);
   }
+
+    onSubmit() {
+        this.userService.updateUser(this.user).
+        subscribe(data => {
+            console.log(data.success);
+            if (data.success) {
+                this.userService.setUpdate(true);
+                this.snackBar.open('User update successful!');
+                setTimeout(() => {
+                    this.snackBar.dismiss();
+                }, 5000);
+            } else {
+                this.snackBar.open('Error occured updating User!');
+                setTimeout(() => {
+                    this.snackBar.dismiss();
+                }, 5000);
+            }
+        });
+
+    }
 
 }

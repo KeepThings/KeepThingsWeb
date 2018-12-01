@@ -1,4 +1,4 @@
-<div class="newEntryDiv">
+<div *ngIf="userItem" class="newEntryDiv">
   <div class="newEntryHeadline">
     <span><mat-icon id="newEntryIcon">view_list</mat-icon></span><span id="newEntryHeadlineText">Edit your lent out Item</span>
   </div>
@@ -50,6 +50,9 @@
         <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
         <mat-datepicker #pickerTo></mat-datepicker>
       </mat-form-field>
+      <div id="buttonWrapper">
+        <button mat-raised-button id="entryButton" type="submit">Save</button>
+      </div>
     </form>
   </div>
 

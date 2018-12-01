@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {MyErrorStateMatcher} from '../new-request-form/new-request-form.component';
 import {ErrorStateMatcher, MatSnackBar} from '@angular/material';
 import {UserItemsService} from '../../user-items.service';
 import {DatePipe} from '@angular/common';
@@ -35,15 +34,20 @@ export class NewEntryFormComponent implements OnInit {
   ngOnInit() {
   }
     onSubmit() {
-        if (this.titleFormControl.invalid || this.descFormControl.invalid || this.personFormControl.invalid || this.fromFormControl.invalid || this.toFormControl.invalid) {
+        if (this.titleFormControl.invalid || this.descFormControl.invalid || this.personFormControl.invalid ||
+            this.fromFormControl.invalid || this.toFormControl.invalid) {
             this.snackBar.open('All fields are required!');
             setTimeout(() => {
                 this.snackBar.dismiss();
             }, 5000);
         } else {
-            this.userItemService.addUserItem(this.titleFormControl.value, this.descFormControl.value, localStorage.getItem('userID'), this.personFormControl.value, this.transformDate(this.fromFormControl.value), this.transformDate(this.toFormControl.value)).subscribe(data => {
+            this.userItemService.addUserItem(this.titleFormControl.value, this.descFormControl.value,
+                localStorage.getItem('userID'), this.personFormControl.value, this.transformDate(this.fromFormControl.value),
+                this.transformDate(this.toFormControl.value))
+                .subscribe(data => {
                 if (data.success) {
                     this.snackBar.open('Request creation successful!');
+                    this.userItemService.setUpdate(true);
                     this.titleFormControl.setValue(' ');
                     this.personFormControl.setValue(' ');
                     this.descFormControl.setValue(' ');
