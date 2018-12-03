@@ -26,11 +26,11 @@ Logical View, Process View, Deployment View, Implementation View, Data View, Siz
 This section describes what software architecture is for the current system. Our Project consists of two Applications. We have an Angular Application and an Android Application. These have different architectures. Angular is based on the Model-View-ViewModel architecture.
 This diagram describes the main aspects of the Angular architecture.
 
-![Alt-Text](/SoftwareArchitectureDocument/m-v-vm_angular.png)
+![Alt-Text](/m-v-vm_angular.png)
 
 The architecture of Android is MVC. This diagram describes the main aspects of the MVC.
 
-![Alt-Text](/SoftwareArchitectureDocument/mvc_android.png)
+![Alt-Text](/mvc_android.png)
 
 
 ## 3. Architectural Goals and Constraints
@@ -39,7 +39,7 @@ The MVC architecture has a very simple functionality. You have a View which gets
 
 
 ## 4. Use-Case View
-![Alt-Text](/SoftwareArchitectureDocument/UC-KeepThings.svg)
+![Alt-Text](/UC-KeepThings.svg)
 
 ### 4.1 Use-Case Realization
 N.a
@@ -48,9 +48,9 @@ N.a
 ## 5. Logical View
 
 ### 5.1 Overview
-![Alt-Text](/SoftwareArchitectureDocument/Logical-View.png)
+![Alt-Text](/Logical-View.png)
 
-![Alt-Text](/SoftwareArchitectureDocument/ClassDiagramAngular.png)
+![Alt-Text](/ClassDiagramAngular.png)
 
 ### 5.2	Architecturally Significant Design Packages
 N.a
@@ -76,7 +76,7 @@ N.a
 ## 9. Data View
 We are using a MySQL database. Here you can see our database scheme.
 
-![Alt-Text](/SoftwareArchitectureDocument/DBSchema.svg)
+![Alt-Text](/DBSchema.svg)
 
 
 ## 10. Size and Performance
