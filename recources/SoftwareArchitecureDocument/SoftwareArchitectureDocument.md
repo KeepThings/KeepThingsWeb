@@ -61,7 +61,7 @@ N.a
 
 
 ## 7. Deployment View 
-N.a
+![Alt-Text](DeploymentView.svg)
 
 
 ## 8. Implementation View 
