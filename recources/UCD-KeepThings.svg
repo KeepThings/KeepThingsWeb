@@ -113,14 +113,14 @@
       <ellipse rx="70.4688" fill="none" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="-68.25"/>
       <text x="740.248" xml:space="preserve" y="-63.5361" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">register user</text>
     </g>
-    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="white">
+    <g fill="lime" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="lime">
       <ellipse rx="70.4688" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="303.9375" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke-linecap="butt">
       <ellipse rx="70.4688" fill="none" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="303.9375"/>
       <text x="747.5781" xml:space="preserve" y="308.6514" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">login user</text>
     </g>
-    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="white">
+    <g fill="lime" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="lime">
       <ellipse rx="70.4688" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="55.8125" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke-linecap="butt">
@@ -179,7 +179,7 @@
       <ellipse rx="70.4688" fill="none" ry="41.0938" clip-path="url(#clipPath2)" cx="1173.1851" cy="-4.5"/>
       <text x="1119.8267" xml:space="preserve" y="0.2139" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">send server-request</text>
     </g>
-    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="white">
+    <g fill="lime" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="lime">
       <ellipse rx="70.4688" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="428" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke-linecap="butt">
@@ -290,14 +290,14 @@
       <ellipse rx="70.4688" fill="none" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="639.4167"/>
       <text x="740.248" xml:space="preserve" y="644.1306" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">register user</text>
     </g>
-    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="white">
+    <g fill="lime" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="lime">
       <ellipse rx="70.4688" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="1135.6667" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke-linecap="butt">
       <ellipse rx="70.4688" fill="none" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="1135.6667"/>
       <text x="747.5781" xml:space="preserve" y="1140.3805" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">login user</text>
     </g>
-    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="white">
+    <g fill="lime" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="lime">
       <ellipse rx="70.4688" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="763.4792" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke-linecap="butt">
@@ -356,7 +356,7 @@
       <ellipse rx="70.4688" fill="none" ry="41.0938" clip-path="url(#clipPath2)" cx="1173.1851" cy="763.4792"/>
       <text x="1119.8267" xml:space="preserve" y="768.1931" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">send server-request</text>
     </g>
-    <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="white">
+    <g fill="lime" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke="lime">
       <ellipse rx="70.4688" ry="41.0938" clip-path="url(#clipPath2)" cx="773.5938" cy="1259.7292" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-381,168)" stroke-linecap="butt">
