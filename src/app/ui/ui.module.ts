@@ -16,9 +16,7 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
   imports: [
     CommonModule
   ],
-  declarations: [LayoutComponent, LoginComponent, FooterComponent, NewEntryFormComponent,
-      NewRequestFormComponent, LentOutComponent, MarketplaceComponent, LoginErrorComponent,
-      UIDetailsComponent, MIDetailsComponent, UserSettingsComponent],
-  exports: [LayoutComponent]
+  declarations: [],
+  exports: []
 })
 export class UiModule { }

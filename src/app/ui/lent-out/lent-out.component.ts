@@ -15,7 +15,7 @@ export class LentOutComponent implements OnInit {
     userItems: UserItem[];
     userItem: UserItem;
     sub: Subscription;
-  constructor(private userItemsService: UserItemsService, private auth: AuthenticationService, private dialog: MatDialog) { }
+  constructor(private userItemsService: UserItemsService, private dialog: MatDialog) { }
 
   ngOnInit() {
       this.getUserItems();

@@ -14,7 +14,7 @@ import { NavComponent } from './ui/nav/nav.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import {LayoutComponent} from './ui/layout/layout.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule, FormControlDirective} from '@angular/forms';
 import {NewRequestFormComponent} from './ui/new-request-form/new-request-form.component';
 import {MarketplaceComponent} from './ui/marketplace/marketplace.component';
 import {LentOutComponent} from './ui/lent-out/lent-out.component';
@@ -32,7 +32,6 @@ import {UserSettingsComponent} from './ui/user-settings/user-settings.component'
     LoginComponent,
     NavComponent,
     FooterComponent,
-    LayoutComponent,
     NewEntryFormComponent,
     NewRequestFormComponent,
     MarketplaceComponent,
@@ -41,6 +40,7 @@ import {UserSettingsComponent} from './ui/user-settings/user-settings.component'
     UIDetailsComponent,
       MIDetailsComponent,
       UserSettingsComponent,
+      LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -61,10 +61,12 @@ import {UserSettingsComponent} from './ui/user-settings/user-settings.component'
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
+    
   ],
   providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe],
   bootstrap: [AppComponent],
-  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent]
+  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent],
+    exports: [MatIconModule, FormsModule, LayoutComponent]
 })
 export class AppModule {
 

@@ -5,7 +5,7 @@ import {AuthenticationService} from '../../authentication.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {UserSettingsComponent} from '../user-settings/user-settings.component';
 import {Subscription} from 'rxjs';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import 'rxjs/add/observable/interval';
 import {Router} from '@angular/router';
 
@@ -25,13 +25,17 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
 
+    
         this.sub = Observable.interval(1000)
             .subscribe((val) => {
-              if (!this.user) {
+              if (this.auth.isLoggedIn === true && !this.user ) {
                 this.getUserName();
+                console.log('1');
               } else {
-                  if (this.userService.needUpdate()) {
+                  if (this.userService.needUpdate() && this.auth.isLoggedIn === true) {
                   this.getUserName();
+
+                console.log('2');
                   }
               }
 
@@ -54,7 +58,9 @@ export class NavComponent implements OnInit {
     }
 
     userSettings() {
-      this.dialog.open(UserSettingsComponent);
+        if(this.auth.isLoggedIn){
+            this.dialog.open(UserSettingsComponent);
+        }
 
     }
 
@@ -65,8 +71,9 @@ export class NavComponent implements OnInit {
                 setTimeout(() => {
                     this.snackBar.dismiss();
                 }, 5000);
-                this.router.navigate(['login']);
                 this.user = null;
+                this.router.navigate(['login']);
+                
 
             } else {
                 this.snackBar.open('Logout error!');

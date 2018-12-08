@@ -1,23 +1,17 @@
-<nav class="navBar navBar-expand-lg navbar custom-nav">
-    <a class="navBar-brand"><img alt="no Image loading" class="logo" src="{{LogoImageUrl}}"></a>
-    <div class="collapse navBar-collapse" id="navBarNavDropdown">
-        <ul class="nav-right list-inline">
-            <li (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" class="nav-item active list-inline-item">
-                <span class="iconSpan"><mat-icon class="navIcons">calendar_today</mat-icon></span>
-            </li>
-            <li (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" class="nav-item list-inline-item">
-                <span class="iconSpan"><mat-icon class="navIcons">email</mat-icon></span>
-            </li>
-            <li (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" class="nav-item list-inline-item" (click)="userSettings()" >
-                  <span class="iconSpan" id="UserIconSpan"><mat-icon class="navIcons">account_circle</mat-icon></span>
-            </li>
-            <li *ngIf="user" class="nav-item list-inline-item">
-                <span id="userName">{{user.USERNAME}}</span>
-            </li>
-            <li *ngIf="user" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)" (click)="logout()" class="nav-item list-inline-item">
-                <span class="iconSpan"><mat-icon class="navIcons">arrow_forward</mat-icon></span>
-            </li>
-        </ul>
+<div id="nav">
+    <div id="nav-left">
+        <a class="navBar-brand"><img alt="no Image loading" class="logo" src="{{LogoImageUrl}}"></a>
     </div>
-</nav>
+    <div id="nav-right">
+        <button mat-button><mat-icon class="navIcons">calendar_today</mat-icon></button>
+        <button mat-button><mat-icon class="navIcons">email</mat-icon></button>
+        <button mat-button (click)="userSettings()"><mat-icon class="navIcons">account_circle</mat-icon></button>
+        <div id="userNameDiv">
+        <span *ngIf="user"id="userName">{{user.USERNAME}}</span>
+        </div>
+        <button (click)="logout()" mat-button><mat-icon class="navIcons">arrow_forward</mat-icon></button>
+    </div>
+
+</div>
 <div class="navLine"></div>
+

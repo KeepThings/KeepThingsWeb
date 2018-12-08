@@ -37,7 +37,9 @@ export class MarketplaceComponent implements OnInit {
         }
     }
     getMarketplaceItems(): void {
+        
         this.marketplaceService.getMarketplaceItems().subscribe(marketplaceItems => this.marketplaceItems = marketplaceItems);
+        console.log(this.marketplaceItems);
     }
 
 

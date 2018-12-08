@@ -33,36 +33,40 @@ export class NewEntryFormComponent implements OnInit {
     }
   ngOnInit() {
   }
+
+  addUserItem(title,desc,uid,person,date1,date2) {
+    this.userItemService.addUserItem(title,desc,uid,person,date1,date2)
+        .subscribe(data => {
+        if (data.success) {
+            this.snackBar.open('Request creation successful!');
+            this.userItemService.setUpdate(true);
+            this.titleFormControl.setValue(' ');
+            this.personFormControl.setValue(' ');
+            this.descFormControl.setValue(' ');
+            this.fromFormControl.setValue(' ');
+            this.toFormControl.setValue(' ');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        } else {
+            this.snackBar.open('ERROR inserting Data');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        }
+    });
+  }
     onSubmit() {
         if (this.titleFormControl.invalid || this.descFormControl.invalid || this.personFormControl.invalid ||
             this.fromFormControl.invalid || this.toFormControl.invalid) {
             this.snackBar.open('All fields are required!');
             setTimeout(() => {
                 this.snackBar.dismiss();
-            }, 5000);
+            }, 5000); 
         } else {
-            this.userItemService.addUserItem(this.titleFormControl.value, this.descFormControl.value,
+            this.addUserItem(this.titleFormControl.value, this.descFormControl.value,
                 localStorage.getItem('userID'), this.personFormControl.value, this.transformDate(this.fromFormControl.value),
                 this.transformDate(this.toFormControl.value))
-                .subscribe(data => {
-                if (data.success) {
-                    this.snackBar.open('Request creation successful!');
-                    this.userItemService.setUpdate(true);
-                    this.titleFormControl.setValue(' ');
-                    this.personFormControl.setValue(' ');
-                    this.descFormControl.setValue(' ');
-                    this.fromFormControl.setValue(' ');
-                    this.toFormControl.setValue(' ');
-                    setTimeout(() => {
-                        this.snackBar.dismiss();
-                    }, 5000);
-                } else {
-                    this.snackBar.open('ERROR inserting Data');
-                    setTimeout(() => {
-                        this.snackBar.dismiss();
-                    }, 5000);
-                }
-            });
         }
 
     }

@@ -3,6 +3,7 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {ErrorStateMatcher,  MatSnackBar} from '@angular/material';
 import {DatePipe} from '@angular/common';
 import {MarketplaceService} from '../../marketplace.service';
+import { MarketplaceItems } from 'src/app/marketplace-items';
 
 
 // See the Moment.js docs for the meaning of these formats:
@@ -14,6 +15,8 @@ import {MarketplaceService} from '../../marketplace.service';
   styleUrls: ['./new-request-form.component.css'],
 })
 export class NewRequestFormComponent implements OnInit {
+    
+    marketplaceItems;
 
     titleFormControl = new FormControl('', [
         Validators.required,
@@ -35,6 +38,27 @@ export class NewRequestFormComponent implements OnInit {
   }
   ngOnInit() {
   }
+
+  addMarketplaceItem(title, desc, uid, date_from, date_to){
+    this.marketplaceService.addMarketplaceItem(title, desc, uid, date_from, date_to).subscribe(data => {
+        if (data.success) {
+            this.snackBar.open('Request creation successful!');
+            this.marketplaceService.setUpdate(true);
+            this.titleFormControl.setValue(' ');
+            this.descFormControl.setValue(' ');
+            this.fromFormControl.setValue(' ');
+            this.toFormControl.setValue(' ');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        } else {
+            this.snackBar.open('ERROR inserting Data');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        }
+    });
+  }
     onSubmit() {
       if (this.titleFormControl.invalid || this.descFormControl.invalid || this.fromFormControl.invalid || this.toFormControl.invalid) {
           this.snackBar.open('All fields are required!');
@@ -42,26 +66,10 @@ export class NewRequestFormComponent implements OnInit {
               this.snackBar.dismiss();
           }, 5000);
       } else {
-          this.marketplaceService.addMarketplaceItem(this.titleFormControl.value, this.descFormControl.value,
-              localStorage.getItem('userID'), this.transformDate(this.fromFormControl.value),
-              this.transformDate(this.toFormControl.value)).subscribe(data => {
-              if (data.success) {
-                  this.snackBar.open('Request creation successful!');
-                  this.marketplaceService.setUpdate(true);
-                  this.titleFormControl.setValue(' ');
-                  this.descFormControl.setValue(' ');
-                  this.fromFormControl.setValue(' ');
-                  this.toFormControl.setValue(' ');
-                  setTimeout(() => {
-                      this.snackBar.dismiss();
-                  }, 5000);
-              } else {
-                  this.snackBar.open('ERROR inserting Data');
-                  setTimeout(() => {
-                      this.snackBar.dismiss();
-                  }, 5000);
-              }
-          });
+          this.addMarketplaceItem(this.titleFormControl.value, this.descFormControl.value,
+            localStorage.getItem('userID'), this.transformDate(this.fromFormControl.value),
+            this.transformDate(this.toFormControl.value));
+        
       }
 
     }

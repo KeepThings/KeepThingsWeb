@@ -1,12 +1,17 @@
-.nav{
-    background-color:white;
+#nav{
     width:100%;
     position:relative;
+    margin: 20px;
 
 }
-.nav-right{
-    position: absolute;
+#nav-right{
     right: 50px;
+    display: inline;
+    position: absolute;
+}
+#nav-left{
+    left: 50px;
+    display: inline;
 }
 .logo{
     height:50px;
@@ -22,7 +27,7 @@
 #UserIconSpan{
     padding-right: 20px;
 }
-.iconSpan{
+.navIcons{
     color: #003854;
 
 }
@@ -42,5 +47,11 @@
 #userName{
     color: #9A0000;
     font-size: 30px;
+    margin-top: 10px;
 }
+#userNameDiv{
+    padding-top:10px;
+    display: inline;
+    height: 100%;
 
+}
