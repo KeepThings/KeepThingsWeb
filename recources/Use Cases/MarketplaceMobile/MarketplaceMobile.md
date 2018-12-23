@@ -1,7 +1,7 @@
-# Use-Case Specification: DashboardMobile
+# Use-Case Specification: MarketplaceMobile
 
 
-## 1. DashboardMobile
+## 1. MarketplaceMobile
 
 ### 1.1 Brief Description
 Shows all marketplace items of the community in a list. One item contains the name of the lent item, person who need the item, the date it is needed and the date it should be returned. 
