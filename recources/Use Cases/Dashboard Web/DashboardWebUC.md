@@ -14,7 +14,7 @@ Shows all lent out items of the user and the marketplace items in a list. One it
 #### Activity Diagram
 ![Alt-Text](DahboardWebDiagram.svg)
 #### Feature
-[/Features/dashboardWeb.feature](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardWeb.feature)
+![/Features/dashboardWeb.feature](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardWeb.feature)
 #### Mockup
 ![Alt-Text](DashboardWebMokup-01.svg)
 	
