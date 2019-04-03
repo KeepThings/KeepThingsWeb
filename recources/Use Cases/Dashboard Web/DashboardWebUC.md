@@ -12,11 +12,11 @@ Shows all lent out items of the user and the marketplace items in a list. One it
 ### 2.1               Basic Flow
 
 #### Activity Diagram
-![Alt-Text](DashboardWebMokup-01.svg)
+![Alt-Text](DahboardWebDiagram.svg)
 #### Feature
 [/Features/dashboardWeb.feature](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardWeb.feature)
 #### Mockup
-![Alt-Text](DahboardWebDiagram.svg)
+![Alt-Text](DashboardWebMokup-01.svg)
 	
 ## 3.                  Special Requirements
 n/a
