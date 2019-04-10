@@ -40,6 +40,5 @@ export class AuthenticationService {
       this.setLoggedIn(false);
       localStorage.removeItem('userID');
       this.uid = null;
-      return this.http.get<Response>('/api/logout.php');
   }
 }

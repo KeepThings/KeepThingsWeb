@@ -19,19 +19,16 @@ export class UserService {
     user: User;
     update = false;
     constructor(private http: HttpClient) {}
-    getUserById(UID): Observable<User> {
-        return this.http.get<User>('/api/getUsers.php?UID=' + UID).pipe(
-            map((res) => {
-                this.user = res['result'];
-                return this.user;
-            }));
+
+    getUserById(UID) {
+        return this.http.get('https://localhost:5001/api/user/1').subscribe((res: User) => {this.user = res; });
     }
 
     isLoggedIn(): Observable<IsLoggedIn> {
         return this.http.get<IsLoggedIn>('/api/isloggedin.php');
     }
     updateUser(user: User) {
-        this.setUpdate(true);
+        this.user = user;
         return this.http.get<UpdateResponse>('/api/updateUsers.php?UID=' + user.USER_ID
             + '&NAME=' + user.NAME
             + '&FIRST_NAME=' + user.FIRST_NAME

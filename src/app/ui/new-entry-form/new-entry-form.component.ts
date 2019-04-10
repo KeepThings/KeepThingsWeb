@@ -3,6 +3,8 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {ErrorStateMatcher, MatSnackBar} from '@angular/material';
 import {UserItemsService} from '../../user-items.service';
 import {DatePipe} from '@angular/common';
+import {UserItem} from '../../user-item';
+import {UserService} from '../../user.service';
 
 @Component({
   selector: 'app-new-entry-form',
@@ -26,7 +28,7 @@ export class NewEntryFormComponent implements OnInit {
         Validators.required,
     ]);
     matcher = new MyErrorStateMatcher2();
-  constructor(private userItemService: UserItemsService, private snackBar: MatSnackBar, private datepipe: DatePipe) { }
+  constructor(private userItemService: UserItemsService, private snackBar: MatSnackBar, private datepipe: DatePipe, private userService: UserService) { }
 
     transformDate(date) {
         return this.datepipe.transform(date, 'yyyy-MM-dd');
@@ -34,27 +36,18 @@ export class NewEntryFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  addUserItem(title,desc,uid,person,date1,date2) {
-    this.userItemService.addUserItem(title,desc,uid,person,date1,date2)
-        .subscribe(data => {
-        if (data.success) {
-            this.snackBar.open('Request creation successful!');
-            this.userItemService.setUpdate(true);
-            this.titleFormControl.setValue(' ');
-            this.personFormControl.setValue(' ');
-            this.descFormControl.setValue(' ');
-            this.fromFormControl.setValue(' ');
-            this.toFormControl.setValue(' ');
-            setTimeout(() => {
-                this.snackBar.dismiss();
-            }, 5000);
-        } else {
-            this.snackBar.open('ERROR inserting Data');
-            setTimeout(() => {
-                this.snackBar.dismiss();
-            }, 5000);
-        }
-    });
+  addUserItem(userItem: UserItem) {
+    this.userItemService.addUserItem(userItem).subscribe();
+      this.snackBar.open('Entry creation successful!');
+      this.userItemService.setUpdate(true);
+      this.titleFormControl.setValue(' ');
+      this.personFormControl.setValue(' ');
+      this.descFormControl.setValue(' ');
+      this.fromFormControl.setValue(' ');
+      this.toFormControl.setValue(' ');
+      setTimeout(() => {
+          this.snackBar.dismiss();
+      }, 5000);
   }
     onSubmit() {
         if (this.titleFormControl.invalid || this.descFormControl.invalid || this.personFormControl.invalid ||
@@ -62,11 +55,10 @@ export class NewEntryFormComponent implements OnInit {
             this.snackBar.open('All fields are required!');
             setTimeout(() => {
                 this.snackBar.dismiss();
-            }, 5000); 
+            }, 5000);
         } else {
-            this.addUserItem(this.titleFormControl.value, this.descFormControl.value,
-                localStorage.getItem('userID'), this.personFormControl.value, this.transformDate(this.fromFormControl.value),
-                this.transformDate(this.toFormControl.value))
+            const newItem = new UserItem(this.userItemService.createItemId(), this.titleFormControl.value, this.descFormControl.value, this.userService.user.USER_ID, this.personFormControl.value, this.fromFormControl, this.toFormControl );
+            this.addUserItem(newItem);
         }
 
     }

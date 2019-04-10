@@ -31,7 +31,7 @@ export class UserSettingsComponent implements OnInit {
     this.getUser();
   }
   getUser() {
-      this.userService.getUserById(localStorage.getItem('userID')).subscribe(user => this.user = user);
+      this.user = this.userService.user;
   }
 
     onSubmit() {

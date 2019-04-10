@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MarketplaceItems} from '../../marketplace-items';
+import {MarketplaceItem} from '../../marketplace-item';
 import {MarketplaceService} from '../../marketplace.service';
 import {MatDialog} from '@angular/material';
 import {MIDetailsComponent} from '../m-idetails/m-idetails.component';
 import {Observable, Subscription} from 'rxjs';
+import {UserService} from '../../user.service';
+import {User} from '../../user';
+import {UserItem} from '../../user-item';
 
 @Component({
   selector: 'app-marketplace',
@@ -11,21 +14,14 @@ import {Observable, Subscription} from 'rxjs';
   styleUrls: ['./marketplace.component.css']
 })
 export class MarketplaceComponent implements OnInit {
-    marketplaceItems: MarketplaceItems[];
-    marketplaceItem: MarketplaceItems;
+    marketplaceItems: MarketplaceItem[];
+    marketplaceItem: MarketplaceItem;
     sub: Subscription;
-  constructor(private marketplaceService: MarketplaceService, private dialog: MatDialog) { }
+    user: User;
+  constructor(private marketplaceService: MarketplaceService, private dialog: MatDialog, private userService: UserService) { }
 
   ngOnInit() {
       this.getMarketplaceItems();
-      this.sub = Observable.interval(1000)
-          .subscribe((val) => {
-                  if (this.marketplaceService.needUpdate()) {
-                      this.getMarketplaceItems();
-                      this.marketplaceService.setUpdate(false);
-
-                  }
-               });
   }
 
 
@@ -36,10 +32,16 @@ export class MarketplaceComponent implements OnInit {
             document.body.style.cursor = 'default';
         }
     }
+
+
+    removeItem(marketplaceItem: MarketplaceItem) {
+        this.marketplaceItems = this.marketplaceItems.filter(i => i !== marketplaceItem);
+        this.marketplaceService.removeMarketplaceItem(marketplaceItem).subscribe();
+    }
+
     getMarketplaceItems(): void {
-        
         this.marketplaceService.getMarketplaceItems().subscribe(marketplaceItems => this.marketplaceItems = marketplaceItems);
-        console.log(this.marketplaceItems);
+        this.marketplaceItems.filter(i => i.USER_ID === this.userService.user.USER_ID);
     }
 
 

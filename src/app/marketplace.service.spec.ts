@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { MarketplaceService } from './marketplace.service';
 import {of} from 'rxjs';
 
-describe('MarketplaceService', () => {
+describe('The MarketplaceService', () => {
   let service: MarketplaceService;
   let mockHttpService;
   let date;
@@ -17,7 +17,7 @@ describe('MarketplaceService', () => {
   ];
     mockHttpService = jasmine.createSpyObj(['get']);
     date = jasmine.createSpyObj(['transform']);
-    service = new MarketplaceService(mockHttpService,date);
+    service = new MarketplaceService(mockHttpService, date);
 
   });
   it('should get all Marketplace Items', () => {
@@ -31,5 +31,8 @@ describe('MarketplaceService', () => {
     service.marketplaceItem = MOCK_ITEMS[0];
     service.getMarketplaceItem(0);
     expect(service.marketplaceItem).toBe(MOCK_ITEMS[0]);
-  })
+  });
+
+
+
 });

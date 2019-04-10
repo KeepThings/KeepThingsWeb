@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {MarketplaceItems} from './marketplace-items';
-import {HttpClient} from '@angular/common/http';
+import {MarketplaceItem} from './marketplace-item';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {DatePipe} from '@angular/common';
@@ -14,55 +14,50 @@ interface InsertResponse {
 })
 
 export class MarketplaceService {
-    marketplaceItems: MarketplaceItems[];
-    marketplaceItem: MarketplaceItems;
-    update = false;
+    marketplaceItems: MarketplaceItem[];
+    marketplaceItem: MarketplaceItem;
+    marketplaceItemURL = 'localhost:5001/api/marketplaceItem';
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type':  'application/json',
+            'Authorization': 'my-auth-token'
+        })
+    };
 
-    constructor(private http: HttpClient, private  datepipe: DatePipe) {}
+    constructor(private http: HttpClient) {}
 
-    getMarketplaceItems(): Observable<MarketplaceItems[]> {
-        return this.http.get<MarketplaceItems[]>('/api/getMarketplaceItems.php?ALL=true').pipe(
+    createItemId() {
+        return new Date().getTime() + Math.floor(Math.random() * Math.floor(1000));
+    }
+    getMarketplaceItems(): Observable<MarketplaceItem[]> {
+        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}`).pipe(
             map((res) => {
                 this.marketplaceItems = res['result'];
                 return this.marketplaceItems;
             }));
     }
-
-    getMarketplaceItem(id: number): Observable<MarketplaceItems> {
-        return this.http.get<MarketplaceItems>('/api/getMarketplaceItems.php?IID=' + id).pipe(
+    getMarketplaceItemById(id: number): Observable<MarketplaceItem> {
+        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}/${id}`).pipe(
             map((res) => {
                 this.marketplaceItem = res['result'];
                 return this.marketplaceItem;
             }));
     }
-
-    addMarketplaceItem(ITEM_NAME, ITEM_DESC, USER_ID, DATE_FROM, DATE_TO) {
-        return this.http.get<InsertResponse>('/api/addRequest.php?ITEM_NAME='
-            + ITEM_NAME + '&ITEM_DESC=' + ITEM_DESC + '&USER_ID=' + USER_ID + '&DATE_FROM=' + DATE_FROM + '&DATE_TO=' + DATE_TO);
+    addMarketplaceItem(item: MarketplaceItem): Observable<MarketplaceItem> {
+        this.marketplaceItems.push(item);
+        return this.http.post<MarketplaceItem>(this.marketplaceItemURL, item, this.httpOptions);
     }
 
-
-    transformDate(date) {
-        return this.datepipe.transform(date, 'yyyy-MM-dd');
+    removeMarketplaceItem (item: MarketplaceItem): Observable<{}> {
+        this.marketplaceItems = this.marketplaceItems.filter(i => i !== item);
+        const url = `${this.marketplaceItemURL}/${item.ITEM_ID}`; // DELETE api/heroes/42
+        return this.http.delete(url, this.httpOptions);
     }
 
-
-    updateMarketplaceItem(marketplaceItem: MarketplaceItems) {
-        this.setUpdate(true);
-        return this.http.get<InsertResponse>('/api/updateMarketplaceItems.php?IID=' + marketplaceItem.ITEM_ID
-            + '&ITEM_NAME=' + marketplaceItem.ITEM_NAME
-            + '&ITEM_DESC=' + marketplaceItem.ITEM_DESC
-            + '&USERNAME=' + marketplaceItem.OWNER
-            + '&BORROWER=' + marketplaceItem.BORROWER
-            + '&DATE_FROM=' + this.transformDate(marketplaceItem.DATE_FROM)
-            + '&DATE_TO=' + this.transformDate(marketplaceItem.DATE_TO));
-
+    updateMarketplaceItem(marketplaceItem: MarketplaceItem): Observable<MarketplaceItem> {
+        const updatedItem = this.marketplaceItems.find(item => item.ITEM_ID === marketplaceItem.ITEM_ID );
+        this.marketplaceItems[this.marketplaceItems.indexOf(updatedItem)] = marketplaceItem;
+        return this.http.put<MarketplaceItem>(this.marketplaceItemURL, MarketplaceItem, this.httpOptions);
     }
 
-    setUpdate(bool) {
-        this.update = bool;
-    }
-    needUpdate() {
-        return this.update;
-    }
 }

@@ -53,13 +53,13 @@ describe('newRequestComponent', () => {
 
     })
 
-   /* it('add MarketplaceItem to MarketplaceItems', () => {
+   /* it('add MarketplaceItem to MarketplaceItem', () => {
         mockMarketplaceItemService.addMarketplaceItem.and.returnValue(of({ 'success': true }));
         fixture.componentInstance.addMarketplaceItem(MOCK_ITEM.ITEM_NAME, MOCK_ITEM.ITEM_DESC, MOCK_ITEM.OWNER, MOCK_ITEM.DATE_FROM, MOCK_ITEM.DATE_TO);
         expect(mockMarketplaceItemService.addMarketplaceItem).toHaveBeenCalled();
     }); 
 
-    it('Item has been added to the MarketplaceItems list', () => {
+    it('Item has been added to the MarketplaceItem list', () => {
         component.marketplaceItems = MOCK_ITEMS;
         mockMarketplaceItemService.addMarketplaceItem.and.returnValue(of({ 'success': true }));
         fixture.componentInstance.addMarketplaceItem(MOCK_ITEM.ITEM_NAME, MOCK_ITEM.ITEM_DESC, MOCK_ITEM.OWNER, MOCK_ITEM.DATE_FROM, MOCK_ITEM.DATE_TO);

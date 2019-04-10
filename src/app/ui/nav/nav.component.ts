@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {User} from '../../user';
 import {UserService} from '../../user.service';
 import {AuthenticationService} from '../../authentication.service';
@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnChanges, OnInit {
   user: User;
   sub: Subscription;
     LogoImageUrl = '/assets/images/Logo_KeepThings.svg';
@@ -23,27 +23,16 @@ export class NavComponent implements OnInit {
   constructor(private userService: UserService, private auth: AuthenticationService,
               private dialog: MatDialog, private snackBar: MatSnackBar, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
-    
-        this.sub = Observable.interval(1000)
-            .subscribe((val) => {
-              if (this.auth.isLoggedIn === true && !this.user ) {
-                this.getUserName();
-                console.log('1');
-              } else {
-                  if (this.userService.needUpdate() && this.auth.isLoggedIn === true) {
-                  this.getUserName();
-
-                console.log('2');
-                  }
-              }
-
-             });
-
-
-
+      this.getUserName();
   }
+
+    ngOnChanges() {
+
+        this.getUserName();
+
+    }
 
     changeCursor(value: boolean) {
         if (value) {
@@ -54,7 +43,7 @@ export class NavComponent implements OnInit {
     }
 
     getUserName() {
-       this.userService.getUserById(localStorage.getItem('userID')).subscribe((data: User) => this.user = data);
+       this.user = this.userService.user;
     }
 
     userSettings() {
@@ -65,7 +54,9 @@ export class NavComponent implements OnInit {
     }
 
     logout() {
-        this.auth.logout().subscribe(data => {
+        this.user = null;
+        this.router.navigate(['login']);
+        /*this.auth.logout().subscribe(data => {
             if (data.success) {
                 this.snackBar.open('Logout successful!');
                 setTimeout(() => {
@@ -82,7 +73,7 @@ export class NavComponent implements OnInit {
                 }, 5000);
             }
 
-        });
+        });*/
     }
 
 }

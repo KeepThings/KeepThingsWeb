@@ -25,8 +25,10 @@ export class LoginComponent implements OnInit {
     constructor(private Auth: AuthenticationService, private snackBar: MatSnackBar, private router: Router) {}
 
     onSubmit() {
-
-        this.Auth.getUserDetails(this.emailFormControl.value, this.passwordFormControl.value).subscribe(data => {
+        this.router.navigate(['dashboard']);
+        this.Auth.setLoggedIn(true);
+        this.Auth.setUID(1);
+        /*this.Auth.getUserDetails(this.emailFormControl.value, this.passwordFormControl.value).subscribe(data => {
             if (data.success) {
                 this.snackBar.dismiss();
                 this.router.navigate(['dashboard']);
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
             } else {
                 this.snackBar.openFromComponent(LoginErrorComponent);
             }
-        });
+        });*/
 
 
     }

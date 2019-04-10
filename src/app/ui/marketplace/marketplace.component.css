@@ -56,3 +56,7 @@
     height: 1px;
     background-color: #004669;
 }
+#deleteIcon{
+    float: right;
+    color: #9A0000;
+}

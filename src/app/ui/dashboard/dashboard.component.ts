@@ -18,17 +18,13 @@ export class DashboardComponent implements OnInit {
 
         console.log(localStorage.getItem('userID'));
             console.log(this.getUser(2));
+            console.log(this.user);
 
 
     }
 
     getUser(id): void {
 
-        this.userService.getUserById(id).subscribe(
-            (res: User) => {
-                this.user = res;
-            }
-        );
-
+        this.user = this.userService.user;
     }
 }

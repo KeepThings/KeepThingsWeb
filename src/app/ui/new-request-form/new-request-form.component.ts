@@ -3,7 +3,9 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {ErrorStateMatcher,  MatSnackBar} from '@angular/material';
 import {DatePipe} from '@angular/common';
 import {MarketplaceService} from '../../marketplace.service';
-import { MarketplaceItems } from 'src/app/marketplace-items';
+import { MarketplaceItem } from 'src/app/marketplace-item';
+import {UserItem} from '../../user-item';
+import {UserService} from '../../user.service';
 
 
 // See the Moment.js docs for the meaning of these formats:
@@ -31,7 +33,7 @@ export class NewRequestFormComponent implements OnInit {
         Validators.required,
     ]);
     matcher = new MyErrorStateMatcher();
-  constructor(private marketplaceService: MarketplaceService, private snackBar: MatSnackBar, private datepipe: DatePipe) { }
+  constructor(private marketplaceService: MarketplaceService, private snackBar: MatSnackBar, private datepipe: DatePipe, private userService: UserService) { }
 
   transformDate(date) {
       return this.datepipe.transform(date, 'yyyy-MM-dd');
@@ -39,25 +41,16 @@ export class NewRequestFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  addMarketplaceItem(title, desc, uid, date_from, date_to){
-    this.marketplaceService.addMarketplaceItem(title, desc, uid, date_from, date_to).subscribe(data => {
-        if (data.success) {
-            this.snackBar.open('Request creation successful!');
-            this.marketplaceService.setUpdate(true);
-            this.titleFormControl.setValue(' ');
-            this.descFormControl.setValue(' ');
-            this.fromFormControl.setValue(' ');
-            this.toFormControl.setValue(' ');
-            setTimeout(() => {
-                this.snackBar.dismiss();
-            }, 5000);
-        } else {
-            this.snackBar.open('ERROR inserting Data');
-            setTimeout(() => {
-                this.snackBar.dismiss();
-            }, 5000);
-        }
-    });
+  addMarketplaceItem(marketplaceItem: MarketplaceItem){
+    this.marketplaceService.addMarketplaceItem(marketplaceItem).subscribe();
+      this.snackBar.open('Request creation successful!');
+      this.titleFormControl.setValue(' ');
+      this.descFormControl.setValue(' ');
+      this.fromFormControl.setValue(' ');
+      this.toFormControl.setValue(' ');
+      setTimeout(() => {
+          this.snackBar.dismiss();
+      }, 5000);
   }
     onSubmit() {
       if (this.titleFormControl.invalid || this.descFormControl.invalid || this.fromFormControl.invalid || this.toFormControl.invalid) {
@@ -66,9 +59,9 @@ export class NewRequestFormComponent implements OnInit {
               this.snackBar.dismiss();
           }, 5000);
       } else {
-          this.addMarketplaceItem(this.titleFormControl.value, this.descFormControl.value,
-            localStorage.getItem('userID'), this.transformDate(this.fromFormControl.value),
-            this.transformDate(this.toFormControl.value));
+          const newItem = new MarketplaceItem(this.marketplaceService.createItemId(), this.titleFormControl.value, this.descFormControl.value, this.userService.user.USER_ID, " ", this.fromFormControl, this.toFormControl );
+          this.addMarketplaceItem(newItem);
+
         
       }
 

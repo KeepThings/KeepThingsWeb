@@ -36,30 +36,18 @@ export class UIDetailsComponent implements OnInit {
 
   ngOnInit() {
       this.getUserItem(this.data.ITEM_ID);
-      console.log(this.userItem);
   }
     getUserItem(id): void {
-      console.log(id);
-        this.userItemService.getUserItem(id).subscribe(userItem => this.userItem = userItem);
+        this.userItemService.getUserItemById(id).subscribe(userItem => this.userItem = userItem);
     }
 
     onSubmit() {
         // this.snackBar.open('Test');
-        this.userItemService.updateUserItem(this.userItem).
-        subscribe(data => {
-            console.log(data.success);
-            if (data.success) {
-                this.snackBar.open('User Item update successful!');
-                setTimeout(() => {
-                    this.snackBar.dismiss();
-                }, 5000);
-            } else {
-                this.snackBar.open('Error occured updating User Item!');
-                setTimeout(() => {
-                    this.snackBar.dismiss();
-                }, 5000);
-            }
-        });
+        this.userItemService.updateUserItem(this.userItem).subscribe();
+        this.snackBar.open('User Item update successful!');
+        setTimeout(() => {
+            this.snackBar.dismiss();
+        }, 5000);
 
     }
 }

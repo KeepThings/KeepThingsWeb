@@ -5,6 +5,7 @@ import {AuthenticationService} from '../../authentication.service';
 import {UIDetailsComponent} from '../u-idetails/u-idetails.component';
 import {MatDialog} from '@angular/material';
 import {Observable, Subscription} from 'rxjs';
+import {UserService} from '../../user.service';
 
 @Component({
   selector: 'app-lent-out',
@@ -15,18 +16,11 @@ export class LentOutComponent implements OnInit {
     userItems: UserItem[];
     userItem: UserItem;
     sub: Subscription;
-  constructor(private userItemsService: UserItemsService, private dialog: MatDialog) { }
+  constructor(private userItemsService: UserItemsService, private dialog: MatDialog, private userService: UserService) { }
 
   ngOnInit() {
       this.getUserItems();
-      this.sub = Observable.interval(1000)
-          .subscribe((val) => {
-              if (this.userItemsService.needUpdate()) {
-                  this.getUserItems();
-                  this.userItemsService.setUpdate(false);
 
-              }
-          });
   }
     changeCursor(value: boolean) {
         if (value) {
@@ -36,7 +30,8 @@ export class LentOutComponent implements OnInit {
         }
     }
     getUserItems(): void {
-        this.userItemsService.getUserItems(localStorage.getItem('userID')).subscribe(userItems => this.userItems = userItems);
+        this.userItemsService.getUserItems().subscribe(userItems => this.userItems = userItems);
+        this.userItems = this.userItems.filter(i => i.USER_ID === this.userService.user.USER_ID);
     }
 
     details(id: number): void {
@@ -44,5 +39,10 @@ export class LentOutComponent implements OnInit {
             }
         }) ;
 
+    }
+
+    removeItem(userItem: UserItem) {
+        this.userItems = this.userItems.filter(i => i !== userItem);
+        this.userItemsService.removeUserItem(userItem).subscribe();
     }
 }

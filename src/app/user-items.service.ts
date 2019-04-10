@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {UserItem} from './user-item';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import { map} from 'rxjs/operators';
 import {DatePipe} from '@angular/common';
 
 interface InsertResponse {
@@ -16,47 +16,59 @@ export class UserItemsService {
     userItems: UserItem[];
     userItem: UserItem;
     update = false;
+    userItemUrl = 'localhost:5001/api/userItem';
+    httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type':  'application/json',
+            'Authorization': 'my-auth-token'
+        })
+    };
     constructor(private http: HttpClient, private datepipe: DatePipe) {}
 
-    getUserItems(UID): Observable<UserItem[]> {
-        return this.http.get<UserItem>('/api/getUserItems.php?UID=' + UID).pipe(
+
+
+    createItemId() {
+        return new Date().getTime() + Math.floor(Math.random() * Math.floor(1000));
+    }
+
+    getUserItems(): Observable<UserItem[]> {
+        return this.http.get<UserItem>(`${this.userItemUrl}`).pipe(
             map((res) => {
                 this.userItems = res['result'];
                 return this.userItems;
             }));
     }
-    getUserItem(id: number): Observable<UserItem> {
-        return this.http.get<UserItem>('/api/getUserItems.php?IID=' + id).pipe(
+    getUserItemById(id: number): Observable<UserItem> {
+        return this.http.get<UserItem>(`${this.userItemUrl}/${id}`).pipe(
             map((res) => {
                 this.userItem = res['result'];
                 return this.userItem;
             }));
     }
-    addUserItem(ITEM_NAME, ITEM_DESC, USER_ID, BORROWER, DATE_FROM, DATE_TO) {
-        return this.http.get<InsertResponse>('/api/addEntry.php?ITEM_NAME=' + ITEM_NAME + '&ITEM_DESC='
-            + ITEM_DESC + '&USER_ID=' + USER_ID + '&BORROWER=' + BORROWER + '&DATE_FROM=' + DATE_FROM + '&DATE_TO=' + DATE_TO);
+    addUserItem(item: UserItem): Observable<UserItem> {
+        item.ITEM_ID = this.createItemId();
+        this.userItems.push(item);
+        return this.http.post<UserItem>(this.userItemUrl, item, this.httpOptions);
+    }
+
+    removeUserItem (item: UserItem): Observable<{}> {
+        this.userItems = this.userItems.filter(i => i !== item);
+        const url = `${this.userItemUrl}/${item.ITEM_ID}`; // DELETE api/heroes/42
+        return this.http.delete(url, this.httpOptions);
     }
 
     transformDate(date) {
         return this.datepipe.transform(date, 'yyyy-MM-dd');
     }
 
-    updateUserItem(userItem: UserItem) {
-        this.setUpdate(true);
-        return this.http.get<InsertResponse>('/api/updateUserItems.php?IID=' + userItem.ITEM_ID
-            + '&ITEM_NAME=' + userItem.ITEM_NAME
-            + '&ITEM_DESC=' + userItem.ITEM_DESC
-            + '&USERNAME=' + userItem.OWNER
-            + '&BORROWER=' + userItem.BORROWER
-            + '&DATE_FROM=' + this.transformDate(userItem.DATE_FROM)
-            + '&DATE_TO=' + this.transformDate(userItem.DATE_TO));
-
+    updateUserItem(userItem: UserItem): Observable<UserItem> {
+        const updatedItem = this.userItems.find(item => item.ITEM_ID === userItem.ITEM_ID );
+        this.userItems[this.userItems.indexOf(updatedItem)] = userItem;
+        return this.http.put<UserItem>(this.userItemUrl, userItem, this.httpOptions);
     }
     setUpdate(bool) {
         this.update = bool;
     }
 
-    needUpdate(): boolean {
-        return this.update;
-    }
+
 }
