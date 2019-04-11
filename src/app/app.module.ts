@@ -24,6 +24,7 @@ import {MIDetailsComponent} from './ui/m-idetails/m-idetails.component';
 import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFormFieldModule, MatInputModule, MatListModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule, NativeDateAdapter, MatDialogModule } from '@angular/material';
 import {DatePipe} from '@angular/common';
 import {UserSettingsComponent} from './ui/user-settings/user-settings.component';
+import {RegisterComponent} from './ui/register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import {UserSettingsComponent} from './ui/user-settings/user-settings.component'
     LentOutComponent,
     LoginErrorComponent,
     UIDetailsComponent,
-      MIDetailsComponent,
-      UserSettingsComponent,
-      LayoutComponent
+    MIDetailsComponent,
+    UserSettingsComponent,
+    LayoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

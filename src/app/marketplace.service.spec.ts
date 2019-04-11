@@ -11,13 +11,13 @@ describe('The MarketplaceService', () => {
 
   beforeEach(() => {
     MOCK_ITEMS = [
-      {ITEM_ID: 1, ITEM_NAME: 'Laptop', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'},
-      {ITEM_ID: 2, ITEM_NAME: 'Test', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'},
-      {ITEM_ID: 3, ITEM_NAME: 'Test123', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'}
+      {ITEM_ID: 1, ITEM_NAME: 'Laptop', ITEM_DESC: 'Test123', USER_ID: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'},
+      {ITEM_ID: 2, ITEM_NAME: 'Test', ITEM_DESC: 'Test123', USER_ID: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'},
+      {ITEM_ID: 3, ITEM_NAME: 'Test123', ITEM_DESC: 'Test123', USER_ID: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'}
   ];
     mockHttpService = jasmine.createSpyObj(['get']);
     date = jasmine.createSpyObj(['transform']);
-    service = new MarketplaceService(mockHttpService, date);
+    service = new MarketplaceService(mockHttpService);
 
   });
   it('should get all Marketplace Items', () => {
@@ -29,7 +29,7 @@ describe('The MarketplaceService', () => {
   it('should get Marketplace Item', () => {
     mockHttpService.get.and.returnValue(of(MOCK_ITEMS[0]));
     service.marketplaceItem = MOCK_ITEMS[0];
-    service.getMarketplaceItem(0);
+    service.getMarketplaceItemById(0);
     expect(service.marketplaceItem).toBe(MOCK_ITEMS[0]);
   });
 

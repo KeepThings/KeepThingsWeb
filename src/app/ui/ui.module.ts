@@ -13,12 +13,13 @@ import { MIDetailsComponent } from './m-idetails/m-idetails.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessagesReplyComponent } from './messages-reply/messages-reply.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [MessagesComponent, MessagesReplyComponent],
+  declarations: [MessagesComponent, MessagesReplyComponent, RegisterComponent],
   exports: []
 })
 export class UiModule { }

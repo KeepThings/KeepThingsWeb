@@ -1,0 +1,57 @@
+<div id="registerOuter">
+  <div id="registerInner">
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm" >
+      <div class="register">
+        <mat-form-field class="registerFormField">
+          <mat-label class="registerFormLabel">First Name</mat-label>
+          <input matNativeControl [formControl]="firstNameFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="firstNameFormControl.hasError('required')">
+            First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="registerFormField">
+          <mat-label class="registerFormLabel">Last Name</mat-label>
+          <input matNativeControl [formControl]="lastNameFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="lastNameFormControl.hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="register">
+        <mat-form-field class="registerFormField">
+          <mat-label class="registerFormLabel">E-Mail</mat-label>
+          <input matNativeControl [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="emailFormControl.hasError('email')  || emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="registerFormField">
+          <mat-label class="registerFormLabel">Password</mat-label>
+          <input matNativeControl [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="register">
+        <mat-form-field class="registerFormField">
+          <mat-label class="registerFormLabel">Username</mat-label>
+          <input matNativeControl [formControl]="usernameFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="usernameFormControl.hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="registerFormField">
+          <mat-label class="registerFormLabel">Tel-Nr.</mat-label>
+          <input matNativeControl [formControl]="telNrFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="telNrFormControl.hasError('required')">
+            Tel-Nr. is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    <div id="buttonWrapper">
+      <button mat-raised-button id="registerButton" type="submit">Register</button>
+    </div>
+    </form>
+  </div>
+</div>
