@@ -1,0 +1,30 @@
+#buttonWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.register{
+    display: flex;
+    flex-direction: row;
+}
+#registerInner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    margin: 20px;
+}
+#registerOuter{
+    display: flex;
+    justify-content: center;
+
+}
+.registerFormField{
+    margin: 20px;
+}
+#registerButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
