@@ -1,7 +1,7 @@
-# Use-Case Specification: WebLogin
+# Use-Case Specification: webLogin
 
 
-## 1. WebLogin
+## 1. webLogin
 
 ### 1.1 Brief Description
 
@@ -14,7 +14,7 @@ In this Use-Case we will be implementing the login interface for our web applica
 #### Activity Diagram
 
 #### Feature
-tbd
+![Alt-Text](webLogin.svg)
 #### Mockup
 tbd
 
