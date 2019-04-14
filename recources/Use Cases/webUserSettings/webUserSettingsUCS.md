@@ -1,10 +1,11 @@
-# Use-Case Specification: UC NAME
+# Use-Case Specification: webUserSettings
 
 
-## 1. UC NAME
+## 1. webUserSettings
 
 ### 1.1 Brief Description
 
+In this Use-Case we will be implementing the opportunity to change some user information. The user will be able to change the password, email, username and tel_nr. 
 
 ## 2. Flow of Events
 
