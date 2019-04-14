@@ -1,4 +1,4 @@
-# Use-Case Specification: UC NAME
+# Use-Case Specification: mobileUserSettings
 
 
 ## 1. UC NAME
@@ -13,7 +13,7 @@
 #### Activity Diagram
 
 #### Feature
-tbd
+![Alt-Text](mobileUserSettings.svg)
 #### Mockup
 tbd
 
