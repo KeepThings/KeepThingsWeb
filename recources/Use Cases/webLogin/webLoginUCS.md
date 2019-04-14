@@ -16,7 +16,7 @@ In this Use-Case we will be implementing the login interface for our web applica
 #### Feature
 ![Alt-Text](webLogin.svg)
 #### Mockup
-tbd
+![Alt-Text](webLoginMockup.svg)
 
 ## 3. Special Requirements
 
