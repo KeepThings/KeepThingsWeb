@@ -12,8 +12,6 @@ In this Use-Case we will be implementing the opportunity to change some user inf
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
-#### Feature
 ![Alt-Text](webUserSettings.svg)
 #### Mockup
 ![Alt-Text](webUserSettingsMockup.svg)
