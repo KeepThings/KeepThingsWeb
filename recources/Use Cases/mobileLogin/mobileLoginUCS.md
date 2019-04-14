@@ -12,11 +12,8 @@ In this Use-Case we will be implementing the login interface for our mobile appl
 
 #### Activity Diagram
 ![Alt-Text](mobileLogin.svg)
-#### Feature
-tbd
 #### Mockup
-tbd
-
+![Alt-Text](mobileLoginMockup.svg)
 ## 3. Special Requirements
 
 n/a
