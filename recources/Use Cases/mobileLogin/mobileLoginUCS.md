@@ -25,7 +25,7 @@ n/a
 
 ## 5. Postconditions
 
-### 5.1 synchronization of data
+### 5.1 redirecting the user to the dashboard view
 The user shall be redirected to the dashboard view.
 
 
