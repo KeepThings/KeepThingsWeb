@@ -12,8 +12,6 @@ In this Use-Case we will be implementing the login interface for our web applica
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
-#### Feature
 ![Alt-Text](webLogin.svg)
 #### Mockup
 ![Alt-Text](webLoginMockup.svg)
