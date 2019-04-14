@@ -11,11 +11,8 @@ In this Use-Case we will be implementing the opportunity to change some user inf
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
-#### Feature
 ![Alt-Text](mobileUserSettings.svg)
 #### Mockup
-tbd
 ![Alt-Text](mobileUserSettingsMockup.svg)
 ## 3. Special Requirements
 
