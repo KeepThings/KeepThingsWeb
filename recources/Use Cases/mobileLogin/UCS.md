@@ -11,7 +11,7 @@
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
+![Alt-Text](mobileLogin.svg)
 #### Feature
 tbd
 #### Mockup
