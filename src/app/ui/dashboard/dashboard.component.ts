@@ -15,16 +15,12 @@ export class DashboardComponent implements OnInit {
     constructor(private userService: UserService, private auth: AuthenticationService, private nav: NavComponent ) {}
 
     ngOnInit() {
-
-        console.log(localStorage.getItem('userID'));
-            console.log(this.getUser(2));
-            console.log(this.user);
+            this.getUser(1);
 
 
     }
 
     getUser(id): void {
-
-        this.user = this.userService.user;
+        this.userService.getUserById(id).subscribe(value => this.user = value);
     }
 }

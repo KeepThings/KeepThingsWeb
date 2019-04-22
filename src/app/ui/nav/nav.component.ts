@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnChanges, OnInit {
+export class NavComponent implements OnInit {
   user: User;
   sub: Subscription;
     LogoImageUrl = '/assets/images/Logo_KeepThings.svg';
@@ -28,12 +28,6 @@ export class NavComponent implements OnChanges, OnInit {
       this.getUserName();
   }
 
-    ngOnChanges() {
-
-        this.getUserName();
-
-    }
-
     changeCursor(value: boolean) {
         if (value) {
             document.body.style.cursor = 'pointer';
@@ -43,37 +37,18 @@ export class NavComponent implements OnChanges, OnInit {
     }
 
     getUserName() {
-       this.user = this.userService.user;
+       this.userService.getUserById(1).subscribe(value => this.user = value);
     }
 
     userSettings() {
-        if(this.auth.isLoggedIn){
+        if (this.auth.isLoggedIn) {
             this.dialog.open(UserSettingsComponent);
         }
 
     }
 
     logout() {
-        this.user = null;
-        this.router.navigate(['login']);
-        /*this.auth.logout().subscribe(data => {
-            if (data.success) {
-                this.snackBar.open('Logout successful!');
-                setTimeout(() => {
-                    this.snackBar.dismiss();
-                }, 5000);
-                this.user = null;
-                this.router.navigate(['login']);
-                
-
-            } else {
-                this.snackBar.open('Logout error!');
-                setTimeout(() => {
-                    this.snackBar.dismiss();
-                }, 5000);
-            }
-
-        });*/
+        this.auth.logout();
     }
 
 }

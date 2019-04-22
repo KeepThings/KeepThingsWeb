@@ -4,6 +4,9 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import { map} from 'rxjs/operators';
 import {DatePipe} from '@angular/common';
+import {AuthenticationService} from './authentication.service';
+import {tap} from 'rxjs/internal/operators/tap';
+import {catchError} from 'rxjs/internal/operators/catchError';
 
 interface InsertResponse {
     success: boolean;
@@ -16,14 +19,12 @@ export class UserItemsService {
     userItems: UserItem[];
     userItem: UserItem;
     update = false;
-    userItemUrl = 'localhost:5001/api/userItem';
+    userItemUrl = '/api/userItem';
     httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type':  'application/json',
-            'Authorization': 'my-auth-token'
-        })
-    };
-    constructor(private http: HttpClient, private datepipe: DatePipe) {}
+        headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
+    }
+
+    constructor(private http: HttpClient, private datepipe: DatePipe, private auth: AuthenticationService) {}
 
 
 
@@ -32,28 +33,20 @@ export class UserItemsService {
     }
 
     getUserItems(): Observable<UserItem[]> {
-        return this.http.get<UserItem>(`${this.userItemUrl}`).pipe(
-            map((res) => {
-                this.userItems = res['result'];
-                return this.userItems;
-            }));
+        return this.http.get<UserItem[]>(`${this.userItemUrl}`, this.httpOptions ).pipe(tap(data => this.userItems = data));
     }
     getUserItemById(id: number): Observable<UserItem> {
-        return this.http.get<UserItem>(`${this.userItemUrl}/${id}`).pipe(
-            map((res) => {
-                this.userItem = res['result'];
-                return this.userItem;
-            }));
+        return this.http.get<UserItem>(`${this.userItemUrl}/${id}`, this.httpOptions).pipe(tap(data => this.userItem = data));
     }
     addUserItem(item: UserItem): Observable<UserItem> {
-        item.ITEM_ID = this.createItemId();
-        this.userItems.push(item);
-        return this.http.post<UserItem>(this.userItemUrl, item, this.httpOptions);
+        return this.http.post<UserItem>(this.userItemUrl, item, this.httpOptions).pipe(
+            tap((newUserItem: UserItem) => console.log(`${newUserItem.id}`)
+        ));
     }
 
     removeUserItem (item: UserItem): Observable<{}> {
         this.userItems = this.userItems.filter(i => i !== item);
-        const url = `${this.userItemUrl}/${item.ITEM_ID}`; // DELETE api/heroes/42
+        const url = `${this.userItemUrl}/${item.id}`;
         return this.http.delete(url, this.httpOptions);
     }
 
@@ -62,13 +55,9 @@ export class UserItemsService {
     }
 
     updateUserItem(userItem: UserItem): Observable<UserItem> {
-        const updatedItem = this.userItems.find(item => item.ITEM_ID === userItem.ITEM_ID );
+        const updatedItem = this.userItems.find(item => item.id === userItem.id );
         this.userItems[this.userItems.indexOf(updatedItem)] = userItem;
         return this.http.put<UserItem>(this.userItemUrl, userItem, this.httpOptions);
     }
-    setUpdate(bool) {
-        this.update = bool;
-    }
-
 
 }

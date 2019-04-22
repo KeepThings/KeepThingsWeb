@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher, MatSnackBar} from '@angular/material';
 import {UserItemsService} from '../../user-items.service';
 import {DatePipe} from '@angular/common';
 import {UserItem} from '../../user-item';
 import {UserService} from '../../user.service';
+import {User} from '../../user';
 
 @Component({
   selector: 'app-new-entry-form',
@@ -12,6 +13,7 @@ import {UserService} from '../../user.service';
   styleUrls: ['./new-entry-form.component.css']
 })
 export class NewEntryFormComponent implements OnInit {
+
     titleFormControl = new FormControl('', [
         Validators.required,
     ]);
@@ -36,10 +38,9 @@ export class NewEntryFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  addUserItem(userItem: UserItem) {
-    this.userItemService.addUserItem(userItem).subscribe();
+  addUserItem(userItem) {
+    this.userItemService.addUserItem(userItem).subscribe(item => this.userItemService.userItems.push(item));
       this.snackBar.open('Entry creation successful!');
-      this.userItemService.setUpdate(true);
       this.titleFormControl.setValue(' ');
       this.personFormControl.setValue(' ');
       this.descFormControl.setValue(' ');
@@ -57,8 +58,9 @@ export class NewEntryFormComponent implements OnInit {
                 this.snackBar.dismiss();
             }, 5000);
         } else {
-            const newItem = new UserItem(this.userItemService.createItemId(), this.titleFormControl.value, this.descFormControl.value, this.userService.user.USER_ID, this.personFormControl.value, this.fromFormControl, this.toFormControl );
-            this.addUserItem(newItem);
+            const item = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: this.personFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)}
+            console.log(item);
+            this.addUserItem(item);
         }
 
     }

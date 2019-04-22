@@ -1,12 +1,12 @@
 export class User {
-    USER_ID: number;
-    NAME: string;
-    FIRST_NAME: string;
-    PASSWORD: string;
-    EMAIL: string;
-    TEL_NR: number;
-    USERNAME: string;
-    TYPE: string;
-    VERIFIED: boolean;
+    id: number;
+    name: string;
+    first_name: string;
+    password: string;
+    email: string;
+    tel_nr: number;
+    username: string;
+    type: string;
+    verified: boolean;
 
 }

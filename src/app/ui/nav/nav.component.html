@@ -7,7 +7,7 @@
         <button mat-button><mat-icon class="navIcons">email</mat-icon></button>
         <button mat-button (click)="userSettings()"><mat-icon class="navIcons">account_circle</mat-icon></button>
         <div id="userNameDiv">
-        <span *ngIf="user"id="userName">{{user.USERNAME}}</span>
+        <span *ngIf="user"id="userName">{{user.username}}</span>
         </div>
         <button (click)="logout()" mat-button><mat-icon class="navIcons">arrow_forward</mat-icon></button>
     </div>

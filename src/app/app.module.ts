@@ -25,6 +25,8 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFor
 import {DatePipe} from '@angular/common';
 import {UserSettingsComponent} from './ui/user-settings/user-settings.component';
 import {RegisterComponent} from './ui/register/register.component';
+import {CallbackComponent} from './ui/callback/callback.component';
+import {AuthenticationService} from './authentication.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import {RegisterComponent} from './ui/register/register.component';
     MIDetailsComponent,
     UserSettingsComponent,
     LayoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,7 @@ import {RegisterComponent} from './ui/register/register.component';
     MatDialogModule,
     
   ],
-  providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe],
+  providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe, AuthenticationService],
   bootstrap: [AppComponent],
   entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent],
     exports: [MatIconModule, FormsModule, LayoutComponent]

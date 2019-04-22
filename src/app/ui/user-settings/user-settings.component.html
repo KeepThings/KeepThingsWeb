@@ -1,34 +1,34 @@
 <div *ngIf="user" class="userSettingsDiv">
   <div class="userSettingsHeadline">
-    <span><mat-icon id="userSettingsIcon">settings</mat-icon></span><span id="userSettingsHeadlineText">Hello {{user.FIRST_NAME}} {{user.NAME}}, here you can edit your User Settings</span>
+    <span><mat-icon id="userSettingsIcon">settings</mat-icon></span><span id="userSettingsHeadlineText">Hello {{user.first_name}} {{user.name}}, here you can edit your User Settings</span>
   </div>
 
   <div class="usersettingsForm">
     <form (ngSubmit)="onSubmit()" #userSettingsForm="ngForm">
       <mat-form-field class="userSettingsFormField">
-        <mat-label class="userSettingsFormLabel">Password</mat-label>
-        <input matNativeControl type="password" [formControl]="passwordFormControl" [(ngModel)]="user.PASSWORD" [errorStateMatcher]="matcher">
+        <mat-label class="userSettingsFormLabel">password</mat-label>
+        <input matNativeControl type="password" [formControl]="passwordFormControl" [(ngModel)]="user.password" [errorStateMatcher]="matcher">
         <mat-error *ngIf="passwordFormControl.hasError('required')">
-          Password is <strong>required</strong>
+          password is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="userSettingsFormField">
         <mat-label class="userSettingsFormLabel">EMail</mat-label>
-        <input matNativeControl [formControl]="EMailFormControl" [(ngModel)]="user.EMAIL" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="EMailFormControl" [(ngModel)]="user.email" [errorStateMatcher]="matcher">
         <mat-error *ngIf="EMailFormControl.hasError('required')">
           Valid EMail is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="userSettingsFormField">
         <mat-label class="userSettingsFormLabel">Username</mat-label>
-        <input matNativeControl [formControl]="usernameFormControl" [(ngModel)]="user.USERNAME" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="usernameFormControl" [(ngModel)]="user.username" [errorStateMatcher]="matcher">
         <mat-error *ngIf="usernameFormControl.hasError('required')">
           Username is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="userSettingsFormField">
         <mat-label class="userSettingsFormLabel">TelNr</mat-label>
-        <input matNativeControl [formControl]="TelNrFormControl" [(ngModel)]="user.TEL_NR" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="TelNrFormControl" [(ngModel)]="user.tel_nr" [errorStateMatcher]="matcher">
         <mat-error *ngIf="TelNrFormControl.hasError('required')">
           TelNr is <strong>required</strong>
         </mat-error>

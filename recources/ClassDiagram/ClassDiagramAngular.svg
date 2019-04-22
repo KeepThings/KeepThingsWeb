@@ -232,15 +232,15 @@
 <polygon fill='skyblue' filter='url(#shadow)' points='2450.5,-272.5 2450.5,-437.5 2563.5,-437.5 2563.5,-272.5 2450.5,-272.5' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polygon fill='skyblue' points='2450.5,-272.5 2450.5,-437.5 2563.5,-437.5 2563.5,-272.5 2450.5,-272.5' stroke='black' style='fill:url(#skyblue);stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-426.3'>User</text>
 <polyline fill='none' filter='url(#shadow)' points='2450.5,-422.5 2563.5,-422.5 ' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polyline fill='none' points='2450.5,-422.5 2563.5,-422.5 ' stroke='black' style='fill:url(#none);stroke:black;'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-411.3'>USER_ID</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-411.3'>id</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-396.3'>NAME</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-381.3'>FIRST_NAME</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-366.3'>PASSWORD</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-351.3'>EMAIL</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-336.3'>TEL_NR</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-321.3'>USERNAME</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-306.3'>TYPE</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-291.3'>VERIFIED</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-366.3'>password</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-351.3'>email</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-336.3'>tel_nr</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-321.3'>username</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-306.3'>type</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-291.3'>verified</text>
 <polyline fill='none' filter='url(#shadow)' points='2450.5,-287.5 2563.5,-287.5 ' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polyline fill='none' points='2450.5,-287.5 2563.5,-287.5 ' stroke='black' style='fill:url(#none);stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='2507' y='-276.3'> </text>
 </g><g class='node' id='node20'><title>yuml_updateresponse</title>
@@ -295,13 +295,13 @@
 <polygon fill='skyblue' filter='url(#shadow)' points='3225,-287.5 3225,-422.5 3335,-422.5 3335,-287.5 3225,-287.5' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polygon fill='skyblue' points='3225,-287.5 3225,-422.5 3335,-422.5 3335,-287.5 3225,-287.5' stroke='black' style='fill:url(#skyblue);stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-411.3'>UserItem</text>
 <polyline fill='none' filter='url(#shadow)' points='3225,-407.5 3335,-407.5 ' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polyline fill='none' points='3225,-407.5 3335,-407.5 ' stroke='black' style='fill:url(#none);stroke:black;'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-396.3'>ITEM_ID</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-381.3'>ITEM_NAME</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-366.3'>ITEM_DESC</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-396.3'>id</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-381.3'>item_name</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-366.3'>item_desc</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-351.3'>OWNER</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-336.3'>BORROWER</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-321.3'>DATE_FROM</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-306.3'>DATE_TO</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-336.3'>borrower</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-321.3'>date_from</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-306.3'>date_to</text>
 <polyline fill='none' filter='url(#shadow)' points='3225,-302.5 3335,-302.5 ' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polyline fill='none' points='3225,-302.5 3335,-302.5 ' stroke='black' style='fill:url(#none);stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3280' y='-291.3'> </text>
 </g><g class='node' id='node26'><title>yuml_marketplaceservice</title>
@@ -323,13 +323,13 @@
 <polygon fill='skyblue' filter='url(#shadow)' points='3539,-287.5 3539,-422.5 3667,-422.5 3667,-287.5 3539,-287.5' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polygon fill='skyblue' points='3539,-287.5 3539,-422.5 3667,-422.5 3667,-287.5 3539,-287.5' stroke='black' style='fill:url(#skyblue);stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-411.3'>MarketplaceItem</text>
 <polyline fill='none' filter='url(#shadow)' points='3539,-407.5 3667,-407.5 ' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polyline fill='none' points='3539,-407.5 3667,-407.5 ' stroke='black' style='fill:url(#none);stroke:black;'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-396.3'>ITEM_ID</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-381.3'>ITEM_NAME</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-366.3'>ITEM_DESC</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-396.3'>id</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-381.3'>item_name</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-366.3'>item_desc</text>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-351.3'>OWNER</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-336.3'>BORROWER</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-321.3'>DATE_FROM</text>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-306.3'>DATE_TO</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-336.3'>borrower</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-321.3'>date_from</text>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-306.3'>date_to</text>
 <polyline fill='none' filter='url(#shadow)' points='3539,-302.5 3667,-302.5 ' stroke='black' style='fill: black; stroke: none; fill-opacity:0.2'/><polyline fill='none' points='3539,-302.5 3667,-302.5 ' stroke='black' style='fill:url(#none);stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,-2)' x='3603' y='-291.3'> </text>
 </g><g class='node' id='node28'><title>yuml_response</title>

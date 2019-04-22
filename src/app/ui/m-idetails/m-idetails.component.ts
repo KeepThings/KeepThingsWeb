@@ -6,6 +6,7 @@ import {MAT_DIALOG_DATA, MatSnackBar} from '@angular/material';
 import {MarketplaceService} from '../../marketplace.service';
 import {UserService} from '../../user.service';
 import {User} from '../../user';
+import {MarketplaceComponent} from '../marketplace/marketplace.component';
 
 @Component({
   selector: 'app-m-idetails',
@@ -29,7 +30,7 @@ export class MIDetailsComponent implements OnInit {
                 private snackBar: MatSnackBar, private userService: UserService) { }
 
   ngOnInit() {
-      this.getMarketplaceItem(this.data.ITEM_ID);
+      this.getMarketplaceItem(this.data.id);
       this.getUserName();
       this.checkOwnership();
 
@@ -43,19 +44,35 @@ export class MIDetailsComponent implements OnInit {
     }
 
     checkOwnership() {
-        if (this.user.USER_ID === this.marketplaceItem.USER_ID) {
+        if (this.user.id === this.marketplaceItem.id) {
             this.NotOwner = false;
         } else {
             this.NotOwner = true;
         }
     }
 
+    checkUserInput(): boolean {
+        if (this.fromFormControl.value < this.toFormControl) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     onSubmit() {
-        this.marketplaceService.updateMarketplaceItem(this.marketplaceItem).subscribe();
-        this.snackBar.open('Marketplace Item update successful!');
-        setTimeout(() => {
-            this.snackBar.dismiss();
-        }, 5000);
+        if (this.checkUserInput()) {
+            this.marketplaceService.updateMarketplaceItem(this.marketplaceItem).subscribe();
+            this.snackBar.open('Marketplace Item update successful!');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        } else {
+            this.snackBar.open('Start date has to be earlier than end date!');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 3000);
+        }
+
 
     }
 }

@@ -41,14 +41,14 @@ describe('newEntryComponent', () => {
         fixture = TestBed.createComponent(NewEntryFormComponent);
         component = fixture.componentInstance;
         MOCK_ITEM = 
-        {ITEM_ID: 1, ITEM_NAME: 'Laptop', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02'};
+        {id: 1, item_name: 'Laptop', item_desc: 'Test123', OWNER: 'NightDeath', borrower: '', date_from: '2018-11-10', date_to: '2018-12-02'};
         
 
     })
 
     it('add UserItem to UserItems', () => {
         mockUserItemService.addUserItem.and.returnValue(of({'success': true}));
-        fixture.componentInstance.addUserItem(MOCK_ITEM.ITEM_NAME, MOCK_ITEM.ITEM_DESC, MOCK_ITEM.OWNER, MOCK_ITEM.BORROWER, MOCK_ITEM.DATE_FROM, MOCK_ITEM.DATE_TO);
+        fixture.componentInstance.addUserItem(MOCK_ITEM.item_name, MOCK_ITEM.item_desc, MOCK_ITEM.OWNER, MOCK_ITEM.borrower, MOCK_ITEM.date_from, MOCK_ITEM.date_to);
         expect(mockUserItemService.addUserItem).toHaveBeenCalled();
     });
 

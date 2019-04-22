@@ -4,6 +4,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {DatePipe} from '@angular/common';
+import {tap} from 'rxjs/internal/operators/tap';
+import {UserItem} from './user-item';
+import {AuthenticationService} from './authentication.service';
 
 interface InsertResponse {
    success: boolean;
@@ -16,46 +19,35 @@ interface InsertResponse {
 export class MarketplaceService {
     marketplaceItems: MarketplaceItem[];
     marketplaceItem: MarketplaceItem;
-    marketplaceItemURL = 'localhost:5001/api/marketplaceItem';
+    marketplaceItemURL = '/api/marketplaceItem';
     httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type':  'application/json',
-            'Authorization': 'my-auth-token'
-        })
+        headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
     };
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
-    createItemId() {
-        return new Date().getTime() + Math.floor(Math.random() * Math.floor(1000));
-    }
     getMarketplaceItems(): Observable<MarketplaceItem[]> {
-        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}`).pipe(
-            map((res) => {
-                this.marketplaceItems = res['result'];
-                return this.marketplaceItems;
-            }));
+        return this.http.get<MarketplaceItem[]>(`${this.marketplaceItemURL}`)
+            .pipe(tap(data => this.marketplaceItems = data));
     }
     getMarketplaceItemById(id: number): Observable<MarketplaceItem> {
-        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}/${id}`).pipe(
-            map((res) => {
-                this.marketplaceItem = res['result'];
-                return this.marketplaceItem;
-            }));
+        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}/${id}`)
+            .pipe(tap(data => this.marketplaceItem = data));
     }
     addMarketplaceItem(item: MarketplaceItem): Observable<MarketplaceItem> {
-        this.marketplaceItems.push(item);
-        return this.http.post<MarketplaceItem>(this.marketplaceItemURL, item, this.httpOptions);
+        return this.http.post<UserItem>(this.marketplaceItemURL, item, this.httpOptions).pipe(
+            tap((newMarketplaceItem: MarketplaceItem) => console.log(`${newMarketplaceItem.id}`)
+            ));
     }
 
     removeMarketplaceItem (item: MarketplaceItem): Observable<{}> {
         this.marketplaceItems = this.marketplaceItems.filter(i => i !== item);
-        const url = `${this.marketplaceItemURL}/${item.ITEM_ID}`; // DELETE api/heroes/42
+        const url = `${this.marketplaceItemURL}/${item.id}`; // DELETE api/heroes/42
         return this.http.delete(url, this.httpOptions);
     }
 
     updateMarketplaceItem(marketplaceItem: MarketplaceItem): Observable<MarketplaceItem> {
-        const updatedItem = this.marketplaceItems.find(item => item.ITEM_ID === marketplaceItem.ITEM_ID );
+        const updatedItem = this.marketplaceItems.find(item => item.id === marketplaceItem.id );
         this.marketplaceItems[this.marketplaceItems.indexOf(updatedItem)] = marketplaceItem;
         return this.http.put<MarketplaceItem>(this.marketplaceItemURL, MarketplaceItem, this.httpOptions);
     }

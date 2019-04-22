@@ -5,24 +5,24 @@
   <ul  *ngIf="userItems" class="userItemsList">
     <li *ngFor="let userItem of userItems" class="lendOutList">
       <div *ngIf="userItems">
-      <div class="lentOutListItem" (click)="details(userItem.ITEM_ID)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
+      <div class="lentOutListItem" (click)="details(userItem.id)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
         <div class="row">
           <div class="col-md-6">
-            <span class="userItemListSmallNormal">{{userItem.ITEM_NAME}}</span>
+            <span class="userItemListSmallNormal">{{userItem.item_name}}</span>
           </div>
           <div class="col-md-5">
-            <span class="userItemListSmallNormal listAlignRight">{{userItem.DATE_TO | date}}</span>
+            <span class="userItemListSmallNormal listAlignRight">{{userItem.date_to | date}}</span>
           </div>
           <div class="col-md-1">
-            <span *ngIf="userItem.OWNER == user.USERNAME" (click)="removeItem(userItem)" class="userItemListDeleteIcon"><mat-icon id="deleteIcon">delete_outline</mat-icon></span>
+             <span *ngIf="userItem.user_id == user.id" (click)="removeItem(userItem)" class="userItemListDeleteIcon"><mat-icon id="deleteIcon">delete_outline</mat-icon></span>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
-            <span class="userItemListSmallText">{{userItem.BORROWER}}</span>
+            <span class="userItemListSmallText">{{userItem.borrower}}</span>
           </div>
           <div class="col-md-5">
-            <span class="userItemListSmallText listAlignRight">{{userItem.DATE_FROM | date}}</span>
+            <span class="userItemListSmallText listAlignRight">{{userItem.date_from | date}}</span>
           </div>
         </div>
       </div>

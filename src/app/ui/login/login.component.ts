@@ -5,6 +5,7 @@ import {AuthenticationService} from '../../authentication.service';
 import {MatSnackBar} from '@angular/material';
 import {LoginErrorComponent} from './login-error/login-error.component';
 import {Router} from '@angular/router';
+import {UserService} from '../../user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,12 +23,13 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
 
     }
-    constructor(private Auth: AuthenticationService, private snackBar: MatSnackBar, private router: Router) {}
+    constructor(private Auth: AuthenticationService, private snackBar: MatSnackBar, private router: Router, private userService: UserService) {}
 
     onSubmit() {
-        this.router.navigate(['dashboard']);
+        this.Auth.login();
+        /*this.router.navigate(['dashboard']);
         this.Auth.setLoggedIn(true);
-        this.Auth.setUID(1);
+        this.Auth.setUID(1); */
         /*this.Auth.getUserDetails(this.emailFormControl.value, this.passwordFormControl.value).subscribe(data => {
             if (data.success) {
                 this.snackBar.dismiss();

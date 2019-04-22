@@ -3,13 +3,8 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {ErrorStateMatcher,  MatSnackBar} from '@angular/material';
 import {DatePipe} from '@angular/common';
 import {MarketplaceService} from '../../marketplace.service';
-import { MarketplaceItem } from 'src/app/marketplace-item';
-import {UserItem} from '../../user-item';
 import {UserService} from '../../user.service';
 
-
-// See the Moment.js docs for the meaning of these formats:
-// https://momentjs.com/docs/#/displaying/format/
 
 @Component({
   selector: 'app-new-request-form',
@@ -17,7 +12,7 @@ import {UserService} from '../../user.service';
   styleUrls: ['./new-request-form.component.css'],
 })
 export class NewRequestFormComponent implements OnInit {
-    
+
     marketplaceItems;
 
     titleFormControl = new FormControl('', [
@@ -41,8 +36,8 @@ export class NewRequestFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  addMarketplaceItem(marketplaceItem: MarketplaceItem){
-    this.marketplaceService.addMarketplaceItem(marketplaceItem).subscribe();
+  addMarketplaceItem(marketplaceItem) {
+    this.marketplaceService.addMarketplaceItem(marketplaceItem).subscribe(item => this.marketplaceService.marketplaceItems.push(item));
       this.snackBar.open('Request creation successful!');
       this.titleFormControl.setValue(' ');
       this.descFormControl.setValue(' ');
@@ -59,10 +54,10 @@ export class NewRequestFormComponent implements OnInit {
               this.snackBar.dismiss();
           }, 5000);
       } else {
-          const newItem = new MarketplaceItem(this.marketplaceService.createItemId(), this.titleFormControl.value, this.descFormControl.value, this.userService.user.USER_ID, " ", this.fromFormControl, this.toFormControl );
+          const newItem = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: '', date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.fromFormControl.value)};
           this.addMarketplaceItem(newItem);
 
-        
+
       }
 
     }

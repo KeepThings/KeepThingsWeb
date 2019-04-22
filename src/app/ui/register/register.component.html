@@ -26,10 +26,10 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="registerFormField">
-          <mat-label class="registerFormLabel">Password</mat-label>
+          <mat-label class="registerFormLabel">password</mat-label>
           <input matNativeControl [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
           <mat-error *ngIf="passwordFormControl.hasError('required')">
-            Password is <strong>required</strong>
+            password is <strong>required</strong>
           </mat-error>
         </mat-form-field>
       </div>

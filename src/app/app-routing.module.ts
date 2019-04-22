@@ -5,12 +5,14 @@ import {LoginComponent} from './ui/login/login.component';
 import {AuthGuard} from './auth.guard';
 import {UIDetailsComponent} from './ui/u-idetails/u-idetails.component';
 import {RegisterComponent} from './ui/register/register.component';
+import {CallbackComponent} from './ui/callback/callback.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent}
+    { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent},
+    { path: 'callback', component: CallbackComponent}
 ];
 
 @NgModule({

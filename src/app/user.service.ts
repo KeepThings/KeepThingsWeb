@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {User} from './user';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
+import {catchError} from 'rxjs/internal/operators/catchError';
+import {AuthenticationService} from './authentication.service';
 
 
 interface IsLoggedIn {
@@ -18,31 +20,26 @@ export class UserService {
 
     user: User;
     update = false;
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
-    getUserById(UID) {
-        return this.http.get('https://localhost:5001/api/user/1').subscribe((res: User) => {this.user = res; });
+    getUserById(UID): Observable<User> {
+        return this.http.get<User>('/api/user/1', {
+            headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
+        }).pipe(tap(data => this.user = data));
     }
-
-    isLoggedIn(): Observable<IsLoggedIn> {
-        return this.http.get<IsLoggedIn>('/api/isloggedin.php');
-    }
+    
     updateUser(user: User) {
         this.user = user;
-        return this.http.get<UpdateResponse>('/api/updateUsers.php?UID=' + user.USER_ID
-            + '&NAME=' + user.NAME
-            + '&FIRST_NAME=' + user.FIRST_NAME
-            + '&PASSWORD=' + user.PASSWORD
-            + '&USERNAME=' + user.USERNAME
-            + '&VERIFIED=' + user.VERIFIED
-            + '&TEL_NR=' + user.TEL_NR
-            + '&EMAIL=' + user.EMAIL
-            + '&TYPE=' + user.TYPE);
+        return this.http.get<UpdateResponse>('/api/updateUsers.php?UID=' + user.id
+            + '&NAME=' + user.name
+            + '&FIRST_NAME=' + user.first_name
+            + '&password=' + user.password
+            + '&username=' + user.username
+            + '&verified=' + user.verified
+            + '&tel_nr=' + user.tel_nr
+            + '&email=' + user.email
+            + '&type=' + user.type);
     }
-    setUpdate(bool) {
-        this.update = bool;
-    }
-    needUpdate(): boolean {
-        return this.update;
-    }
+
+
 }

@@ -10,7 +10,21 @@ import {map} from 'rxjs/operators';
 })
 export class AuthGuard implements CanActivate {
   constructor(private auth: AuthenticationService, private router: Router, private user: UserService) {}
-  canActivate(
+
+    canActivate(
+        next: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+        if (!this.auth.isLoggedIn) {
+            console.log(this.auth.isLoggedIn + 'is login');
+            console.log('User not logged in');
+            this.router.navigate(['/login']);
+            return false;
+        }
+        return true;
+    }
+
+
+  /*canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       if (this.auth.isLoggedIn) {
@@ -25,5 +39,5 @@ export class AuthGuard implements CanActivate {
               return false;
           }
       }));
-  }
+  } */
 }

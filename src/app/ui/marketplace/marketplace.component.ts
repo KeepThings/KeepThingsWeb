@@ -41,14 +41,15 @@ export class MarketplaceComponent implements OnInit {
 
     getMarketplaceItems(): void {
         this.marketplaceService.getMarketplaceItems().subscribe(marketplaceItems => this.marketplaceItems = marketplaceItems);
-        this.marketplaceItems.filter(i => i.USER_ID === this.userService.user.USER_ID);
     }
 
 
     details(id: number): void {
-        this.dialog.open(MIDetailsComponent, {data: {ITEM_ID: id
+        this.dialog.open(MIDetailsComponent, {data: {id: id
             }
         }) ;
-
+    }
+    closeDetails(): void {
+      this.dialog.closeAll();
     }
 }

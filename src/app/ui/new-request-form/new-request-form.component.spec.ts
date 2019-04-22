@@ -44,25 +44,25 @@ describe('newRequestComponent', () => {
         fixture = TestBed.createComponent(NewRequestFormComponent);
         component = fixture.componentInstance;
         MOCK_ITEM =
-            { ITEM_ID: 1, ITEM_NAME: 'Laptop', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02' };
+            { id: 1, item_name: 'Laptop', item_desc: 'Test123', OWNER: 'NightDeath', borrower: '', date_from: '2018-11-10', date_to: '2018-12-02' };
         MOCK_ITEMS = [
-            { ITEM_ID: 1, ITEM_NAME: 'Laptop', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02' },
-            { ITEM_ID: 2, ITEM_NAME: 'Test', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02' },
-            { ITEM_ID: 3, ITEM_NAME: 'Test123', ITEM_DESC: 'Test123', OWNER: 'NightDeath', BORROWER: '', DATE_FROM: '2018-11-10', DATE_TO: '2018-12-02' }
+            { id: 1, item_name: 'Laptop', item_desc: 'Test123', OWNER: 'NightDeath', borrower: '', date_from: '2018-11-10', date_to: '2018-12-02' },
+            { id: 2, item_name: 'Test', item_desc: 'Test123', OWNER: 'NightDeath', borrower: '', date_from: '2018-11-10', date_to: '2018-12-02' },
+            { id: 3, item_name: 'Test123', item_desc: 'Test123', OWNER: 'NightDeath', borrower: '', date_from: '2018-11-10', date_to: '2018-12-02' }
         ];
 
     })
 
    /* it('add MarketplaceItem to MarketplaceItem', () => {
         mockMarketplaceItemService.addMarketplaceItem.and.returnValue(of({ 'success': true }));
-        fixture.componentInstance.addMarketplaceItem(MOCK_ITEM.ITEM_NAME, MOCK_ITEM.ITEM_DESC, MOCK_ITEM.OWNER, MOCK_ITEM.DATE_FROM, MOCK_ITEM.DATE_TO);
+        fixture.componentInstance.addMarketplaceItem(MOCK_ITEM.item_name, MOCK_ITEM.item_desc, MOCK_ITEM.OWNER, MOCK_ITEM.date_from, MOCK_ITEM.date_to);
         expect(mockMarketplaceItemService.addMarketplaceItem).toHaveBeenCalled();
     }); 
 
     it('Item has been added to the MarketplaceItem list', () => {
         component.marketplaceItems = MOCK_ITEMS;
         mockMarketplaceItemService.addMarketplaceItem.and.returnValue(of({ 'success': true }));
-        fixture.componentInstance.addMarketplaceItem(MOCK_ITEM.ITEM_NAME, MOCK_ITEM.ITEM_DESC, MOCK_ITEM.OWNER, MOCK_ITEM.DATE_FROM, MOCK_ITEM.DATE_TO);
+        fixture.componentInstance.addMarketplaceItem(MOCK_ITEM.item_name, MOCK_ITEM.item_desc, MOCK_ITEM.OWNER, MOCK_ITEM.date_from, MOCK_ITEM.date_to);
         expect(component.marketplaceItems.length).toBe(3);
     }) */
 })

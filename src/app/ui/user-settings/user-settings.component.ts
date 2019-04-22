@@ -31,7 +31,7 @@ export class UserSettingsComponent implements OnInit {
     this.getUser();
   }
   getUser() {
-      this.user = this.userService.user;
+      this.userService.getUserById(1).subscribe(value => this.user = value);
   }
 
     onSubmit() {
@@ -39,7 +39,6 @@ export class UserSettingsComponent implements OnInit {
         subscribe(data => {
             console.log(data.success);
             if (data.success) {
-                this.userService.setUpdate(true);
                 this.snackBar.open('User update successful!');
                 setTimeout(() => {
                     this.snackBar.dismiss();

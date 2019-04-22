@@ -35,7 +35,7 @@ export class UIDetailsComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) private data: any, private userItemService: UserItemsService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-      this.getUserItem(this.data.ITEM_ID);
+      this.getUserItem(this.data.id);
   }
     getUserItem(id): void {
         this.userItemService.getUserItemById(id).subscribe(userItem => this.userItem = userItem);

@@ -14,12 +14,13 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessagesReplyComponent } from './messages-reply/messages-reply.component';
 import { RegisterComponent } from './register/register.component';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [MessagesComponent, MessagesReplyComponent, RegisterComponent],
+  declarations: [MessagesComponent, MessagesReplyComponent, RegisterComponent, CallbackComponent],
   exports: []
 })
 export class UiModule { }
