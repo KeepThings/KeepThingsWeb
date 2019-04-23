@@ -12,7 +12,7 @@ Shows all marketplace items of the community in a list. One item contains the na
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-![MarketplaceAndroidDiagram](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Use%20Cases/MarketplaceMobile/MarketplaceAndroidDiagram.svg)
+![MarketplaceAndroidDiagram](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Use%20Cases/mobileMarketplace/MarketplaceAndroidDiagram.svg)
 #### Feature
 tbd
 #### Mockup
