@@ -36,5 +36,5 @@ dashboard list must be reloaded
 
 ## 6.                  Extension Points
 ### 6.1 Funktion Point Calculation
-![Alt-Text](mobileNewUserItem.png)
+![Alt-Text](mobileNewUserItemFPCalc.png)
 
