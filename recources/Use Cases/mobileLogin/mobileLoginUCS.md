@@ -29,4 +29,3 @@ The user shall be redirected to the dashboard view.
 ## 6. Extension Points
 ### 6.1 Funktion Point Calculation
 ![Alt-Text](mobileLoginFPCalc.png)
-
