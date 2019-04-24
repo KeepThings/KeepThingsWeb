@@ -27,5 +27,6 @@ synchronization of the data between server and client.
 
 
 ## 6. Extension Points
-n/a 
+### 6.1 Funktion Point Calculation
+![Alt-Text](mobileUserItemFPCalc.png)
 
