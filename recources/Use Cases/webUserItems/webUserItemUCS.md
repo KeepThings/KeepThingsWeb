@@ -1,7 +1,7 @@
-# Use-Case Specification: DashboardWeb
+# Use-Case Specification: webUserItem
 
 
-## 1.                  DashboardWeb
+## 1.                  webUserItem
 
 ### 1.1               Brief Description
 Shows all lent out items of the user and the marketplace items in a list. One item of the lent-out list contains the name of the lent item, person who borrowed the item, the date it was borrowed and the date it should be returned. One item of the marketplace list contains the name of the item someone wants to borrow and the date it is needed. On the right side of the dashboard the user can create new entries and requests.
@@ -35,6 +35,7 @@ synchronization of the data between server and client.
 
 
 ## 6.                  Extension Points
-n/a 
+### 6.1 Funktion Point Calculation
+![Alt-Text](webUserItemFPCalc.png)
 
 

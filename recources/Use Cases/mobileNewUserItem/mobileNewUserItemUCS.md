@@ -1,7 +1,7 @@
-# Use-Case Specification: newEntryMobile
+# Use-Case Specification: mobileNewUserItem
 
 
-## 1.                  newEntryMobile
+## 1.                  mobileNewUserItem
 
 ### 1.1               Brief Description
 User can add a new Entry via the entry form. Application checks if all required fields have an input and if the dateTo is later than dateFrom.
@@ -35,6 +35,6 @@ dashboard list must be reloaded
 
 
 ## 6.                  Extension Points
-n/a 
-
+### 6.1 Funktion Point Calculation
+![Alt-Text](mobileNewUserItemFPCalc.png)
 
