@@ -1,7 +1,7 @@
-# Use-Case Specification: newEntryWeb
+# Use-Case Specification: webNewUserItem
 
 
-## 1.                  newEntryWeb
+## 1.                  webNewUserItem
 
 ### 1.1               Brief Description
 User can add a new Entry via the entry form. Application checks if all required fields have an input and if the dateTo is later than dateFrom.
@@ -35,6 +35,7 @@ adds the new Item to the Lend-Out Item List
 
 
 ## 6.                  Extension Points
-n/a 
+### 6.1 Funktion Point Calculation
+![Alt-Text](webNewUserItemFPCalc.png)
 
 

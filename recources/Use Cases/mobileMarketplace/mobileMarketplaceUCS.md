@@ -1,7 +1,7 @@
-# Use-Case Specification: MarketplaceMobile
+# Use-Case Specification: mobileMarketplace
 
 
-## 1. MarketplaceMobile
+## 1. mobileMarketplace
 
 ### 1.1 Brief Description
 Shows all marketplace items of the community in a list. One item contains the name of the lent item, person who need the item, the date it is needed and the date it should be returned. 
@@ -12,7 +12,7 @@ Shows all marketplace items of the community in a list. One item contains the na
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-![MarketplaceAndroidDiagram](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Use%20Cases/MarketplaceMobile/MarketplaceAndroidDiagram.svg)
+![MarketplaceAndroidDiagram](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Use%20Cases/mobileMarketplace/MarketplaceAndroidDiagram.svg)
 #### Feature
 tbd
 #### Mockup
@@ -36,5 +36,6 @@ synchronization of the data between server and client.
 
 
 ## 6. Extension Points
-n/a 
+### 6.1 Funktion Point Calculation
+![Alt-Text](mobileMarketplaceFPCalc.png)
 

@@ -1,7 +1,7 @@
-# Use-Case Specification: UC NAME
+# Use-Case Specification: webMaketplace
 
 
-## 1. UC NAME
+## 1. webMaketplace
 
 ### 1.1 Brief Description
 
@@ -35,5 +35,5 @@ synchronization of the data between server and client.
 
 
 ## 6. Extension Points
-n/a 
-
+### 6.1 Funktion Point Calculation
+![Alt-Text](webMarketplaceFPCalc.png)

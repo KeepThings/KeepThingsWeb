@@ -1,7 +1,7 @@
-# Use-Case Specification: DashboardMobile
+# Use-Case Specification: mobileUserItem
 
 
-## 1. DashboardMobile
+## 1. mobileUserItem
 
 ### 1.1 Brief Description
 Shows all lent out items of the user in a list. One item contains the name of the lent item, person who borrowed the item, the date it was borrowed and the date it should be returned. 
@@ -37,5 +37,6 @@ synchronization of the data between server and client.
 
 
 ## 6. Extension Points
-n/a 
+### 6.1 Funktion Point Calculation
+![Alt-Text](mobileUserItemFPCalc.png)
 
