@@ -1,0 +1,96 @@
+.messageDiv{
+    background-color: white;
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    display: inline-block;
+    width: 1000px;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#messageHeadlineText{
+    display: inline-flex;
+    font-size: 28px;
+    color: #9A0000;
+}
+#messageIcon{
+    font-size: 28px;
+    padding-right: 30px;
+    vertical-align: middle;
+    display: inline-flex;
+    height: 28px;
+    width: 28px;
+    color: #004669;
+}
+.messageHeadline{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.messagesOverview{
+    width: 100%;
+    display: inline;
+    margin-right: 10px;
+}
+#messageOverviewFrom{
+    display: inline;
+}
+#messageOverviewHeader{
+    display: inline;
+}
+#messageOverviewTimestamp{
+    display: inline-flex;
+}
+
+#messageOverviewNext{
+    display: inline-flex;
+}
+.messagesList{
+    list-style: none;
+}
+.headerText{
+    font-size: 18px;
+    font-style: italic;
+}
+.smallText{
+    font-size: 15px;
+}
+.partingLine{
+    height: 1px;
+    background-color: #004669;
+}
+#verticalLine{
+    border-right: 2px solid #004669;
+    height:446px;
+}
+#messageOverviewTimestamp{
+    margin-right: 10px;
+}
+#sendButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
+#buttonWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.replyFormField{
+    width: 100%;
+}
+#messageHeader{
+    display: flex;
+    justify-content: center;
+}
+.messageHeaderText{
+    font-weight: bold;
+}
+.senderName{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#messageFoot{
+    font-size: 10px;;
+    margin-right: 10px;
+}

@@ -1,0 +1,85 @@
+<div class="messageDiv">
+  <div class="messageHeadline">
+    <span><mat-icon id="messageIcon">email</mat-icon></span><span id="messageHeadlineText">Your Messages</span>
+  </div>
+  <div class="row">
+    <div class="col-md-6" id="verticalLine">
+      <div class="messagesOverview">
+        <ul *ngIf="chats" class="messagesItemList">
+          <li *ngFor="let chat of chats; let i = index" [attr.data-index]= "i" class="messagesList" style="cursor: pointer" (click)="getMessages(chat.id)">
+            <div *ngIf="chat">
+              <div id="messageOverview">
+                <div class="row">
+                  <div class="col-md-11">
+                    <div id="messageOverviewFrom">
+                      <span class="senderName">{{chat.sender_id}}</span>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div id="messageOverviewTimestamp">
+                      <span class="smallText"><mat-icon style="display: inline; font-size: 12px;">navigate_next</mat-icon></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="messageOverviewHeader">
+                      <span class="headerText">{{chat.topic}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="i < chats.length-1" class="partingLine"></div>
+            <div *ngIf="!chats">
+              <p>You have no chats!</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+    <div class="messagesDetails">
+      <div class="messageHeader">
+        <div *ngIf="messages">
+          <li *ngFor="let message of messages; let i = index" [attr.data-index]= "i" class="messagesList">
+            <div *ngIf="i > messages.length-5">
+            <span class="messageHeaderText">{{message.sender_id}}</span>
+            <div class="row">
+              <div class="col-md-9">
+                <div id="messageBody">
+                  <span>{{message.message}}</span>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div id="messageFoot">
+                  <span>{{message.sent_timestamp | date : "EEE dd MMM, HH:mm"}}</span>
+                </div>
+              </div>
+            </div>
+            <div>
+            </div>
+            </div>
+          </li>
+            <form (ngSubmit)="onSubmit(replyForm)" #replyForm="ngForm" >
+            <div id="messageReply">
+              <mat-form-field class="replyFormField">
+                <mat-label class="replyFormLabel">Reply</mat-label>
+                <textarea matNativeControl [formControl]="replyFormControl" [errorStateMatcher]="matcher"></textarea>
+                <mat-error *ngIf="replyFormControl.hasError('required')">
+                  Reply is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div id="buttonWrapper">
+              <button mat-raised-button id="sendButton">Reply</button>
+            </div>
+            </form>
+        </div>
+      </div>
+      <div class="messageBody"></div>
+    </div>
+    </div>
+  </div>
+</div>

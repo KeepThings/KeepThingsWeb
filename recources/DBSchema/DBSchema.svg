@@ -68,13 +68,13 @@ PUBLIC "-//W3C//DTD SVG 1.1//EN"
    <rect width="151" height="20" x="502" y="490" style="fill:none;stroke:black;"/>
    <text width="151" height="20" x="507" y="504" style="fill:black;" font-family="Arial" font-size="16px">id</text>
    <rect width="151" height="20" x="502" y="510" style="fill:#aea;stroke:black;"/>
-   <text width="151" height="20" x="507" y="524" style="fill:black;" font-family="Arial" font-size="16px">MESSAGE_ID</text>
+   <text width="151" height="20" x="507" y="524" style="fill:black;" font-family="Arial" font-size="16px">id</text>
    <rect width="151" height="20" x="502" y="530" style="fill:none;stroke:black;"/>
    <text width="151" height="20" x="507" y="544" style="fill:black;" font-family="Arial" font-size="16px">MESSAGE</text>
    <rect width="151" height="20" x="502" y="550" style="fill:none;stroke:black;"/>
-   <text width="151" height="20" x="507" y="564" style="fill:black;" font-family="Arial" font-size="16px">SENDER_ID</text>
+   <text width="151" height="20" x="507" y="564" style="fill:black;" font-family="Arial" font-size="16px">sender_id</text>
    <rect width="151" height="20" x="502" y="570" style="fill:none;stroke:black;"/>
-   <text width="151" height="20" x="507" y="584" style="fill:black;" font-family="Arial" font-size="16px">RECEIVER_ID</text>
+   <text width="151" height="20" x="507" y="584" style="fill:black;" font-family="Arial" font-size="16px">receiver_id</text>
    <rect width="151" height="20" x="502" y="590" style="fill:none;stroke:black;"/>
    <text width="151" height="20" x="507" y="604" style="fill:black;" font-family="Arial" font-size="16px">SENT_TIMESTAMP</text>
    <rect width="107" height="20" x="95" y="256" style="fill:#007;stroke:black;"/>
