@@ -21,7 +21,6 @@ The intended audience of this test plan are the developers themselves. This docu
 |n/a|not applicable|
 |tbd|to be done|
 ### 1.5	 References
-Link zu Blog, Github, Test Plan, SRS, SAD, UCs
 | Title                                                                   | Date       | Publishing organization   |
 | ------------------------------------------------------------------------|:----------:| ------------------------- |
 | [Blog](https://keepthingsnlb.wordpress.com)                          | Oct. 2018  | KeepThings                 |
