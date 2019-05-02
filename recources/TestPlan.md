@@ -42,8 +42,8 @@ The intended audience of this test plan are the developers themselves. This docu
 | [UC15 webUserItems](./UseCases/webUserItems/webUserItemsUCS.md)          | Oct. 2018  | KeepThings                 |
 | [UC16 webUserSettings](./UseCases/webUserSettings/webUserSettingsUCS.md)          | Apr. 2019  | KeepThings                 |
 | [Test Plan](./TestPlan.md)                                              | Apr. 2019  | KeepThings                 |
-| [SRS](./SoftwareRequirementsSpecification.md)                          | Oct. 2018  | KeepThings                 |
-| [SAD](./SoftwareArchitecturDocument/SoftwareArchitectureDocument.md)                               | Oct. 2018  | KeepThings                 |
+| [SRS](./SoftwareRequirementSpecification.md)                          | Oct. 2018  | KeepThings                 |
+| [SAD](./SoftwareArchitectureDocument/SoftwareArchitectureDocument.md)                               | Oct. 2018  | KeepThings                 |
 ## 2.	Evaluation Mission and Test Motivation
 ### 2.1	Background
 Testing our application helps us ensure that changes to the application's source-code will not result in errors or any other malfunctions in our application. By integrating these tests into our deployment process, we make sure that only working versions of our project are getting deployed to end-users.
