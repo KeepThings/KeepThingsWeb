@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {AuthenticationService} from './authentication.service';
 import {Observable} from 'rxjs';
-import {Message} from './message';
-import {UserItem} from './user-item';
 import {Chat} from './chat';
 
 @Injectable({
