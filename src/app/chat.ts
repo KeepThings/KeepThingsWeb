@@ -3,5 +3,4 @@ export class Chat {
     sender_id: number;
     receiver_id: number;
     topic: string;
-
 }
