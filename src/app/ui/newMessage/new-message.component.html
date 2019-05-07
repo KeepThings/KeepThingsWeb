@@ -1,0 +1,27 @@
+<div class="newMessageDiv">
+  <div class="newMessageHeadline">
+    <span><mat-icon id="newMessageIcon">email</mat-icon></span><span id="newMessageHeadlineText">Send Message to {{username}}</span>
+  </div>
+  <div id="form">
+    <form (ngSubmit)="onSubmit()" #newMessage="ngForm">
+      <mat-form-field class="newMessageFormField">
+        <mat-label class="newMessageLabel">Topic</mat-label>
+        <input matNativeControl [formControl]="topicFormControl"  [errorStateMatcher]="matcher">
+        <mat-error *ngIf="topicFormControl.hasError('required')">
+          Topic is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="newMessageFormField">
+        <mat-label class="newMessageLabel">Message</mat-label>
+        <textarea matNativeControl [formControl]="messageFormControl"  [errorStateMatcher]="matcher"></textarea>
+        <mat-error *ngIf="messageFormControl.hasError('required')">
+          Message is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <div class="buttonWrapper">
+        <button mat-raised-button class="entryButton" type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+
+</div>
