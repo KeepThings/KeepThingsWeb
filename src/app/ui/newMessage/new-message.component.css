@@ -1,0 +1,42 @@
+.newMessageDiv{
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px ;
+    border: 2px solid #004669;
+    display: inline-block;
+
+}
+.newMessageHeadline{
+    vertical-align: middle;
+    display: inline-flex;
+    font-size: 28px;
+    color: #9A0000;
+}
+#newMessageIcon{
+    font-size: 28px;
+    padding-right: 30px;
+    vertical-align: middle;
+    display: inline-flex;
+    height: 28px;
+    width: 28px;
+    color: #004669;
+}
+.newMessageLabel{
+    color: #004669;
+}
+.newMessageFormField{
+    width: 100%;
+}
+#form{
+    margin: 10px;
+}
+.buttonWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.entryButton{
+    color: #004669;
+    border: 1px solid #004669;
+}
