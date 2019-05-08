@@ -27,6 +27,11 @@ import {UserSettingsComponent} from './ui/user-settings/user-settings.component'
 import {RegisterComponent} from './ui/register/register.component';
 import {CallbackComponent} from './ui/callback/callback.component';
 import {AuthenticationService} from './authentication.service';
+import {MessagesComponent} from './ui/messages/messages.component';
+import {MarketplaceService} from './marketplace.service';
+import {HandlerService} from './handler.service';
+import {ChatService} from './chat.service';
+import {NewMessageComponent} from './ui/newMessage/new-message.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +50,9 @@ import {AuthenticationService} from './authentication.service';
     UserSettingsComponent,
     LayoutComponent,
     RegisterComponent,
-    CallbackComponent
+    CallbackComponent,
+    MessagesComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -68,9 +75,9 @@ import {AuthenticationService} from './authentication.service';
     MatDialogModule,
     
   ],
-  providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe, AuthenticationService],
+  providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe, AuthenticationService, MarketplaceService, HandlerService, ChatService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent],
+  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent, MessagesComponent, NewMessageComponent],
     exports: [MatIconModule, FormsModule, LayoutComponent]
 })
 export class AppModule {

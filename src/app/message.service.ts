@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {UserItem} from './user-item';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Message} from './message';
+import {AuthenticationService} from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,47 +12,38 @@ import {Message} from './message';
 export class MessageService {
 
     messages: Message[];
-    messageURL = 'localhost:5001/api/message';
+    messageURL = '/api/message';
     httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type':  'application/json',
-            'Authorization': 'my-auth-token'
-        })
+        headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
     };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthenticationService) { }
 
 
-  getMessageById(id: number): Observable<Message[]> {
-    return this.http.get<Message>(`${this.messageURL}/${id}`).pipe(
-        map((res) => {
-          this.messages = res['result'];
-          return this.messages;
-        }));
+  getMessageById(id: number): Observable<Message> {
+    return this.http.get<Message>(`${this.messageURL}/${id}`, this.httpOptions);
+
   }
 
-    getMessages(): Observable<Message[]> {
-        return this.http.get<Message>(`${this.messageURL}`).pipe(
-            map((res) => {
-                this.messages = res['result'];
-                return this.messages;
-            }));
+  // GET ALL MESSAGES OF CHAT WITH ID
+    getMessagesByChatId(id): Observable<Message[]> {
+        return this.http.get<Message[]>(`${this.messageURL}/${id}`, this.httpOptions);
+
     }
 
-    addMessage(message: Message): Observable<UserItem> {
-        this.messages.push(message);
-        return this.http.post<UserItem>(this.messageURL, message, this.httpOptions);
+    addMessage(message): Observable<Message> {
+        return this.http.post<Message>(this.messageURL, message, this.httpOptions);
     }
 
     removeMessage (message: Message): Observable<{}> {
         this.messages = this.messages.filter(i => i !== message);
-        const url = `${this.messageURL}/${message.MESSAGE_ID}`; // DELETE api/heroes/42
+        const url = `${this.messageURL}/${message.id}`; // DELETE api/heroes/42
         return this.http.delete(url, this.httpOptions);
     }
 
 
     updateMessage(message: Message): Observable<Message> {
-        const updatedMessage = this.messages.find(newMessage => newMessage.MESSAGE_ID === message.MESSAGE_ID );
+        const updatedMessage = this.messages.find(newMessage => newMessage.id === message.id );
         this.messages[this.messages.indexOf(updatedMessage)] = message;
         return this.http.put<Message>(this.messageURL, message, this.httpOptions);
     }

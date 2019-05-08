@@ -1,6 +1,6 @@
 #nav{
     width:100%;
-    position:relative;
+    position: relative;
     margin: 20px;
 
 }
@@ -48,6 +48,7 @@
     color: #9A0000;
     font-size: 30px;
     margin-top: 10px;
+    top: 50%;
 }
 #userNameDiv{
     padding-top:10px;

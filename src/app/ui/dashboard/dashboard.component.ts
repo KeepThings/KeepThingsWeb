@@ -12,15 +12,15 @@ import {NavComponent} from '../nav/nav.component';
 export class DashboardComponent implements OnInit {
     title = 'KeepThings';
     user: User;
-    constructor(private userService: UserService, private auth: AuthenticationService, private nav: NavComponent ) {}
+    constructor(private userService: UserService, private auth: AuthenticationService ) {}
 
     ngOnInit() {
-            this.getUser(1);
+            this.getUser();
 
 
     }
 
-    getUser(id): void {
-        this.userService.getUserById(id).subscribe(value => this.user = value);
+    getUser(): void {
+        this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
     }
 }

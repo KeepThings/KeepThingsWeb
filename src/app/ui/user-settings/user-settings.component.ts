@@ -4,6 +4,7 @@ import {User} from '../../user';
 import {FormControl, Validators} from '@angular/forms';
 import {MyErrorStateMatcher2} from '../new-entry-form/new-entry-form.component';
 import {MatSnackBar} from '@angular/material';
+import {AuthenticationService} from '../../authentication.service';
 
 @Component({
   selector: 'app-user-settings',
@@ -25,31 +26,30 @@ export class UserSettingsComponent implements OnInit {
         Validators.required,
     ]);
     matcher = new MyErrorStateMatcher2();
-  constructor(private userService: UserService, private snackBar: MatSnackBar) { }
+  constructor(private userService: UserService, private snackBar: MatSnackBar, private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.getUser();
   }
   getUser() {
-      this.userService.getUserById(1).subscribe(value => this.user = value);
+      this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
   }
 
     onSubmit() {
         this.userService.updateUser(this.user).
-        subscribe(data => {
-            console.log(data.success);
-            if (data.success) {
-                this.snackBar.open('User update successful!');
-                setTimeout(() => {
-                    this.snackBar.dismiss();
-                }, 5000);
-            } else {
-                this.snackBar.open('Error occured updating User!');
-                setTimeout(() => {
-                    this.snackBar.dismiss();
-                }, 5000);
-            }
-        });
+        subscribe(res => {if (res.status === 204) {
+            this.snackBar.open('User update successful!');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        } else {
+            this.snackBar.open('Error updating User!');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        }}
+        );
+
 
     }
 

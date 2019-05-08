@@ -1,9 +1,8 @@
 export class Message {
-    MESSAGE_ID: number;
-    SENDER_ID: number;
-    RECEIVER_ID: number;
-    HEADER: string;
-    MESSAGE: string;
-    TIMESTAMP: number;
+    id: number;
+    chat_id: number;
+    message: string;
+    sender_id: number;
+    sent_timestamp: number;
 
 }
