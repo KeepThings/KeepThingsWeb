@@ -6,35 +6,35 @@
     <form (ngSubmit)="onSubmit()" #newEntryForm="ngForm" >
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">Title</mat-label>
-        <input matNativeControl [formControl]="titleFormControl" [(ngModel)]="userItem.item_name" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="titleFormControl" [errorStateMatcher]="matcher">
         <mat-error *ngIf="titleFormControl.hasError('required')">
           Title is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">Description</mat-label>
-        <input matNativeControl [formControl]="descFormControl" [(ngModel)]="userItem.item_desc" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="descFormControl" [errorStateMatcher]="matcher">
         <mat-error *ngIf="descFormControl.hasError('required')">
           Description is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">Owner</mat-label>
-        <input matNativeControl [formControl]="ownerFormControl" [(ngModel)]="userItem.OWNER" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="ownerFormControl"  [errorStateMatcher]="matcher">
         <mat-error *ngIf="ownerFormControl.hasError('required')">
           Person is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">borrower</mat-label>
-        <input matNativeControl [formControl]="borrowerFormControl" [(ngModel)]="userItem.borrower" [errorStateMatcher]="matcher">
+        <input matNativeControl [formControl]="borrowerFormControl" [errorStateMatcher]="matcher">
         <mat-error *ngIf="borrowerFormControl.hasError('required')">
           Person is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">From</mat-label>
-        <input matInput [matDatepicker]="pickerFrom" [formControl]="fromFormControl" placeholder="Choose a date" [(ngModel)]="userItem.date_from" [errorStateMatcher]="matcher">
+        <input matInput [matDatepicker]="pickerFrom" [formControl]="fromFormControl" placeholder="Choose a date"  [errorStateMatcher]="matcher">
         <mat-error *ngIf="fromFormControl.hasError('required')">
           Start date <strong>required</strong>
         </mat-error>
@@ -43,7 +43,7 @@
       </mat-form-field>
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">To</mat-label>
-        <input matInput [matDatepicker]="pickerTo" [formControl]="toFormControl" placeholder="Choose a date" [(ngModel)]="userItem.date_to" [errorStateMatcher]="matcher">
+        <input matInput [matDatepicker]="pickerTo" [formControl]="toFormControl" placeholder="Choose a date" [errorStateMatcher]="matcher">
         <mat-error *ngIf="toFormControl.hasError('required')">
           End date is <strong>required</strong>
         </mat-error>

@@ -14,6 +14,7 @@ import {User} from '../../user';
 })
 export class NewEntryFormComponent implements OnInit {
 
+
     titleFormControl = new FormControl('', [
         Validators.required,
     ]);
@@ -41,16 +42,11 @@ export class NewEntryFormComponent implements OnInit {
   addUserItem(userItem) {
     this.userItemService.addUserItem(userItem).subscribe(item => this.userItemService.userItems.push(item));
       this.snackBar.open('Entry creation successful!');
-      this.titleFormControl.setValue(' ');
-      this.personFormControl.setValue(' ');
-      this.descFormControl.setValue(' ');
-      this.fromFormControl.setValue(' ');
-      this.toFormControl.setValue(' ');
       setTimeout(() => {
           this.snackBar.dismiss();
       }, 5000);
   }
-    onSubmit() {
+    onSubmit(form) {
         if (this.titleFormControl.invalid || this.descFormControl.invalid || this.personFormControl.invalid ||
             this.fromFormControl.invalid || this.toFormControl.invalid) {
             this.snackBar.open('All fields are required!');
@@ -59,8 +55,13 @@ export class NewEntryFormComponent implements OnInit {
             }, 5000);
         } else {
             const item = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: this.personFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)}
-            console.log(item);
             this.addUserItem(item);
+            this.titleFormControl.reset('');
+            this.descFormControl.reset('');
+            this.personFormControl.reset('');
+            this.fromFormControl.reset('');
+            this.toFormControl.reset('');
+            form.resetForm();
         }
 
     }

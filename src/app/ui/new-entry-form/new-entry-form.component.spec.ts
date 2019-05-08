@@ -18,7 +18,7 @@ describe('newEntryComponent', () => {
     let date;
     let MOCK_ITEM;
     let snackBar;
-    
+    /*
     beforeEach(()=> {
         mockUserItemService = jasmine.createSpyObj(['addUserItem', 'setUpdate']);
         date = jasmine.createSpyObj(['transform']);
@@ -61,6 +61,6 @@ describe('newEntryComponent', () => {
           })
         
     }));
-    
+    */
 
-})
+});

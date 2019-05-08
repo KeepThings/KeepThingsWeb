@@ -3,7 +3,7 @@
     <span><mat-icon id="newEntryIcon">playlist_add</mat-icon></span><span id="newEntryHeadlineText">new Entry</span>
   </div>
   <div class="newEntryForm">
-    <form (ngSubmit)="onSubmit()" #newEntryForm="ngForm" >
+    <form (ngSubmit)="onSubmit(newEntryForm)" #newEntryForm="ngForm" >
       <mat-form-field class="newEntryFormField">
         <mat-label class="newEntryFormLabel">Title</mat-label>
         <input matNativeControl [formControl]="titleFormControl" [errorStateMatcher]="matcher">
