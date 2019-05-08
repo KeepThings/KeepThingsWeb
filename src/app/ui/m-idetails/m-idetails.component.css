@@ -48,11 +48,11 @@
     justify-content: center;
     margin-bottom: 20px;
 }
-#entryButton{
+.entryButton{
     color: #004669;
     border: 1px solid #004669;
 }
-#buttonWrapper{
+.buttonWrapper{
     display: flex;
     justify-content: center;
     margin-bottom: 20px;

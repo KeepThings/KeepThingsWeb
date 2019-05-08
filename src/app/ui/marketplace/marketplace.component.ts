@@ -7,6 +7,7 @@ import {Observable, Subscription} from 'rxjs';
 import {UserService} from '../../user.service';
 import {User} from '../../user';
 import {UserItem} from '../../user-item';
+import {AuthenticationService} from '../../authentication.service';
 
 @Component({
   selector: 'app-marketplace',
@@ -18,12 +19,16 @@ export class MarketplaceComponent implements OnInit {
     marketplaceItem: MarketplaceItem;
     sub: Subscription;
     user: User;
-  constructor(private marketplaceService: MarketplaceService, private dialog: MatDialog, private userService: UserService) { }
+  constructor(private marketplaceService: MarketplaceService, private dialog: MatDialog, private userService: UserService, private auth: AuthenticationService) { }
 
   ngOnInit() {
+      this.getUser();
       this.getMarketplaceItems();
   }
 
+    getUser() {
+        this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
+    }
 
     changeCursor(value: boolean) {
         if (value) {
@@ -47,9 +52,7 @@ export class MarketplaceComponent implements OnInit {
     details(id: number): void {
         this.dialog.open(MIDetailsComponent, {data: {id: id
             }
-        }) ;
+        });
     }
-    closeDetails(): void {
-      this.dialog.closeAll();
-    }
+
 }

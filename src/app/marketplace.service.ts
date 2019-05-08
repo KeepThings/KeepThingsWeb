@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {MarketplaceItem} from './marketplace-item';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {DatePipe} from '@angular/common';
@@ -27,15 +27,15 @@ export class MarketplaceService {
     constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
     getMarketplaceItems(): Observable<MarketplaceItem[]> {
-        return this.http.get<MarketplaceItem[]>(`${this.marketplaceItemURL}`)
+        return this.http.get<MarketplaceItem[]>(`${this.marketplaceItemURL}`, this.httpOptions)
             .pipe(tap(data => this.marketplaceItems = data));
     }
     getMarketplaceItemById(id: number): Observable<MarketplaceItem> {
-        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}/${id}`)
+        return this.http.get<MarketplaceItem>(`${this.marketplaceItemURL}/${id}`, this.httpOptions)
             .pipe(tap(data => this.marketplaceItem = data));
     }
     addMarketplaceItem(item: MarketplaceItem): Observable<MarketplaceItem> {
-        return this.http.post<UserItem>(this.marketplaceItemURL, item, this.httpOptions).pipe(
+        return this.http.post<MarketplaceItem>(this.marketplaceItemURL, item, this.httpOptions).pipe(
             tap((newMarketplaceItem: MarketplaceItem) => console.log(`${newMarketplaceItem.id}`)
             ));
     }
@@ -46,10 +46,10 @@ export class MarketplaceService {
         return this.http.delete(url, this.httpOptions);
     }
 
-    updateMarketplaceItem(marketplaceItem: MarketplaceItem): Observable<MarketplaceItem> {
+    updateMarketplaceItem(marketplaceItem: MarketplaceItem): Observable<HttpResponse<MarketplaceItem>> {
         const updatedItem = this.marketplaceItems.find(item => item.id === marketplaceItem.id );
         this.marketplaceItems[this.marketplaceItems.indexOf(updatedItem)] = marketplaceItem;
-        return this.http.put<MarketplaceItem>(this.marketplaceItemURL, MarketplaceItem, this.httpOptions);
+        return this.http.put<MarketplaceItem>(`${this.marketplaceItemURL}/${marketplaceItem.id}`, marketplaceItem, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response'});
     }
 
 }

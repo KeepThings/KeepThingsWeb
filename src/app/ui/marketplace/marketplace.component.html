@@ -14,7 +14,7 @@
           <span class="marketplaceListSmallNormal listAlignRight">{{marketplaceItem.date_to | date}}</span>
         </div>
         <div class="col-md-1">
-          <span *ngIf="marketplaceItem.user_id == user.id" (click)="removeItem(marketplaceItem)" class="userItemListDeleteIcon"><mat-icon id="deleteIcon">delete_outline</mat-icon></span>
+          <span *ngIf=" marketplaceItem && user && marketplaceItem.user_id == user.id" (click)="removeItem(marketplaceItem)" class="userItemListDeleteIcon"><mat-icon id="deleteIcon">delete_outline</mat-icon></span>
         </div>
       </div>
       <div class="row">
