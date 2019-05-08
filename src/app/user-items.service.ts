@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {UserItem} from './user-item';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import { map} from 'rxjs/operators';
 import {DatePipe} from '@angular/common';
 import {AuthenticationService} from './authentication.service';
 import {tap} from 'rxjs/internal/operators/tap';
 import {catchError} from 'rxjs/internal/operators/catchError';
+import {response} from 'express';
 
 interface InsertResponse {
     success: boolean;
@@ -15,18 +16,22 @@ interface InsertResponse {
 @Injectable({
   providedIn: 'root'
 })
-export class UserItemsService {
+export class UserItemsService implements OnInit {
     userItems: UserItem[];
     userItem: UserItem;
     update = false;
     userItemUrl = '/api/userItem';
     httpOptions = {
         headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
-    }
+    };
 
     constructor(private http: HttpClient, private datepipe: DatePipe, private auth: AuthenticationService) {}
 
+    ngOnInit(): void {
+        setInterval(function () {
 
+        }, 1000);
+    }
 
     createItemId() {
         return new Date().getTime() + Math.floor(Math.random() * Math.floor(1000));
@@ -54,10 +59,10 @@ export class UserItemsService {
         return this.datepipe.transform(date, 'yyyy-MM-dd');
     }
 
-    updateUserItem(userItem: UserItem): Observable<UserItem> {
+    updateUserItem(userItem: UserItem): Observable<HttpResponse<UserItem>> {
         const updatedItem = this.userItems.find(item => item.id === userItem.id );
         this.userItems[this.userItems.indexOf(updatedItem)] = userItem;
-        return this.http.put<UserItem>(this.userItemUrl, userItem, this.httpOptions);
+        return this.http.put<UserItem>(`${this.userItemUrl}/${userItem.id}`, userItem, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response'});
     }
 
 }

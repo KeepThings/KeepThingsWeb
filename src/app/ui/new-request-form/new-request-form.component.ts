@@ -39,15 +39,11 @@ export class NewRequestFormComponent implements OnInit {
   addMarketplaceItem(marketplaceItem) {
     this.marketplaceService.addMarketplaceItem(marketplaceItem).subscribe(item => this.marketplaceService.marketplaceItems.push(item));
       this.snackBar.open('Request creation successful!');
-      this.titleFormControl.setValue(' ');
-      this.descFormControl.setValue(' ');
-      this.fromFormControl.setValue(' ');
-      this.toFormControl.setValue(' ');
       setTimeout(() => {
           this.snackBar.dismiss();
       }, 5000);
   }
-    onSubmit() {
+    onSubmit(form) {
       if (this.titleFormControl.invalid || this.descFormControl.invalid || this.fromFormControl.invalid || this.toFormControl.invalid) {
           this.snackBar.open('All fields are required!');
           setTimeout(() => {
@@ -56,7 +52,11 @@ export class NewRequestFormComponent implements OnInit {
       } else {
           const newItem = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: '', date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.fromFormControl.value)};
           this.addMarketplaceItem(newItem);
-
+          this.titleFormControl.reset('');
+          this.descFormControl.reset('');
+          this.fromFormControl.reset('');
+          this.toFormControl.reset('');
+          form.resetForm();
 
       }
 

@@ -3,7 +3,7 @@
     <span><mat-icon id="newRequestIcon">playlist_add</mat-icon></span><span id="newRequestHeadlineText">new Request</span>
   </div>
   <div class="newRequestForm">
-    <form (ngSubmit)="onSubmit()" #newRequestForm="ngForm" >
+    <form (ngSubmit)="onSubmit(newRequestForm)" #newRequestForm="ngForm" >
         <mat-form-field class="newRequestFormField">
             <mat-label class="newRequestFormLabel">Title</mat-label>
             <input matNativeControl [formControl]="titleFormControl" [errorStateMatcher]="matcher">
