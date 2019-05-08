@@ -17,8 +17,7 @@ export class LentOutComponent implements OnInit {
     user: User;
     userItems: UserItem[];
     userItem: UserItem;
-    sub: Subscription;
-  constructor(private userItemsService: UserItemsService, private dialog: MatDialog, private userService: UserService) { }
+  constructor(private userItemsService: UserItemsService, private dialog: MatDialog, private userService: UserService, private auth: AuthenticationService) { }
 
   ngOnInit() {
       this.getUser();
@@ -27,18 +26,11 @@ export class LentOutComponent implements OnInit {
   }
 
   getUser() {
-      this.userService.getUserById(1).subscribe(value => this.user = value);
+      this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
   }
-    changeCursor(value: boolean) {
-        if (value) {
-            document.body.style.cursor = 'pointer';
-        } else if (!value) {
-            document.body.style.cursor = 'default';
-        }
-    }
+
     getUserItems(): void {
         this.userItemsService.getUserItems().subscribe(userItems => this.userItems = userItems);
-        // this.userItems = this.userItems.filter(i => i.id === this.userService.user.id);
     }
 
     details(id: number): void {

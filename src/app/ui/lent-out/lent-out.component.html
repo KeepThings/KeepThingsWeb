@@ -3,9 +3,9 @@
     <span><mat-icon id="lentOutIcon">view_list</mat-icon></span><span id="lentOutHeadlineText">Lent out</span>
   </div>
   <ul  *ngIf="userItems" class="userItemsList">
-    <li *ngFor="let userItem of userItems" class="lendOutList">
-      <div *ngIf="userItems">
-      <div class="lentOutListItem" (click)="details(userItem.id)" (mouseenter)="changeCursor(true)" (mouseleave)="changeCursor(false)">
+    <li *ngFor="let userItem of userItems" class="lendOutList" (click)="details(userItem.id)" style="cursor: pointer">
+      <div *ngIf="userItems && user && userItem.user_id === user.id">
+      <div class="lentOutListItem">
         <div class="row">
           <div class="col-md-6">
             <span class="userItemListSmallNormal">{{userItem.item_name}}</span>
@@ -14,7 +14,9 @@
             <span class="userItemListSmallNormal listAlignRight">{{userItem.date_to | date}}</span>
           </div>
           <div class="col-md-1">
-             <span *ngIf="userItem.user_id == user.id" (click)="removeItem(userItem)" class="userItemListDeleteIcon"><mat-icon id="deleteIcon">delete_outline</mat-icon></span>
+            <div *ngIf="user">
+              <span *ngIf="userItem && user &&  userItem.user_id == user.id" (click)="removeItem(userItem)" class="userItemListDeleteIcon"><mat-icon id="deleteIcon">delete_outline</mat-icon></span>
+            </div>
           </div>
         </div>
         <div class="row">
