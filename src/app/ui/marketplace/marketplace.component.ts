@@ -24,6 +24,7 @@ export class MarketplaceComponent implements OnInit {
   ngOnInit() {
       this.getUser();
       this.getMarketplaceItems();
+
   }
 
     getUser() {
@@ -45,7 +46,7 @@ export class MarketplaceComponent implements OnInit {
     }
 
     getMarketplaceItems(): void {
-        this.marketplaceService.getMarketplaceItems().subscribe(marketplaceItems => this.marketplaceItems = marketplaceItems);
+            this.marketplaceService.getMarketplaceItems().subscribe(marketplaceItems => this.marketplaceItems = marketplaceItems);
     }
 
 

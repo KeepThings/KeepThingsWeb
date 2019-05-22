@@ -40,10 +40,9 @@ export class MarketplaceService {
             ));
     }
 
-    removeMarketplaceItem (item: MarketplaceItem): Observable<{}> {
-        this.marketplaceItems = this.marketplaceItems.filter(i => i !== item);
+    removeMarketplaceItem (item: MarketplaceItem): Observable<MarketplaceItem[]> {
         const url = `${this.marketplaceItemURL}/${item.id}`; // DELETE api/heroes/42
-        return this.http.delete(url, this.httpOptions);
+        return this.http.delete<MarketplaceItem[]>(url, this.httpOptions).pipe(tap( () => this.marketplaceItems = this.marketplaceItems.filter(i => i !== item)));
     }
 
     updateMarketplaceItem(marketplaceItem: MarketplaceItem): Observable<HttpResponse<MarketplaceItem>> {

@@ -54,7 +54,7 @@ export class NewEntryFormComponent implements OnInit {
                 this.snackBar.dismiss();
             }, 5000);
         } else {
-            const item = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: this.personFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)}
+            const item = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: this.personFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)};
             this.addUserItem(item);
             this.titleFormControl.reset('');
             this.descFormControl.reset('');

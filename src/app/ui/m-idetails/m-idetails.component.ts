@@ -11,6 +11,9 @@ import {HandlerService} from '../../handler.service';
 import {AuthenticationService} from '../../authentication.service';
 import {NewMessageComponent} from '../newMessage/new-message.component';
 import {DatePipe} from '@angular/common';
+import {UserItemsService} from '../../user-items.service';
+import {UserItem} from '../../user-item';
+import {LentOutComponent} from '../lent-out/lent-out.component';
 
 @Component({
   selector: 'app-m-idetails',
@@ -32,7 +35,9 @@ export class MIDetailsComponent implements OnInit {
 
 
     constructor(@Inject(MAT_DIALOG_DATA) private data: any, private marketplaceService: MarketplaceService,
-                private snackBar: MatSnackBar, private userService: UserService, private handler: HandlerService, private auth: AuthenticationService, private dialog: MatDialog, private datepipe: DatePipe) { }
+                private snackBar: MatSnackBar, private userService: UserService, private handler: HandlerService,
+                private auth: AuthenticationService, private dialog: MatDialog, private datepipe: DatePipe,
+                private userItemService: UserItemsService) { }
 
   ngOnInit() {
       this.getMarketplaceItem(this.data.id);
@@ -95,9 +100,16 @@ export class MIDetailsComponent implements OnInit {
         if (!this.owner) {
             this.dialog.open(NewMessageComponent, {data: {user_id: this.marketplaceItem.user_id}});
         } else {
+            // check if date from is earlier than date to
             if (true) {
-                this.marketplaceService.updateMarketplaceItem({id: this.marketplaceItem.id, item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.user.id, borrower: this.borrowerFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)}).subscribe(res => {if (res.status === 200 ) {
+                const item = {id: this.marketplaceItem.id, item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.user.id, borrower: this.borrowerFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)};
+                this.marketplaceService.updateMarketplaceItem(item).subscribe(res => {if (res.status === 200 ) {
                     this.snackBar.open('Marketplace Item update successful!');
+                    if (this.borrowerFormControl.value !== '') {
+                        this.marketplaceService.removeMarketplaceItem(this.marketplaceItem).subscribe(res =>{} );
+                        this.userItemService.addUserItem(<UserItem>item).subscribe(res => {
+                        });
+                    }
                     setTimeout(() => {
                         this.snackBar.dismiss();
                     }, 5000);

@@ -37,7 +37,7 @@ export class UserSettingsComponent implements OnInit {
 
     onSubmit() {
         this.userService.updateUser(this.user).
-        subscribe(res => {if (res.status === 204) {
+        subscribe(res => {if (res.status === 200) {
             this.snackBar.open('User update successful!');
             setTimeout(() => {
                 this.snackBar.dismiss();

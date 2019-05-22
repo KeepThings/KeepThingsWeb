@@ -12,7 +12,7 @@ import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatIconModule, MatFor
 import { By } from "@angular/platform-browser";
 
 describe('newEntryComponent', () => {
-    let fixture: ComponentFixture<NewEntryFormComponent>
+    let fixture: ComponentFixture<NewEntryFormComponent>;
     let component: NewEntryFormComponent;
     let mockUserItemService;
     let date;

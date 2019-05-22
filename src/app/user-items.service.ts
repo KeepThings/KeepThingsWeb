@@ -37,6 +37,10 @@ export class UserItemsService implements OnInit {
         return new Date().getTime() + Math.floor(Math.random() * Math.floor(1000));
     }
 
+    syncUserItems() {
+        return this.userItems;
+    }
+
     getUserItems(): Observable<UserItem[]> {
         return this.http.get<UserItem[]>(`${this.userItemUrl}`, this.httpOptions ).pipe(tap(data => this.userItems = data));
     }
@@ -45,8 +49,8 @@ export class UserItemsService implements OnInit {
     }
     addUserItem(item: UserItem): Observable<UserItem> {
         return this.http.post<UserItem>(this.userItemUrl, item, this.httpOptions).pipe(
-            tap((newUserItem: UserItem) => console.log(`${newUserItem.id}`)
-        ));
+            tap((newUserItem: UserItem) => this.userItems.push(newUserItem))
+        );
     }
 
     removeUserItem (item: UserItem): Observable<{}> {

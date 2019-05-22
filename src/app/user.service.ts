@@ -29,8 +29,9 @@ export class UserService implements OnInit {
     }
 
     updateUser(user: User): Observable<HttpResponse<User>> {
-        this.user = user;
-        return this.http.put<User>(`${this.userUrl}/${user.id}`, user, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response' }) ;
+        return this.http.put<User>(`${this.userUrl}/${this.auth.userProfile.sub}`, user, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response' })
+            .pipe(tap(
+                () => this.user = user));
     }
 
     getUser() {
