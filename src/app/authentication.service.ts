@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {Router} from '@angular/router';
 import * as auth0 from 'auth0-js';
-import {UserService} from './user.service';
 
 
 @Injectable({
@@ -26,7 +25,7 @@ export class AuthenticationService {
     expiresAt: number;
     userProfile: any;
     accessToken = null;
-    //accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1rSkdOVU14UWtRNFJVSTJSREEwTmtRMlJrUkRPVEkwTWtJd05qZEVRalV4TVVVeE5VRTNSUSJ9.eyJpc3MiOiJodHRwczovL2tlZXB0aGluZ3MuZXUuYXV0aDAuY29tLyIsInN1YiI6IlNKT3gyeW5YNXVyY0xEdEZCNTRPaW5URjNvbUFMd1BRQGNsaWVudHMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxL2FwaS8iLCJpYXQiOjE1NTYyODc0MzIsImV4cCI6MTU1NjM3MzgzMiwiYXpwIjoiU0pPeDJ5blg1dXJjTER0RkI1NE9pblRGM29tQUx3UFEiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.XlDHpzrLylqcgoUfPXlTigyMLYIpmelqKNHVX-2o4xQATnlc9SIy15dGsSYq1xonzW0O5nO6ldYBhlgR-1xK1r6JT621kubORRTMFXeZiB0V_btIAnQxWqiRfS9G-lKFCMIC8kcc-haWGoUrAkMXVDqQhBNui8PLNKFpOKQh_5ECKc2LRaWUN6fs2fBrPCmZXT7QSggZBA6yToJjczb0KSQfG2xsKd2H-iNeT1xmFhnWez6rihmHQjOkETo24cvuuu0Ef7Yt2cNj2h7IgvMc6arAD106IjhBpAZVNaDf8QdB2VeMXXIpnXKjXcHUvTSgrHRl2PvmyZIEodNJg3bnJg';
+    // accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1rSkdOVU14UWtRNFJVSTJSREEwTmtRMlJrUkRPVEkwTWtJd05qZEVRalV4TVVVeE5VRTNSUSJ9.eyJpc3MiOiJodHRwczovL2tlZXB0aGluZ3MuZXUuYXV0aDAuY29tLyIsInN1YiI6IlNKT3gyeW5YNXVyY0xEdEZCNTRPaW5URjNvbUFMd1BRQGNsaWVudHMiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxL2FwaS8iLCJpYXQiOjE1NTYyODc0MzIsImV4cCI6MTU1NjM3MzgzMiwiYXpwIjoiU0pPeDJ5blg1dXJjTER0RkI1NE9pblRGM29tQUx3UFEiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.XlDHpzrLylqcgoUfPXlTigyMLYIpmelqKNHVX-2o4xQATnlc9SIy15dGsSYq1xonzW0O5nO6ldYBhlgR-1xK1r6JT621kubORRTMFXeZiB0V_btIAnQxWqiRfS9G-lKFCMIC8kcc-haWGoUrAkMXVDqQhBNui8PLNKFpOKQh_5ECKc2LRaWUN6fs2fBrPCmZXT7QSggZBA6yToJjczb0KSQfG2xsKd2H-iNeT1xmFhnWez6rihmHQjOkETo24cvuuu0Ef7Yt2cNj2h7IgvMc6arAD106IjhBpAZVNaDf8QdB2VeMXXIpnXKjXcHUvTSgrHRl2PvmyZIEodNJg3bnJg';
     authenticated = false;
 
     constructor(private http: HttpClient, private router: Router) {
@@ -74,7 +73,7 @@ export class AuthenticationService {
         this.expiresAt = authResult.expiresIn * 36000 + Date.now();
         this.accessToken = authResult.accessToken;
         console.log(authResult);
-        //USer KEY
+        // USer KEY
         console.log(profile.sub);
         this.userProfile = profile;
         this.authenticated = true;
