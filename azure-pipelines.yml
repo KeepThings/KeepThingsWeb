@@ -24,8 +24,8 @@ steps:
   displayName: 'npm install and build'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    PathtoPublish: 'dist'
+    ArtifactName: 'app'
     publishLocation: 'Container'
 - task: AzureRmWebAppDeployment@4
   inputs:
