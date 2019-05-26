@@ -20,7 +20,7 @@ describe('The LendOutComponent', () => {
             {id: 3, item_name: 'Test123', item_desc: 'Test123', user_id: 1, borrower: 'Pleb3', date_from: '2018-11-10', date_to: '2018-12-02'}
         ];
 
-        MOCK_USER = {id: 1, auth0_id: 'auth0|1', name: 'User', first_name: 'Test', password: '12345', email: 'test@test.de', tel_nr: 123, username: 'TestUser', type: 'User', verified: true};
+        MOCK_USER = {id: 1, auth0_id: 'auth0|1', name: 'User', first_name: 'Test', password: '', email: 'test@test.de', tel_nr: 123, username: 'TestUser', type: 'User', verified: true};
         mockUserItemService = jasmine.createSpyObj(['getUserItems', 'getUserItem', 'addUserItem', 'updateUserItem', 'removeUserItem']);
         mockDialog = jasmine.createSpyObj(['open']);
         mockAuthService = jasmine.createSpyObj(['login', 'handleLoginCallback', 'getAccessToken', 'getUserInfo', 'logout']);

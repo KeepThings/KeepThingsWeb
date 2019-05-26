@@ -2,10 +2,8 @@ import {Injectable, OnInit} from '@angular/core';
 import {User} from './user';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
-import {catchError} from 'rxjs/internal/operators/catchError';
+import {tap} from 'rxjs/operators';
 import {AuthenticationService} from './authentication.service';
-import {UserItem} from './user-item';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +44,7 @@ export class UserService implements OnInit {
         const response = this.http.post('https://keepthings.eu.auth0.com/dbconnections/signup', {
             'client_id': 'darTWkOKmvvDIwIKw2Qaw6hTuakyHsFy',
             'email': 'fruitglemon@gmail.com',
-            'password': 'Test123',
+            'password': '',
             'connection': 'Username-Password-Authentication'});
         console.log(response);
         return this.http.post<User>(this.userUrl, user, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response' });

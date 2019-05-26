@@ -43,25 +43,27 @@
     <div class="messagesDetails">
       <div class="messageHeader">
         <div *ngIf="messages">
-          <li *ngFor="let message of messages; let i = index" [attr.data-index]= "i" class="messagesList">
-            <div *ngIf="i > messages.length-5">
-            <span class="messageHeaderText">{{message.sender_id}}</span>
-            <div class="row">
-              <div class="col-md-9">
-                <div id="messageBody">
-                  <span>{{message.message}}</span>
+          <ul>
+            <li *ngFor="let message of messages; let i = index" [attr.data-index]= "i" class="messagesList">
+              <div *ngIf="i > messages.length-5">
+                <span class="messageHeaderText">{{message.sender_id}}</span>
+                <div class="row">
+                  <div class="col-md-9">
+                    <div id="messageBody">
+                      <span>{{message.message}}</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div id="messageFoot">
+                      <span>{{message.sent_timestamp | date : "EEE dd MMM, HH:mm"}}</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div id="messageFoot">
-                  <span>{{message.sent_timestamp | date : "EEE dd MMM, HH:mm"}}</span>
-                </div>
-              </div>
-            </div>
-            <div>
-            </div>
-            </div>
-          </li>
+            </li>
+          </ul>
             <form (ngSubmit)="onSubmit(replyForm)" #replyForm="ngForm" >
             <div id="messageReply">
               <mat-form-field class="replyFormField">
