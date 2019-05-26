@@ -20,3 +20,16 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'dist'
+    ArtifactName: 'dist'
+    publishLocation: 'Container'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(012a0bdf-86dd-4f2c-8263-e14ea5639310)'
+    appType: 'webAppLinux'
+    WebAppName: 'KeepThings'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/dist/KeepThings'
+    RuntimeStack: 'NODE|lts'
