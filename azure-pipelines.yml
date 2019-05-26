@@ -23,7 +23,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'dist'
-    ArtifactName: 'app'
+    ArtifactName: 'dist'
     publishLocation: 'Container'
 - task: AzureRmWebAppDeployment@4
   inputs:
