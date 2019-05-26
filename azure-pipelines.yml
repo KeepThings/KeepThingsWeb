@@ -1,6 +1,4 @@
 # Node.js with Angular
-
-
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -33,5 +31,5 @@ steps:
     azureSubscription: 'Free Trial(012a0bdf-86dd-4f2c-8263-e14ea5639310)'
     appType: 'webAppLinux'
     WebAppName: 'KeepThings'
-    packageForLinux: '/home/vsts/work/1/s/dist'
+    packageForLinux: 'dist/KeepThings'
     RuntimeStack: 'NODE|lts'
