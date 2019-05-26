@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=alert_status)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb)
 # KeepThings
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
