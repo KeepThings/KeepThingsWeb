@@ -30,7 +30,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'keepthings - 1 - Service Endpoint'
+    azureSubscription: 'Free Trial(012a0bdf-86dd-4f2c-8263-e14ea5639310)'
     appType: 'webAppLinux'
     WebAppName: 'KeepThings'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
