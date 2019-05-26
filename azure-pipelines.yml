@@ -31,5 +31,5 @@ steps:
     azureSubscription: 'Free Trial(012a0bdf-86dd-4f2c-8263-e14ea5639310)'
     appType: 'webAppLinux'
     WebAppName: 'KeepThings'
-    packageForLinux: 'dist/KeepThings'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/dist/KeepThings'
     RuntimeStack: 'NODE|lts'
