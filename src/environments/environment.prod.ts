@@ -4,7 +4,7 @@ export const environment = {
     clientID: 'darTWkOKmvvDIwIKw2Qaw6hTuakyHsFy',
     domain: 'keepthings.eu.auth0.com', // e.g., you.auth0.com
     audience: 'https://localhost:5001/api/', // e.g., http://localhost:3001
-    redirect: 'http://localhost:4200/callback',
+    redirect: 'http://keepthingsweb.azurewebsites.net/callback',
     scope: 'openid profile email'
   }
 };

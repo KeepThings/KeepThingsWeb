@@ -5,10 +5,9 @@
 .loginDiv{
     border-radius: 10px ;
     border: 2px solid #004669;
-    width: 400px;
-    position: absolute;
-    right:50%;
-    left: 35%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10%;
     background-color: white;
 }
