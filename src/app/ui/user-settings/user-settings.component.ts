@@ -13,12 +13,6 @@ import {AuthenticationService} from '../../authentication.service';
 })
 export class UserSettingsComponent implements OnInit {
     user: User;
-    passwordFormControl = new FormControl('', [
-        Validators.required,
-    ]);
-    EMailFormControl = new FormControl('', [
-        Validators.required,
-    ]);
     usernameFormControl = new FormControl('', [
         Validators.required,
     ]);

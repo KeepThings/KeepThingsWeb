@@ -1,5 +1,8 @@
 <div id="registerOuter">
   <div id="registerInner">
+    <div id="buttonWrapper2">
+      <button mat-raised-button id="backButton" routerLink="/login" routerLinkActive="active">Back to login</button>
+    </div>
     <form (ngSubmit)="onSubmit()" #registerForm="ngForm" >
       <div class="register">
         <mat-form-field class="registerFormField">
@@ -26,10 +29,10 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="registerFormField">
-          <mat-label class="registerFormLabel">password</mat-label>
+          <mat-label class="registerFormLabel">Password</mat-label>
           <input matNativeControl [formControl]="passwordFormControl" [errorStateMatcher]="matcher">
           <mat-error *ngIf="passwordFormControl.hasError('required')">
-            password is <strong>required</strong>
+            Password is <strong>required</strong>
           </mat-error>
         </mat-form-field>
       </div>

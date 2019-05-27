@@ -6,20 +6,6 @@
   <div class="usersettingsForm">
     <form (ngSubmit)="onSubmit()" #userSettingsForm="ngForm">
       <mat-form-field class="userSettingsFormField">
-        <mat-label class="userSettingsFormLabel">password</mat-label>
-        <input matNativeControl type="password" [formControl]="passwordFormControl" [(ngModel)]="user.password" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="passwordFormControl.hasError('required')">
-          password is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="userSettingsFormField">
-        <mat-label class="userSettingsFormLabel">EMail</mat-label>
-        <input matNativeControl [formControl]="EMailFormControl" [(ngModel)]="user.email" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="EMailFormControl.hasError('required')">
-          Valid EMail is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="userSettingsFormField">
         <mat-label class="userSettingsFormLabel">Username</mat-label>
         <input matNativeControl [formControl]="usernameFormControl" [(ngModel)]="user.username" [errorStateMatcher]="matcher">
         <mat-error *ngIf="usernameFormControl.hasError('required')">
