@@ -21,9 +21,14 @@ export class LentOutComponent implements OnInit {
 
   ngOnInit() {
       this.getUser();
-      this.getUserItems();
+      this.startInterval();
 
   }
+    startInterval() {
+        setInterval(() => {
+            this.getUserItems();
+        }, 1000);
+    }
 
   getUser() {
       this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);

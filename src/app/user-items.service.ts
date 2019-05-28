@@ -29,9 +29,6 @@ export class UserItemsService implements OnInit {
     constructor(private http: HttpClient, private datepipe: DatePipe, private auth: AuthenticationService) {}
 
     ngOnInit(): void {
-        setInterval(function () {
-
-        }, 1000);
     }
 
     createItemId() {
