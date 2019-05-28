@@ -30,9 +30,16 @@ export class MessagesComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getChats();
+    this.startInterval();
 
   }
+
+  startInterval() {
+    setInterval(() => {
+      this.getChats();
+    }, 1000);
+  }
+
 
   getChats() {
     this.chatService.getChatByUserId(this.userService.user.id).subscribe(chats => this.chats = chats);
