@@ -12,7 +12,7 @@ export const environment = {
     scope: 'openid profile email'
   },
   database: {
-    url: 'https://keepthingsapi.azurewebsites.net/api'
+    url: 'http://keepthingsapi.azurewebsites.net/api'
   }
 };
 
