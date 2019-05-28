@@ -8,6 +8,7 @@ import {AuthenticationService} from './authentication.service';
 import {tap} from 'rxjs/internal/operators/tap';
 import {catchError} from 'rxjs/internal/operators/catchError';
 import {response} from 'express';
+import {environment} from '../environments/environment';
 
 interface InsertResponse {
     success: boolean;
@@ -20,7 +21,7 @@ export class UserItemsService implements OnInit {
     userItems: UserItem[];
     userItem: UserItem;
     update = false;
-    userItemUrl = '/api/userItem';
+    userItemUrl = environment.database.url+'/userItem';
     httpOptions = {
         headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
     };

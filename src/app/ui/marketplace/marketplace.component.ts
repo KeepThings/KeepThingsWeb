@@ -23,9 +23,14 @@ export class MarketplaceComponent implements OnInit {
 
   ngOnInit() {
       this.getUser();
-      this.getMarketplaceItems();
+      this.startInterval();
 
   }
+    startInterval() {
+        setInterval(() => {
+            this.getMarketplaceItems();
+        }, 1000);
+    }
 
     getUser() {
         this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);

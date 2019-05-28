@@ -33,10 +33,16 @@ export class NavComponent implements OnInit {
               filter(event => event instanceof NavigationEnd)
           ).subscribe(() => {
               if (this.router.url === '/dashboard') {
-                  this.getUser();
+                  this.startInterval();
               }
           });
   }
+
+    startInterval() {
+        setInterval(() => {
+            this.getUser();
+        }, 1000);
+    }
 
     getUser() {
        this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);

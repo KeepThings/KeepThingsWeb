@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {AuthenticationService} from './authentication.service';
 import {Observable} from 'rxjs';
 import {Chat} from './chat';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {Chat} from './chat';
 export class ChatService {
 
   chats: Chat[];
-  chatUrl = '/api/chat';
+  chatUrl = environment.database.url+'/chat';
   httpOptions = {
     headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
   };

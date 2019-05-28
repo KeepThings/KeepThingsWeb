@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {AuthenticationService} from './authentication.service';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class UserService implements OnInit {
     httpOptions = {
         headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
     };
-    userUrl = '/api/user';
+    userUrl = environment.database.url + '/user';
     constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
     ngOnInit(): void {
@@ -37,7 +38,10 @@ export class UserService implements OnInit {
     }
 
     getSpecificUser(id): Observable<User> {
-        return this.http.get<User>(`${'/api/specificuser'}/${id}`, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)});
+        return this.http.get<User>(`${environment.database.url +'/usernameid'}/${id}`, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)});
+    }
+    getListOfUsernames(): Observable<[]> {
+        return this.http.get<[]>(environment.database.url +'/usernameid', {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)});
     }
 
     addUser(user): Observable <HttpResponse<User>> {

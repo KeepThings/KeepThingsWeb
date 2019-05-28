@@ -25,6 +25,7 @@ export class MessagesComponent implements OnInit {
     Validators.required,
   ]);
   currentChatId = null;
+  usernames: [];
   matcher = new MyErrorStateMatcher2();
 
 
@@ -44,11 +45,14 @@ export class MessagesComponent implements OnInit {
     // this.messages = this.messages.filter(i => i.sender_id === this.userService.user.id && i.receiver_id === this.userService.user.id);
   }
 
-  getUsername(id) {
-    this.userService.getSpecificUser(id).subscribe(res => {
-
-      return res.username;
+  getUsernames() {
+    this.userService.getListOfUsernames().subscribe(res => {
+      this.usernames = res;
     });
+  }
+
+  getUserName(id) {
+      return this.usernames.find(id);
   }
 
 

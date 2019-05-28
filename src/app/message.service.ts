@@ -5,6 +5,7 @@ import {map, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Message} from './message';
 import {AuthenticationService} from './authentication.service';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import {AuthenticationService} from './authentication.service';
 export class MessageService {
 
     messages: Message[];
-    messageURL = '/api/message';
+    messageURL = environment.database.url + '/message';
     httpOptions = {
         headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
     };

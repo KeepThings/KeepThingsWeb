@@ -7,6 +7,7 @@ import {DatePipe} from '@angular/common';
 import {tap} from 'rxjs/internal/operators/tap';
 import {UserItem} from './user-item';
 import {AuthenticationService} from './authentication.service';
+import {environment} from '../environments/environment';
 
 interface InsertResponse {
    success: boolean;
@@ -19,7 +20,7 @@ interface InsertResponse {
 export class MarketplaceService {
     marketplaceItems: MarketplaceItem[];
     marketplaceItem: MarketplaceItem;
-    marketplaceItemURL = '/api/marketplaceItem';
+    marketplaceItemURL = environment.database.url+'/marketplaceItem';
     httpOptions = {
         headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)
     };

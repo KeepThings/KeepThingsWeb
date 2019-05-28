@@ -6,5 +6,8 @@ export const environment = {
     audience: 'https://localhost:5001/api/', // e.g., http://localhost:3001
     redirect: 'http://keepthingsweb.azurewebsites.net/callback',
     scope: 'openid profile email'
+  },
+  database: {
+    url: 'https://keepthingsapi.azurewebsites.net/api'
   }
 };
