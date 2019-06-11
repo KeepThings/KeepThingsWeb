@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {Router} from '@angular/router';
 import * as auth0 from 'auth0-js';
 import {UserService} from './user.service';
 import {User} from './user';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
 
 @Injectable({
@@ -29,7 +31,7 @@ export class AuthenticationService {
     accessToken = null;
     authenticated = false;
 
-    constructor(private http: HttpClient, private router: Router, private userService: UserService) {
+    constructor(private http: HttpClient, private router: Router) {
         this.getAccessToken();
     }
 
@@ -68,7 +70,6 @@ export class AuthenticationService {
             }
         });
     }
-
     private _setSession(authResult, profile) {
         // Save authentication data and update login status subject
         this.expiresAt = authResult.expiresIn * 36000 + Date.now();
@@ -78,12 +79,20 @@ export class AuthenticationService {
         console.log(profile.sub);
         this.userProfile = profile;
         this.authenticated = true;
-        this.userService.getUserById(this.userProfile.sub).subscribe(res => {
+        this.getUserById(this.userProfile.sub).subscribe(res => {
             if (res.status !== 201) {
-                this.userService.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.username, type: 'User', verified: true });
+                this.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.username, type: 'User', verified: true });
             }
             this.router.navigate(['/dashboard']);
         });
+    }
+
+    getUserById(Auth0Id): Observable<HttpResponse<User>> {
+        return this.http.get<User>(`${environment.database.url + '/user'}/${Auth0Id}`, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.accessToken}`), observe: 'response'} );
+    }
+
+    addUser(user): Observable <HttpResponse<User>> {
+        return this.http.post<User>(environment.database.url + '/user', user, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.accessToken}`), observe: 'response' });
     }
 
     logout() {

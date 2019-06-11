@@ -45,12 +45,6 @@ export class UserService implements OnInit {
     }
 
     addUser(user): Observable <HttpResponse<User>> {
-        const response = this.http.post('https://keepthings.eu.auth0.com/dbconnections/signup', {
-            'client_id': 'darTWkOKmvvDIwIKw2Qaw6hTuakyHsFy',
-            'email': 'fruitglemon@gmail.com',
-            'password': '',
-            'connection': 'Username-Password-Authentication'});
-        console.log(response);
         return this.http.post<User>(this.userUrl, user, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response' });
     }
 
