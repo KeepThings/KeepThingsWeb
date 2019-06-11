@@ -16,9 +16,6 @@ export class UserSettingsComponent implements OnInit {
     usernameFormControl = new FormControl('', [
         Validators.required,
     ]);
-    TelNrFormControl = new FormControl('', [
-        Validators.required,
-    ]);
     matcher = new MyErrorStateMatcher2();
   constructor(private userService: UserService, private snackBar: MatSnackBar, private auth: AuthenticationService) { }
 

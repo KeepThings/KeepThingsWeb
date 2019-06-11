@@ -12,13 +12,6 @@
           Username is <strong>required</strong>
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="userSettingsFormField">
-        <mat-label class="userSettingsFormLabel">TelNr</mat-label>
-        <input matNativeControl [formControl]="TelNrFormControl" [(ngModel)]="user.tel_nr" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="TelNrFormControl.hasError('required')">
-          TelNr is <strong>required</strong>
-        </mat-error>
-      </mat-form-field>
       <div id="buttonWrapper">
         <button mat-raised-button id="entryButton" type="submit">Save</button>
       </div>
