@@ -107,7 +107,8 @@ export class MIDetailsComponent implements OnInit {
                     this.snackBar.open('Marketplace Item update successful!');
                     if (this.borrowerFormControl.value !== '') {
                         this.marketplaceService.removeMarketplaceItem(this.marketplaceItem).subscribe(res =>{} );
-                        this.userItemService.addUserItem(<UserItem>item).subscribe(res => {
+                        const userItem = {item_name: item.item_name, item_desc: item.item_desc, user_id: item.user_id, borrower: item.borrower, date_from: item.date_from, date_to: item.date_to};
+                        this.userItemService.addUserItem(userItem).subscribe(res => {
                         });
                     }
                     setTimeout(() => {

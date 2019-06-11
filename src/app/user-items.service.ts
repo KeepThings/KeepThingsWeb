@@ -45,7 +45,7 @@ export class UserItemsService implements OnInit {
     getUserItemById(id: number): Observable<UserItem> {
         return this.http.get<UserItem>(`${this.userItemUrl}/${id}`, this.httpOptions).pipe(tap(data => this.userItem = data));
     }
-    addUserItem(item: UserItem): Observable<UserItem> {
+    addUserItem(item): Observable<UserItem> {
         return this.http.post<UserItem>(this.userItemUrl, item, this.httpOptions).pipe(
             tap((newUserItem: UserItem) => this.userItems.push(newUserItem))
         );
