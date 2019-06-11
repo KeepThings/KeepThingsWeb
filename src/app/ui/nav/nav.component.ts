@@ -2,14 +2,14 @@ import {Component, OnChanges, OnInit} from '@angular/core';
 import {User} from '../../user';
 import {UserService} from '../../user.service';
 import {AuthenticationService} from '../../authentication.service';
-import {MatDialog, MatSnackBar} from '@angular/material';
+import {MatDialog, MatDialogRef, MatSnackBar} from '@angular/material';
 import {UserSettingsComponent} from '../user-settings/user-settings.component';
 import {Subscription} from 'rxjs';
 import {Observable} from 'rxjs';
 import 'rxjs/add/observable/interval';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {MessagesComponent} from '../messages/messages.component';
-import {filter} from 'rxjs/operators';
+import {filter, finalize} from 'rxjs/operators';
 import {NewUserComponent} from '../new-user/new-user.component';
 import {RegisterComponent} from '../register/register.component';
 
@@ -24,7 +24,7 @@ export class NavComponent implements OnInit {
 
 
   constructor(private userService: UserService, private auth: AuthenticationService,
-              private dialog: MatDialog, private router: Router, private activatedRoute: ActivatedRoute) { }
+              private dialog: MatDialog, private dialogRef: MatDialogRef<RegisterComponent>, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
       this.watchRouter();
@@ -50,7 +50,11 @@ export class NavComponent implements OnInit {
     getUser() {
        this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => {
            if(res.status !== 200) {
-               this.dialog.open(RegisterComponent, { disableClose: true });
+               if(!this.dialogRef) {return;}
+               this.dialogRef = this.dialog.open(RegisterComponent, { disableClose: true });
+               this.dialogRef.afterClosed().pipe(
+                   finalize(() => this.dialogRef = undefined)
+               );
            } else {
                this.user = res.body;
            }
