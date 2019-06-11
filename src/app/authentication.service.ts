@@ -82,6 +82,7 @@ export class AuthenticationService {
         this.authenticated = true;
         this.getUserById(this.userProfile.sub).subscribe(res => {
             if (res.status !== 200) {
+                console.log('Now add User');
                 this.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.username, type: 'User', verified: true });
             }
             this.router.navigate(['/dashboard']);
@@ -101,8 +102,7 @@ export class AuthenticationService {
         // Ensure that returnTo URL is specified in Auth0
         // Application settings for Allowed Logout URLs
         this.auth0.logout({
-            //returnTo: 'http://keepthingsweb.azurewebsites.net/',
-            returnTo: 'http://localhost:4200',
+            returnTo: 'http://keepthingsweb.azurewebsites.net/',
             clientID: environment.auth.clientID
         });
     }
