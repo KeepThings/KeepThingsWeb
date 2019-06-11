@@ -24,7 +24,7 @@ export class NavComponent implements OnInit {
 
     open = false;
   constructor(private userService: UserService, private auth: AuthenticationService,
-              private dialog: MatDialog, private dialogRef: MatDialogRef<RegisterComponent>, private router: Router, private activatedRoute: ActivatedRoute) { }
+              private dialog: MatDialog, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
       this.watchRouter();
