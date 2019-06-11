@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {Router} from '@angular/router';
 import * as auth0 from 'auth0-js';
+import {UserService} from './user.service';
+import {User} from './user';
 
 
 @Injectable({
@@ -27,7 +29,7 @@ export class AuthenticationService {
     accessToken = null;
     authenticated = false;
 
-    constructor(private http: HttpClient, private router: Router) {
+    constructor(private http: HttpClient, private router: Router, private userService: UserService) {
         this.getAccessToken();
     }
 
@@ -76,7 +78,12 @@ export class AuthenticationService {
         console.log(profile.sub);
         this.userProfile = profile;
         this.authenticated = true;
-        this.router.navigate(['/dashboard']);
+        this.userService.getUserById(this.userProfile.sub).subscribe(res => {
+            if (res.status !== 201) {
+                this.userService.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.username, type: 'User', verified: true });
+            }
+            this.router.navigate(['/dashboard']);
+        });
     }
 
     logout() {

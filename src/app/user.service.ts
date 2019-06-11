@@ -23,8 +23,8 @@ export class UserService implements OnInit {
 
     }
 
-    getUserById(Auth0Id): Observable<User> {
-        return this.http.get<User>(`${this.userUrl}/${Auth0Id}`, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)} ).pipe(tap(data => this.user = data));
+    getUserById(Auth0Id): Observable<HttpResponse<User>> {
+        return this.http.get<User>(`${this.userUrl}/${Auth0Id}`, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`), observe: 'response'} ).pipe(tap(res => this.user = res.body));
     }
 
     updateUser(user: User): Observable<HttpResponse<User>> {

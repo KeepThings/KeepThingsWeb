@@ -32,6 +32,7 @@ import {MarketplaceService} from './marketplace.service';
 import {HandlerService} from './handler.service';
 import {ChatService} from './chat.service';
 import {NewMessageComponent} from './ui/newMessage/new-message.component';
+import {NewUserComponent} from './ui/new-user/new-user.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {NewMessageComponent} from './ui/newMessage/new-message.component';
     RegisterComponent,
     CallbackComponent,
     MessagesComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +79,7 @@ import {NewMessageComponent} from './ui/newMessage/new-message.component';
   ],
   providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe, AuthenticationService, MarketplaceService, HandlerService, ChatService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent, MessagesComponent, NewMessageComponent],
+  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent, MessagesComponent, NewMessageComponent, NewUserComponent],
     exports: [MatIconModule, FormsModule, LayoutComponent]
 })
 export class AppModule {

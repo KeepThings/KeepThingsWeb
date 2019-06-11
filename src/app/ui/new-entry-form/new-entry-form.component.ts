@@ -40,7 +40,7 @@ export class NewEntryFormComponent implements OnInit {
   }
 
   addUserItem(userItem) {
-    this.userItemService.addUserItem(userItem).subscribe(item => this.userItemService.userItems.push(item));
+    this.userItemService.addUserItem(userItem).subscribe();
       this.snackBar.open('Entry creation successful!');
       setTimeout(() => {
           this.snackBar.dismiss();

@@ -10,6 +10,7 @@ import 'rxjs/add/observable/interval';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {MessagesComponent} from '../messages/messages.component';
 import {filter} from 'rxjs/operators';
+import {NewUserComponent} from '../new-user/new-user.component';
 
 @Component({
   selector: 'app-nav',
@@ -46,7 +47,13 @@ export class NavComponent implements OnInit {
     }
 
     getUser() {
-       this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
+       this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => {
+           if(res.status !== 201) {
+               this.dialog.open(NewUserComponent);
+           } else {
+               this.user = res.body;
+           }
+       });
     }
 
     userSettings() {
