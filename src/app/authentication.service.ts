@@ -77,6 +77,7 @@ export class AuthenticationService {
         console.log(authResult);
         // USer KEY
         console.log(profile.sub);
+        console.log(profile);
         this.userProfile = profile;
         this.authenticated = true;
         this.getUserById(this.userProfile.sub).subscribe(res => {
@@ -100,7 +101,8 @@ export class AuthenticationService {
         // Ensure that returnTo URL is specified in Auth0
         // Application settings for Allowed Logout URLs
         this.auth0.logout({
-            returnTo: 'http://keepthingsweb.azurewebsites.net/',
+            //returnTo: 'http://keepthingsweb.azurewebsites.net/',
+            returnTo: 'http://localhost:4200',
             clientID: environment.auth.clientID
         });
     }
