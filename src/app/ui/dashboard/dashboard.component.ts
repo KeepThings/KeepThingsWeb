@@ -21,6 +21,6 @@ export class DashboardComponent implements OnInit {
     }
 
     getUser(): void {
-        this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
+        this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => this.user = res.body);
     }
 }

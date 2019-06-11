@@ -33,7 +33,7 @@ export class MarketplaceComponent implements OnInit {
     }
 
     getUser() {
-        this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
+        this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => this.user = res.body);
     }
 
     changeCursor(value: boolean) {

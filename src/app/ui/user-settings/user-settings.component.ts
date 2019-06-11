@@ -26,7 +26,7 @@ export class UserSettingsComponent implements OnInit {
     this.getUser();
   }
   getUser() {
-      this.userService.getUserById(this.auth.userProfile.sub).subscribe(value => this.user = value);
+      this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => this.user = res.body);
   }
 
     onSubmit() {
