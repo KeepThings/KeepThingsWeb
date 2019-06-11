@@ -79,7 +79,7 @@ export class UIDetailsComponent implements OnInit {
     onSubmit() {
         this.checkOwnership();
         if (true) {
-            this.userItemService.updateUserItem({id: this.userItem.id, item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.user.id, borrower: this.borrowerFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)}).subscribe(res => {if (res.status === 200 ) {
+            this.userItemService.updateUserItem({id: this.userItem.id, item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.user.id, borrower: this.borrowerFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)}).subscribe(res => {if (res.status === 204) {
                 this.snackBar.open('User Item successful!');
                 setTimeout(() => {
                     this.snackBar.dismiss();

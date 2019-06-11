@@ -33,6 +33,7 @@ export class NavComponent implements OnInit {
               filter(event => event instanceof NavigationEnd)
           ).subscribe(() => {
               if (this.router.url === '/dashboard') {
+                  this.getUser();
                   this.startInterval();
               }
           });
@@ -41,7 +42,7 @@ export class NavComponent implements OnInit {
     startInterval() {
         setInterval(() => {
             this.getUser();
-        }, 1000);
+        }, 5000);
     }
 
     getUser() {

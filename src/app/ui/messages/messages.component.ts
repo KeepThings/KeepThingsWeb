@@ -30,6 +30,7 @@ export class MessagesComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getChats();
     this.startInterval();
 
   }
@@ -37,7 +38,7 @@ export class MessagesComponent implements OnInit {
   startInterval() {
     setInterval(() => {
       this.getChats();
-    }, 1000);
+    }, 5000);
   }
 
 
