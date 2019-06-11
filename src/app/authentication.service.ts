@@ -83,7 +83,7 @@ export class AuthenticationService {
         this.getUserById(this.userProfile.sub).subscribe(res => {
             if (res.status !== 200) {
                 console.log('Now add User');
-                this.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.nickname, type: 'User', verified: true });
+                this.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.nickname, type: 'User', verified: true }).subscribe(res => console.log(res.status));
             }
             this.router.navigate(['/dashboard']);
         });
