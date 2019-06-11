@@ -22,7 +22,7 @@ export class NavComponent implements OnInit {
   user: User;
     LogoImageUrl = '/assets/images/Logo_KeepThings.svg';
 
-
+    open = false;
   constructor(private userService: UserService, private auth: AuthenticationService,
               private dialog: MatDialog, private dialogRef: MatDialogRef<RegisterComponent>, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -47,14 +47,15 @@ export class NavComponent implements OnInit {
         }, 5000);
     }
 
+    newUser() {
+      this.open = true;
+        this.dialog.open(RegisterComponent, { disableClose: true });
+    }
+
     getUser() {
        this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => {
-           if(res.status !== 200) {
-               if(!this.dialogRef) {return;}
-               this.dialogRef = this.dialog.open(RegisterComponent, { disableClose: true });
-               this.dialogRef.afterClosed().pipe(
-                   finalize(() => this.dialogRef = undefined)
-               );
+           if(res.status !== 200 && !this.open) {
+               this.newUser();
            } else {
                this.user = res.body;
            }
