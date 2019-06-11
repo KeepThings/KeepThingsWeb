@@ -48,7 +48,7 @@ export class NavComponent implements OnInit {
 
     getUser() {
        this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => {
-           if(res.status !== 201) {
+           if(res.status !== 200) {
                this.dialog.open(NewUserComponent);
            } else {
                this.user = res.body;

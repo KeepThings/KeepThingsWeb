@@ -80,7 +80,7 @@ export class AuthenticationService {
         this.userProfile = profile;
         this.authenticated = true;
         this.getUserById(this.userProfile.sub).subscribe(res => {
-            if (res.status !== 201) {
+            if (res.status !== 200) {
                 this.addUser({auth0_id: this.userProfile.sub, name: '', first_name: '', password: '', email: this.userProfile.email, tel_nr: 0, username: this.userProfile.username, type: 'User', verified: true });
             }
             this.router.navigate(['/dashboard']);
