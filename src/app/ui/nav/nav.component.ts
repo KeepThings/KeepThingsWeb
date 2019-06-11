@@ -11,6 +11,7 @@ import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {MessagesComponent} from '../messages/messages.component';
 import {filter} from 'rxjs/operators';
 import {NewUserComponent} from '../new-user/new-user.component';
+import {RegisterComponent} from '../register/register.component';
 
 @Component({
   selector: 'app-nav',
@@ -49,7 +50,7 @@ export class NavComponent implements OnInit {
     getUser() {
        this.userService.getUserById(this.auth.userProfile.sub).subscribe(res => {
            if(res.status !== 200) {
-               this.dialog.open(NewUserComponent);
+               this.dialog.open(RegisterComponent, { disableClose: true });
            } else {
                this.user = res.body;
            }

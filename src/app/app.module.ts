@@ -79,7 +79,7 @@ import {NewUserComponent} from './ui/new-user/new-user.component';
   ],
   providers: [ UserItemsService, UserService, AuthGuard, NavComponent, DatePipe, AuthenticationService, MarketplaceService, HandlerService, ChatService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent, MessagesComponent, NewMessageComponent, NewUserComponent],
+  entryComponents: [LoginErrorComponent, UIDetailsComponent, MIDetailsComponent, UserSettingsComponent, MessagesComponent, NewMessageComponent, NewUserComponent, RegisterComponent],
     exports: [MatIconModule, FormsModule, LayoutComponent]
 })
 export class AppModule {
