@@ -16,7 +16,7 @@ Shows all lent out items of the user and the marketplace items in a list. One it
 #### Feature
 ![/Features/dashboardWeb.feature](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardWeb.feature)
 #### Mockup
-![Alt-Text](webUserItemMockup.svg)
+![Alt-Text](webUserItemsMockup.svg)
 	
 ## 3.                  Special Requirements
 n/a
