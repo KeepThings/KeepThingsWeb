@@ -1,10 +1,10 @@
-# Use-Case Specification: UC NAME
+# Use-Case Specification: NewRequest
 
 
-## 1. UC NAME
+## 1. NewRequest
 
 ### 1.1 Brief Description
-
+The user can create a new request via the new request form. Application checks if all required fields have an input and if the dateTo is later than dateFrom. 
 
 ## 2. Flow of Events
 
