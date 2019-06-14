@@ -15,7 +15,7 @@ By clicking the messageicon in the top right, the user i able to write messages 
 #### Feature
 tbd
 #### Mockup
-tbd
+![Alt-Text](webNewMessageMockup.svg)
 
 ## 3. Special Requirements
 
