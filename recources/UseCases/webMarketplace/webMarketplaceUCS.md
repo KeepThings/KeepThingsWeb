@@ -15,7 +15,7 @@ The user can see all marketplaceitems that other users would like to lend out. I
 #### Feature
 tbd
 #### Mockup
-tbd
+![Alt-Text](webMarketplaceMockup.svg)
 
 ## 3. Special Requirements
 
