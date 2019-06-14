@@ -4,7 +4,7 @@
 ## 1. webMaketplace
 
 ### 1.1 Brief Description
-
+The user can see all marketplaceitems that other users would like to lend out. If the user is not the owner of the marketplaceitem, he is able to write a message to the owner. If the user is the owner he is able to alter the details of the marketplaceitem by putting in the name of the new borrower. By doing that the marketplaceitem will go to the useritem list.
 
 ## 2. Flow of Events
 
