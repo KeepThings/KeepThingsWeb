@@ -1,10 +1,10 @@
-# Use-Case Specification: UC NAME
+# Use-Case Specification: Messages
 
 
-## 1. UC NAME
+## 1. Messages
 
 ### 1.1 Brief Description
-
+By clicking the messageicon in the top right, the user i able to write messages to other users. In the messagewindow he can select between the diffrent chats and all messages he wrote and recieved in the selected Chat.
 
 ## 2. Flow of Events
 
