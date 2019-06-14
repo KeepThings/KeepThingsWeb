@@ -15,7 +15,7 @@ The User will be able to register if he dosen't already have a account. The regi
 #### Feature
 tbd
 #### Mockup
-tbd
+![Alt-Text](webRegistrationMockup.svg)
 
 ## 3. Special Requirements
 n/a
