@@ -1,10 +1,10 @@
-# Use-Case Specification: NewRequest
+# Use-Case Specification: webNewRequest
 
 
-## 1. NewRequest
+## 1. webNewRequest
 
 ### 1.1 Brief Description
-The user can create a new request via the new request form. Application checks if all required fields have an input and if the dateTo is later than dateFrom. 
+The user can create a new request via the new request form. Application checks if all required fields have an input and if the dateTo is later than dateFrom. The created item will be shown in the marketplacitem list.
 
 ## 2. Flow of Events
 
