@@ -15,7 +15,7 @@ The user can create a new request via the new request form. Application checks i
 #### Feature
 tbd
 #### Mockup
-tbd
+![Alt-Text](webNewRequestMockup.svg)
 
 ## 3. Special Requirements
 
