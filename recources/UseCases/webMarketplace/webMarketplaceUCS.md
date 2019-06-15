@@ -11,7 +11,7 @@ The user can see all marketplaceitems that other users would like to lend out. I
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
+![Alt-Text](webMarketplace.svg)
 #### Feature
 tbd
 #### Mockup
