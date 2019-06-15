@@ -11,7 +11,7 @@ The user can create a new request via the new request form. Application checks i
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
+![Alt-Text](webNewRequest.svg)
 #### Feature
 tbd
 #### Mockup
