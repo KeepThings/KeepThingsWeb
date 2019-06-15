@@ -11,7 +11,7 @@ The User will be able to register if he dosen't already have a account. The regi
 ### 2.1 Basic Flow
 
 #### Activity Diagram
-
+![Alt-Text](webRegistrationAD.svg)
 #### Feature
 tbd
 #### Mockup
