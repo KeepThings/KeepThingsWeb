@@ -12,7 +12,7 @@ Shows all lent out items of the user in a list. One item of the lent-out list co
 ### 2.1               Basic Flow
 
 #### Activity Diagram
-![Alt-Text](DahboardWebDiagram.svg)
+![Alt-Text](DashboardWebDiagram.svg)
 #### Feature
 ![/Features/dashboardWeb.feature](../../Features/dashboardWeb.feature)
 #### Mockup
