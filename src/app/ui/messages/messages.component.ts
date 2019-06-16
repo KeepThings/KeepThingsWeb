@@ -65,7 +65,7 @@ export class MessagesComponent implements OnInit {
   getUserName(id) {
     let temp = null;
     console.log('agefragte id: '+id);
-    temp= this.usernames.find(user => user.id = id).username;
+    temp= this.usernames.find(user => user.id === id).username;
     console.log(temp);
     return temp;
   }
