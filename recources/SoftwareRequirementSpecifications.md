@@ -69,33 +69,62 @@ All logged-in users can create chats with other users where they can write messa
 #### 3.2.1 Easy to use
 The application should be easy and fast to use and easy to understand. An easy to use application will allow the user to quickly manage all off his lend out items or add new ones.
 
-### 3.4	Performance
-tbd
+### 3.3	Reliability
+#### 3.3.1 Stable Application
+The application should be bugfree and there should no crashes or frezzes to allow a reliable usage.
+#### 3.3.1	Availability
+The application and the server it's running on should have 99% uptime to make sure the users can always use the application.
 
+### 3.4 Performance
+#### 3.4.1 Smooth working interface
+The interface should provide a smooth experience for the user. There should be little to no waiting time when fragments are opend or closed.
+#### 3.4.2 Short server response time
+To provide the smooth interface experience it's requires that the  server has a short response times. After adding a new marketplaceitem it should "instantly" be added to the 
 ### 3.5	Supportability
-tbd
+#### 3.5.1 Code
+Code just follow conventions for the respective language (e.g. camel case for C#). Functions and variables should have self explanatory names.
+#### 3.5.2	Git Commits
+For smaller changes or hotfixes the commit message should be short and self explaining. For commits that are connected to a Usecase or a task the commit message should be following the following syntax:
+
+|Action|	Commit message (#ID format)|	Commit message (id:ID format)|
+|:-:|:-:|:-:|
+|Change states|	#ID state:fixed|	id:ID state:fixed|
+|Add comments|	#ID comment: text of your comment here| id:ID comment: text of your comment here|
+|Add time spent|	#ID time:1|	id:ID time:1|
+|Add time spent and time remaining|	#ID time:4:8|	id:ID time:4:8|
+|Update several entities at a time|	#ID, #ID comment: will not be fixed state:invalid time:0.5|	id:ID, id:ID comment: will not be fixed state:invalid time:0.5|
+|All the actions in one commit message|	#456, #887 state:done time:3:0 comment:whoa! Everything is completed!|	id:456, id:887 state:done time:3:0 comment:whoa! Everything is completed!
 
 ### 3.6	Design Constraints
-tbd
+#### 3.6.1	GitHub
+GitHub for version control.
+#### 3.6.2	TargetProcess
+TargetProcess as an agile management tool.
+#### 3.6.3 MySQL
+MySQL as our single database.
+#### 3.6.4 MVC
+The App services are implemented using MVC architecture.
 
 ### 3.7	On-line User Documentation and Help System Requirements
-tbd
+n/a
 
 ### 3.8	Purchased Components
-tbd
+n/a
 
 ### 3.9	Interfaces
-tbd
+#### 3.9.1 User Interfaces
+#### 3.9.2 Hardware Interfaces
+#### 3.9.3 Software Interfaces
+#### 3.9.4 Communications Interfaces
 
 ### 3.10 Licensing Requirements
-tbd
+n/a
 
 ### 3.11 Legal, Copyright, and Other Notices
-tbd
+n/a
 
 ### 3.12 Applicable Standards
-tbd
-
+n/a
 
 ## 4. Supporting Information
-tbd
+n/a
