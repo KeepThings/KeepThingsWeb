@@ -62,7 +62,7 @@ export class MessagesComponent implements OnInit {
   }
 
   getUserName(id) {
-      return this.usernames.find(id);
+      return this.usernames.find(user => user.id = id);
   }
 
 
