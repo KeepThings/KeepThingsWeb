@@ -10,12 +10,16 @@ This document provides a comprehensive architectural overview of the system, usi
 This document is closely related to the Software Requirement Specifications and the defined Use Cases. You can find both in the GitHub repository of this Project. 
  
 ### 1.3	Definitions, Acronyms, and Abbreviations
-* MVC = Model View Controller
-* N.a = Not applicable
+|Term |Definition |
+|-|-|
+|MVC| Model View Controller|
+|N.a| Not applicable|
 
 ### 1.4	References
-* Github Repository: https://github.com/KeepThings
-* Blog: https://keepthingsnlb.wordpress.com/
+|Term|Definition|	
+|:-:|:-:|
+|Github Repository| https://github.com/KeepThings|
+|Blog| https://keepthingsnlb.wordpress.com/|
 
 ### 1.5	Overview
 This Document contains information about our software architecture. In more details, you can find information about Architectural Representation, Architectural Goals and Constraints, Use-Case View,
@@ -23,19 +27,13 @@ Logical View, Process View, Deployment View, Implementation View, Data View, Siz
 
 
 ## 2. Architectural Representation
-This section describes what software architecture is for the current system. Our Project consists of two Applications. We have an Angular Application and an Android Application. These have different architectures. Angular is based on the Model-View-ViewModel architecture.
+This section describes what software architecture is for the current system. Our Project consists of a Angular Application. Angular is based on the Model-View-ViewModel architecture.
 This diagram describes the main aspects of the Angular architecture.
 
 ![Alt-Text](m-v-vm_angular.png)
 
-The architecture of Android is MVC. This diagram describes the main aspects of the MVC.
-
-![Alt-Text](mvc_android.png)
-
-
 ## 3. Architectural Goals and Constraints
 The architecture of Angular is slightly different to MVC. In Angular your View has the ability to change the Model and vise versa. This is a very important difference to the MVC.
-The MVC architecture has a very simple functionality. You have a View which gets User actions and passes them to the Controller. The Controller sends data to the Model or updates the View with the data received from the Model. The Model is the logic of the application.
 
 
 ## 4. Use-Case View
@@ -76,7 +74,7 @@ N.a
 ## 9. Data View
 We are using a MySQL database. Here you can see our database scheme.
 
-![Alt-Text](DBSchema.svg)
+![Alt-Text](DBSchema.png)
 
 
 ## 10. Size and Performance
@@ -85,13 +83,3 @@ N.a
 
 ## 11. Quality
 N.a
-
-
-
-
-
-
-
-
-
-
