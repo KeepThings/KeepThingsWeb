@@ -66,7 +66,8 @@ All logged-in users can create a new marketplaceitem that they want to lent out 
 All logged-in users can create chats with other users where they can write messages to each other. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webMessages/webMessagesUCS.md).
 
 ### 3.2	Usability 
-tbd
+#### 3.2.1 Easy to use
+The application should be easy and fast to use and easy to understand. An easy to use application will allow the user to quickly manage all off his lend out items or add new ones.
 
 ### 3.4	Performance
 tbd
