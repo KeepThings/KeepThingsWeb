@@ -3,7 +3,7 @@
     <span><mat-icon id="messageIcon">email</mat-icon></span><span id="messageHeadlineText">Your Messages</span>
   </div>
   <div class="row">
-    <div class="col-md-6" id="verticalLine">
+    <div class="col-md-6">
       <div class="messagesOverview">
         <ul *ngIf="chats" class="messagesItemList">
           <li *ngFor="let chat of chats; let i = index" [attr.data-index]= "i" class="messagesList" style="cursor: pointer" (click)="getMessages(chat.id)">
