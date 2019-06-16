@@ -27,7 +27,7 @@ export class LentOutComponent implements OnInit {
     startInterval() {
         setInterval(() => {
             this.getUserItems();
-        }, 5000);
+        }, 1000);
     }
 
   getUser() {

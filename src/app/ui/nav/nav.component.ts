@@ -44,7 +44,7 @@ export class NavComponent implements OnInit {
     startInterval() {
         setInterval(() => {
             this.getUser();
-        }, 5000);
+        }, 1000);
     }
 
     newUser() {

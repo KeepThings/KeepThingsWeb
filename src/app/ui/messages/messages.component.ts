@@ -40,7 +40,7 @@ export class MessagesComponent implements OnInit {
   startInterval() {
     setInterval(() => {
       this.getChats();
-    }, 5000);
+    }, 100);
   }
 
 

@@ -29,7 +29,7 @@ export class MarketplaceComponent implements OnInit {
     startInterval() {
         setInterval(() => {
             this.getMarketplaceItems();
-        }, 5000);
+        }, 1000);
     }
 
     getUser() {
