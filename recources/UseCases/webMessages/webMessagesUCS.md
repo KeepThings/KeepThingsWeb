@@ -15,9 +15,11 @@ By clicking the message-icon in the top right, the user i able to write messages
 #### Feature
 tbd
 #### Mockup
-\begin{center} <br>
-\includegraphics[width=8in]{WebMessagesMockup.pdf} <br>
-\end{center}
+<object data="https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webMessages/WebMessagesMockup.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webMessages/WebMessagesMockup.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webMessages/WebMessagesMockup.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
 
 ## 3. Special Requirements
 
