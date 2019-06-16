@@ -15,7 +15,7 @@ By clicking the message-icon in the top right, the user i able to write messages
 #### Feature
 tbd
 #### Mockup
-![Click here to view Mockup File](WebMessagesMockup.pdf)
+![Click here to view Mockup File](WebMessagesMockup.png)
 
 ## 3. Special Requirements
 
