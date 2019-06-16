@@ -16,15 +16,16 @@ The Web-Application contains a dashboard that shows all things the user lent to 
 The Mobile-Application has all the features of the Web-Application. Furthermore, in the Mobile-Application the user is able to send a message to the person he lent something.
 
 ### 1.3	Definitions, Acronyms, and Abbreviations
-tbd
+|Term|Definition|	
+|:-:|:-:|
+|SRS|	Software Requirements Specification|
+|UC|	Use Case|
 
 ### 1.4	References
 |Name|Link|
 |:-----:|:------------------:|
 |Blog|https://keepthingsnlb.wordpress.com/|
 |Git|https://github.com/KeepThings |
-
-
 
 ### 1.5	Overview
 The following chapters gives an overall description about our vision of the project.
@@ -41,9 +42,28 @@ The Web-Application/Mobile-Application is going to be accessed with a User-Accou
 
 
 ## 3. Specific Requirements
-
 ### 3.1	Functionality
-tbd
+This section lists our use cases and elaborates their functionality in the App.
+
+#### 3.1.1 User-oriented
+##### 3.1.1.1 webRegister
+A new user is able to create a new account by using his email, a passwort and an username. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webRegistration/webRegistrationUCS.md).
+##### 3.1.1.2 webLogin
+Already registered users are able to login by using their email and password. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webLogin/webLoginUCS.md).
+##### 3.1.1.3 webUserSettings
+The logged-in user is able to change his username. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webUserSettings/webUserSettingsUCS.md).
+
+#### 3.1.2 General
+##### 3.1.2.1 webMarketplace
+All looged-in users can see all marketplaceitems in a list. If they are intessted in the item they can contact the owner of the item. The owner of the marktplaceitem can lent it to another person. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webMarketplace/webMarketplaceUCS.md).
+##### 3.1.2.2 webUserItem
+All logged-in users can see all of their lent out items. They can see all details regarding the item. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webUserItems/webUserItemsUCS.md).
+##### 3.1.2.3 webNewUserItem
+All looged-in users can create a new item that they lent out to another person. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webNewUserItem/webNewUserItemUCS.md).
+##### 3.1.2.4 webNewRequest
+All logged-in users can create a new marketplaceitem that they want to lent out to someone. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/tree/master/recources/UseCases/webNewRequest).
+##### 3.1.2.5 webMessage
+All logged-in users can create chats with other users where they can write messages to each other. The UCS can be found [here](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/UseCases/webMessages/webMessagesUCS.md).
 
 ### 3.2	Usability 
 tbd
