@@ -65,7 +65,6 @@ export class MIDetailsComponent implements OnInit {
     }
 
     getUsername() {
-
         this.userService.getSpecificUser(this.marketplaceItem.user_id).subscribe(res => {
             this.user = res;
             this.ownerFormControl.setValue(this.user.username);
