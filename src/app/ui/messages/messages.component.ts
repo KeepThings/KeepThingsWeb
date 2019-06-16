@@ -33,7 +33,7 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.getUsernames();
     this.getChats();
-    this.startInterval();
+    //this.startInterval();
 
   }
 
