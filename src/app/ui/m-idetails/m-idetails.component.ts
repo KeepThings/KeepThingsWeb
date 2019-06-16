@@ -101,7 +101,9 @@ export class MIDetailsComponent implements OnInit {
             this.dialog.open(NewMessageComponent, {data: {user_id: this.marketplaceItem.user_id}});
         } else {
             // check if date from is earlier than date to
-            if (true) {
+            const fromDate = new Date(this.fromFormControl.value);
+            const toDate = new Date(this.toFormControl.value);
+            if (fromDate < toDate) {
                 const item = {id: this.marketplaceItem.id, item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.user.id, borrower: this.borrowerFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)};
                 this.marketplaceService.updateMarketplaceItem(item).subscribe(res => {if (res.status === 204 ) {
                     this.snackBar.open('Marketplace Item update successful!');
