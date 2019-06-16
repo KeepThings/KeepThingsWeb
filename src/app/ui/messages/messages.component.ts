@@ -8,6 +8,7 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {Chat} from '../../chat';
 import {ChatService} from '../../chat.service';
 import {AuthenticationService} from '../../authentication.service';
+import {Usernameid} from '../../usernameid';
 
 @Component({
   selector: 'app-messages',
@@ -25,11 +26,12 @@ export class MessagesComponent implements OnInit {
     Validators.required,
   ]);
   currentChatId = null;
-  usernames: [];
+  usernames: Usernameid[];
   matcher = new MyErrorStateMatcher2();
 
 
   ngOnInit() {
+    this.getUsernames();
     this.getChats();
     this.startInterval();
 

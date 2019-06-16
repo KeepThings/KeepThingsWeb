@@ -47,13 +47,20 @@ export class NewEntryFormComponent implements OnInit {
       }, 5000);
   }
     onSubmit(form) {
+      const fromDate = this.datepipe.transform(this.fromFormControl.value);
+      const toDate = this.datepipe.transform(this.toFormControl);
         if (this.titleFormControl.invalid || this.descFormControl.invalid || this.personFormControl.invalid ||
             this.fromFormControl.invalid || this.toFormControl.invalid) {
             this.snackBar.open('All fields are required!');
             setTimeout(() => {
                 this.snackBar.dismiss();
             }, 5000);
-        } else {
+        } else if(fromDate < toDate) {
+            this.snackBar.open('Starting date has to be before ending date');
+            setTimeout(() => {
+                this.snackBar.dismiss();
+            }, 5000);
+        }else {
             const item = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: this.personFormControl.value, date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)};
             this.addUserItem(item);
             this.titleFormControl.reset('');

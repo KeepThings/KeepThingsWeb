@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {AuthenticationService} from './authentication.service';
 import {environment} from '../environments/environment';
+import {Usernameid} from './usernameid';
 
 @Injectable({
   providedIn: 'root'
@@ -40,8 +41,8 @@ export class UserService implements OnInit {
     getSpecificUser(id): Observable<User> {
         return this.http.get<User>(`${environment.database.url +'/usernameid'}/${id}`, {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)});
     }
-    getListOfUsernames(): Observable<[]> {
-        return this.http.get<[]>(environment.database.url +'/usernameid', {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)});
+    getListOfUsernames(): Observable<Usernameid[]> {
+        return this.http.get<Usernameid[]>(environment.database.url +'/usernameid', {headers: new HttpHeaders().set('Authorization', `Bearer ${this.auth.accessToken}`)});
     }
 
     addUser(user): Observable <HttpResponse<User>> {
