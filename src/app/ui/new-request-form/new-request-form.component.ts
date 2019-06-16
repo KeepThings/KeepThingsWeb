@@ -44,8 +44,15 @@ export class NewRequestFormComponent implements OnInit {
       }, 5000);
   }
     onSubmit(form) {
+        const fromDate = new Date(this.fromFormControl.value);
+        const toDate = new Date(this.toFormControl.value);
       if (this.titleFormControl.invalid || this.descFormControl.invalid || this.fromFormControl.invalid || this.toFormControl.invalid) {
           this.snackBar.open('All fields are required!');
+          setTimeout(() => {
+              this.snackBar.dismiss();
+          }, 5000);
+      } else if(toDate < fromDate) {
+          this.snackBar.open('Starting date has to be before ending date');
           setTimeout(() => {
               this.snackBar.dismiss();
           }, 5000);

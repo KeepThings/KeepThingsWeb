@@ -55,7 +55,7 @@ export class NewEntryFormComponent implements OnInit {
             setTimeout(() => {
                 this.snackBar.dismiss();
             }, 5000);
-        } else if(fromDate < toDate) {
+        } else if(toDate < fromDate) {
             this.snackBar.open('Starting date has to be before ending date');
             setTimeout(() => {
                 this.snackBar.dismiss();
