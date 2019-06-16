@@ -20,9 +20,10 @@ tbd
 
 ### 1.4	References
 |Name|Link|
-|Blog|	https://dhbwiewarsessen.wordpress.com/ |
-|Git|	https://github.com/dhbwiewarsessen/ |
-|:-----:|:----------------------------:|
+|:-----:|:------------------:|
+|Blog|https://keepthingsnlb.wordpress.com/|
+|Git|https://github.com/KeepThings |
+
 
 
 ### 1.5	Overview
