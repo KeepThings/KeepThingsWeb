@@ -19,7 +19,11 @@ The Mobile-Application has all the features of the Web-Application. Furthermore,
 tbd
 
 ### 1.4	References
-tbd
+|Name|Link|
+|Blog|	https://dhbwiewarsessen.wordpress.com/ |
+|Git|	https://github.com/dhbwiewarsessen/ |
+|:-----:|:----------------------------:|
+
 
 ### 1.5	Overview
 The following chapters gives an overall description about our vision of the project.
