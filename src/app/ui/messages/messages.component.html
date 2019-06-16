@@ -36,7 +36,7 @@
             </div>
           </li>
         </ul>
-        <div *ngIf="chats.length <1">
+        <div *ngIf="chats && chats.length <1">
           <p>You have no chats! To start a chat click on an item in the Marketpalce section and click on the Button Message this Person.</p>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <div *ngIf="messages">
           <ul>
             <li *ngFor="let message of messages; let i = index" [attr.data-index]= "i" class="messagesList">
-              <div *ngIf="i > messages.length-5">
+              <div *ngIf="messages && i > messages.length-5">
                 <span class="messageHeaderText" [innerHTML]="getUserName(message.sender_id)"></span>
                 <div class="row">
                   <div class="col-md-9">

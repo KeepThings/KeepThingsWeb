@@ -58,16 +58,12 @@ export class MessagesComponent implements OnInit {
   getUsernames() {
     this.userService.getListOfUsernames().subscribe(res => {
       this.usernames = res;
-      console.log(this.usernames);
     });
   }
 
   getUserName(id) {
-    let temp = null;
-    console.log('agefragte id: '+id);
-    temp= this.usernames.find(user => user.id === id).username;
-    console.log(temp);
-    return temp;
+    return this.usernames.find(user => user.id === id).username;
+
   }
 
 
