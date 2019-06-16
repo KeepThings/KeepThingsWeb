@@ -4,7 +4,7 @@
 ## 1.                  webUserItem
 
 ### 1.1               Brief Description
-Shows all lent out items of the user and the marketplace items in a list. One item of the lent-out list contains the name of the lent item, person who borrowed the item, the date it was borrowed and the date it should be returned. One item of the marketplace list contains the name of the item someone wants to borrow and the date it is needed. On the right side of the dashboard the user can create new entries and requests.
+Shows all lent out items of the user in a list. One item of the lent-out list contains the name of the lent item, person who borrowed the item, the date it was borrowed and the date it should be returned.
 
 
 ## 2.                  Flow of Events
@@ -12,11 +12,11 @@ Shows all lent out items of the user and the marketplace items in a list. One it
 ### 2.1               Basic Flow
 
 #### Activity Diagram
-![Alt-Text](DahboardWebDiagram.svg)
+![Alt-Text](DashboardWebDiagram.svg)
 #### Feature
-![/Features/dashboardWeb.feature](https://github.com/KeepThings/KeepThingsWeb/blob/master/recources/Features/dashboardWeb.feature)
+![/Features/dashboardWeb.feature](../../Features/dashboardWeb.feature)
 #### Mockup
-![Alt-Text](DashboardWebMokup-01.svg)
+![Alt-Text](webUserItemsMockup.svg)
 	
 ## 3.                  Special Requirements
 n/a

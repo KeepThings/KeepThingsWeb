@@ -5,7 +5,7 @@
 
 ### 1.1 Brief Description
 
-In this Use-Case we will be implementing the opportunity to change some user information. The user will be able to change the password, email, username and tel_nr. 
+In this Use-Case we will be implementing the opportunity to change some user information. The user will be able to change the username.
 
 ## 2. Flow of Events
 

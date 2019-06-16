@@ -5,7 +5,7 @@
 
 ### 1.1 Brief Description
 
-In this Use-Case we will be implementing the login interface for our web application. The user will be able to enter a valid email and password which is then validated by our api. If the user enters valid credentials he/she is redirected to the dashboard.
+In this Use-Case we will be implementing the login interface for our web application. We will use Auth0 for the identification and validation of the user. The user will be able to enter a email and password which is then validated by Auth0. If the user dosen't have a account right now he will be able to register a new account. After the Login the user is redirected to the dashboard.
 
 ## 2. Flow of Events
 
