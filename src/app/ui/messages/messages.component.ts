@@ -33,7 +33,7 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.getUsernames();
     this.getChats();
-    //this.startInterval();
+    // this.startInterval();
 
   }
 
@@ -63,10 +63,11 @@ export class MessagesComponent implements OnInit {
   }
 
   getUserName(id) {
-      console.log("agefragte id: "+id);
-      const temp = this.usernames.find(user => user.id = id);
-      console.log(temp);
-      return temp;
+    let temp = null;
+    console.log('agefragte id: '+id);
+    temp= this.usernames.find(user => user.id = id).username;
+    console.log(temp);
+    return temp;
   }
 
 
