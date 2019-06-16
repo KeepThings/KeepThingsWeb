@@ -46,8 +46,6 @@ N.a
 ## 5. Logical View
 
 ### 5.1 Overview
-![Alt-Text](Logical-View.png)
-
 ![Alt-Text](ClassDiagramAngular.png)
 
 ### 5.2	Architecturally Significant Design Packages
