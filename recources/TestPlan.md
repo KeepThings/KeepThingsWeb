@@ -147,6 +147,7 @@ Every developer can run tests inside the IDE manually. Whenever new commits are 
 ### 9.1	Base System Hardware
 
 The following table sets forth the system resources for the test effort presented in this Test Plan.
+
 | Ressource | Quantity | Name |
 | -------- | -------- | -------- |
 | CI / CD Server     | 1     | AzureDevops Pipeline     |
@@ -155,6 +156,7 @@ The following table sets forth the system resources for the test effort presente
 ### 9.2	Base Software Elements in the Test Environment
 
 The following base software elements are required in the test environment for this Test Plan.
+
 | Software | Type and other info |
 | -------- |  -------- |
 | Jasmine / Karma     | Runs unit tests for Angular     |
