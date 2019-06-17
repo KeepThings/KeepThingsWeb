@@ -116,16 +116,16 @@ All tests pass without throwing an error.
 
 We are using Azure Pipelines to automate the tests every time something gets pushed to the master branch. The test result is then published to sonarCloud for our Angular App. For the API there is no test coverage integration in the free Visual Studio version which is why we have no evalutation of it. But we have 100% coverage in the API which we will show in the the test coverage reporting.
 In the picture below you can see our pipelines for the web-application and the api.
-![Alt-Text](/APICIPipeline.png)
-![Alt-Text](/AngularCIPipline.png)
+![Alt-Text](APICIPipeline.png)
+![Alt-Text](AngularCIPipline.png)
 ### 7.2	Reporting on Test Coverage
 
-![Alt-Text](/KeepThingsWebTestCoverage.png)
+![Alt-Text](KeepThingsWebTestCoverage.png)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=coverage)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb) 
 This badge is for the angular app only.
 
 For the api we can't visualize the test coverage in sonarqube because we would need Visual Studio Enterprice to generate a Log-file, containing the test coverage. Instead you can see in the following picture all the working Unittest for the api. They cover 100% of it's funktionality.
-![Alt-Text](/KeepThingsAPIUnitTests.png)
+![Alt-Text](KeepThingsAPIUnitTests.png)
 ### 7.3	Perceived Quality Reports
 We use sonarCloud.io for our quality reports. Here you can see the badges for our code quality, duplicated lines and the bugs.
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=alert_status)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb)
