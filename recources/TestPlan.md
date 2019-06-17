@@ -133,7 +133,7 @@ We use sonarCloud.io for our quality reports. Here you can see the badges for ou
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=bugs)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb)
 ### 7.4	Incident Logs and Change Requests
 As soon as one task in the pipeline fails the other tasks are skipped and the pipeline is stopped. Nothing will be pushed to the live server.
-![Alt-Text](/FailedAngularCIPipeline.png)
+![Alt-Text](FailedAngularCIPipeline.png)
 ## 8.	Testing Workflow
 Every developer can run tests inside the IDE manually. Whenever new commits are pushed or a new pull request is created all tests will be executed automatically.
 ## 9.	Environmental Needs
