@@ -203,6 +203,7 @@ Our goal is to get 42% code coverage.
 n/a
 ## 14 Metrics
 Further than making sure the code works, we want to ensure that it meets certain quality requirements. To meassure this we're using metrics. The tool for meassuring will be integrated in our build process.
+
 |Tool	|Description	|Integration|
 |-|-|-|
 |SonarCloud	|Tool static code analysis	|We integrated the tool in our Azure DevOps Pipelines|
