@@ -148,7 +148,7 @@ Every developer can run tests inside the IDE manually. Whenever new commits are 
 
 The following table sets forth the system resources for the test effort presented in this Test Plan.
 | Ressource | Quantity | Name |
-| -------- | -------- | -------- |
+| :--------: |: --------: |: -------- :|
 | CI / CD Server     | 1     | AzureDevops Pipeline     |
 | Local testing machine     | 1     | Any computer more or less modern computer     |
 
