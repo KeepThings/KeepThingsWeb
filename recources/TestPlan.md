@@ -148,7 +148,7 @@ Every developer can run tests inside the IDE manually. Whenever new commits are 
 
 The following table sets forth the system resources for the test effort presented in this Test Plan.
 | Ressource | Quantity | Name |
-| :--------: |: --------: |: -------- :|
+| -------- | -------- | -------- |
 | CI / CD Server     | 1     | AzureDevops Pipeline     |
 | Local testing machine     | 1     | Any computer more or less modern computer     |
 
@@ -156,7 +156,7 @@ The following table sets forth the system resources for the test effort presente
 
 The following base software elements are required in the test environment for this Test Plan.
 | Software | Type and other info |
-| -------- | -------- | -------- |
+| -------- |  -------- |
 | Jasmine / Karma     |Runs unit tests for Angular     |
 | NUnit    |Runs unit tests for .Net Core     |
 | Cucumber    |Runs functional user interface tests     |
@@ -166,7 +166,7 @@ The following tools will be employed to support the test process for this Test P
 
 
 | Tool Category or Type | 	Tool Brand Name |
-| -------- | -------- | -------- |
+| -------- | -------- |
 | Repository Hoster     | [GitHub](https://github.com)     |
 | Test Coverage Monitor     | [SonarCloud](https://sonarcloud.io)     |
 | CI/CD Service     | [Azure DevOps](https://azure.microsoft.com/de-de/services/devops/)     |
