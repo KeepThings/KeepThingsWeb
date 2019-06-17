@@ -157,9 +157,9 @@ The following table sets forth the system resources for the test effort presente
 The following base software elements are required in the test environment for this Test Plan.
 | Software | Type and other info |
 | -------- |  -------- |
-| Jasmine / Karma     |Runs unit tests for Angular     |
-| NUnit    |Runs unit tests for .Net Core     |
-| Cucumber    |Runs functional user interface tests     |
+| Jasmine / Karma     | Runs unit tests for Angular     |
+| NUnit    | Runs unit tests for .Net Core     |
+| Cucumber    | Runs functional user interface tests     |
 
 ### 9.3	Productivity and Support Tools
 The following tools will be employed to support the test process for this Test Plan.
