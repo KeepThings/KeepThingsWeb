@@ -37,7 +37,7 @@ The architecture of Angular is slightly different to MVC. In Angular your View h
 
 
 ## 4. Use-Case View
-![Alt-Text](UC-KeepThings.svg)
+![Alt-Text](../UCD-KeepThings.svg)
 
 ### 4.1 Use-Case Realization
 N.a
