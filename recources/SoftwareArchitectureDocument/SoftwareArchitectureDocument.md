@@ -93,9 +93,13 @@ We implemented a design pattern into our code. We chose to use the template patt
 Since MarketplaceEntryListAdapter and UserItemEntryListAdapter have a similar construction in methods we decided to use those to apply our pattern to.
 
 In the following screenshots you can see our old and the new class diagram for our adapters.
+
 Old:
+
 ![Alt-Text](DesignPatternItemListAdapterold.png)
+
 New:
+
 ![Alt-Text](DesignPatternItemListAdapternew.png)
 
 
