@@ -4,16 +4,14 @@
 ## 1. Introduction
 
 ### 1.1	Purpose
-The purpose of this document is to describe the functionality of the Web-Application and Mobile-Application our team is creating. Both simplify the lending of things to other people by making an entry, that stores all information about it, with just a few clicks.
+The purpose of this document is to describe the functionality of the Web-Application our team is creating. It simplifys the lending of things to other people by making an entry, that stores all information about it, with just a few clicks.
 
 ### 1.2	Scope
-The project consists of three main parts. The Web-Application, the Mobile-Application and the API.
+The project consists of two main parts. The Web-Application and the API.
 
-The API serves as an interface between the Web-Application/Mobile-Application and the database.
+The API serves as an interface between the Web-Application and the database.
 
 The Web-Application contains a dashboard that shows all things the user lent to others with their respective information. It is also possible to lend new things to others. 
-
-The Mobile-Application has all the features of the Web-Application. Furthermore, in the Mobile-Application the user is able to send a message to the person he lent something.
 
 ### 1.3	Definitions, Acronyms, and Abbreviations
 |Term|Definition|	
@@ -34,9 +32,9 @@ The following chapters gives an overall description about our vision of the proj
 ## 2. Overall Description
 The idea of KeepThings is to lend things as fast and easy as possible to other people. The user will be able to do this with just a few clicks. He will also be able to keep track of all things he lent.
 
-The API can push entries from the applications into an Online-Database and information from the database to the applications. The entries contain all information about the thing that is going to be lend. It can also push a Contact-List from the Mobile-Application into the database, so the Web-Application has access to it.
+The API can push entries from the applications into an Online-Database and information from the database to the applications. The entries contain all information about the thing that is going to be lend.
 
-The Web-Application/Mobile-Application is going to be accessed with a User-Account. It contains the name, email of the user and a password. This account is stored in the database. After the login or registration, the user is able to make new entries to lend things to other people. A dashboard shows the user all information about the things he lent to others. Furthermore, in the Mobile-Application the user is able to import his local Contact-List into the database and send reminders to persons he lent something.
+The Web-Application is going to be accessed with a User-Account. It contains the email of the user, the name and a password. This account is stored in the database. After the login or registration, the user is able to make new entries to lend things to other people. A dashboard shows the user all information about the things he lent to others.
 
 ![Alt-Text](/recources/UCD-KeepThings.svg)
 
@@ -113,9 +111,64 @@ n/a
 
 ### 3.9	Interfaces
 #### 3.9.1 User Interfaces
+##### 3.9.1.1 Lend out
+The Lend out component shows all the items a user has lend out to someone. He will be able to see the Name of the Item, to who he lend it out and the beginning and end date of the. By clicking on an item, a popup will appear where the user can see all the detailed information. 
+These information are:
+- Item Name
+- Item Description
+- Owner of the Item
+- Borrower of the Item
+- Date From
+- Date To
+
+The user is able to edit everything except for the owner and to delete items.
+##### 3.9.1.2 Marketplace
+The Marketplace component shows all the items which are currently on the Marketpalce. By clicking on an item a popup will open where the user can see all the detailed information. 
+These information are:
+- Item Name
+- Item Description
+- Owner of the Item
+- Borrower of the Item
+- Date From
+- Date To
+
+The user is able to edit everything except for the owner of the item if he/she is the owner of the item. If the user is the owner of the item he can also delete it. If a borrower for the item is added, it will automatically convert to the Lend-out list of the user and will be removed from the Marketplace. Otherwise the user can only see the information. 
+He is also able to message the owner of the item by clicking on the "Message this Person" button, which will open the new Message component.
+
+##### 3.9.1.3 New Message
+In the new Message component the user is able to write a Message to the owner of the item. He is able to choose a topic and a message.
+
+##### 3.9.1.4 Messages
+In the Messages component the user is able to select a chat on the left side which will load the messages of the chat on the right side. Under the messages on the right side there is an input field where the user can enter a new message.
+
+##### 3.9.1.5 New Entry
+In the new Entry component the user is able to enter the information for a new Item which he wants to lend out. The infomation required are:
+- Item Name
+- Item Description
+- Borrower of the Item
+- Date From
+- Date To
+
+The Date From has to be before or the same as Date To.
+
+##### 3.9.1.6 New Request
+In the new Request component the user is able to make a new Marketplace registration by adding a new Item to the Marketplace. The required infromation for the input form are:
+- Item Name
+- Item Description
+- Date From
+- Date To
+
+The Date From has to be before or the same as Date To.
+
+##### 3.9.1.7 User Settings
+In the User Settings component the user is able to edit his/her username.
+
 #### 3.9.2 Hardware Interfaces
+n/a
 #### 3.9.3 Software Interfaces
+n/a
 #### 3.9.4 Communications Interfaces
+A connection to the server must be available in order to read and write information to the database.
 
 ### 3.10 Licensing Requirements
 n/a

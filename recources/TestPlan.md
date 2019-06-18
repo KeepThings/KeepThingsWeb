@@ -11,7 +11,7 @@ This Test Plan for KeepThings supports the following objectives:
 This test plan cover tests for the whole application. This includes frontend, backend and the communication with the server.
 -	Unit Testing
 -	Integration Testing
--	End-to-end Testing
+-	User Interface Testing
 ### 1.3	Intended Audience
 The intended audience of this test plan are the developers themselves. This document is on a technical level, so it is for more advanced readers who need the necessary background knowledge.
 ### 1.4	Document Terminology and Acronyms
@@ -25,22 +25,14 @@ The intended audience of this test plan are the developers themselves. This docu
 | ------------------------------------------------------------------------|:----------:| ------------------------- |
 | [Blog](https://keepthingsnlb.wordpress.com)                          | Oct. 2018  | KeepThings                 |
 | [GitHub Repository](https://github.com/KeepThings/)        | Oct. 2018  | KeepThings                 |
-| [UC1 mobileAddFriends](./UseCases/mobileAddFriends/mobileAddFriendsUCS.md)               | Apr. 2019  | KeepThings                 |
-| [UC2 mobileLogin](./UseCases/mobileLogin/mobileLoginUCS.md)               | Oct. 2018  | KeepThings                 |
-| [UC3 mobileMarketplace](./UseCases/mobileMarketplace/mobileMarketplaceUCS.md)            | Oct. 2018  | KeepThings                 |
-| [UC4 mobileNewUserItem](./UseCases/mobileNewUserItem/mobileNewUserItemUCS.md)             | Oct. 2018  | KeepThings                 |
-| [UC5 mobileRegistration](./UseCases/mobileRegistration/mobileRegistrationUCS.md)                                  | Oct. 2018  | KeepThings                 |
-| [UC6 mobileUserItems](./UseCases/mobileUserItems/mobileUserItemsUCS.md)                                | Oct. 2018  | KeepThings                 |
-| [UC7 mobileUserSettings](./UseCases/mobileUserSettings/mobileUserSettingsUCS.md) | Apr. 2019  | KeepThings                 |
-| [UC8 webAddFriends](./UseCases/webAddFriends/webAddFriendsUCS.md)              | Apr. 2019  | KeepThings                 |
-| [UC9 webLogin](./UseCases/webLogin/webLoginUCS.md)              | Oct. 2018  | KeepThings                 |
-| [UC10 webMarketplace](./UseCases/webMarketplace/webMarketplaceUCS.md)          | Apr. 2019  | KeepThings                 |
-| [UC11 webMessages](./UseCases/webMessages/webMessagesUCS.md)          | Apr. 2019  | KeepThings                 |
-| [UC12 webNewRequest](./UseCases/webNewRequest/webNewRequestUCS.md)          | Oct. 2018  | KeepThings                 |
-| [UC13 webNewUserItem](./UseCases/webNewUserItem/webNewUserItemUCS.md)          | Oct. 2018  | KeepThings                 |
-| [UC14 webRegistration](./UseCases/webRegistration/webRegistrationUCS.md)          | Oct. 2018  | KeepThings                 |
-| [UC15 webUserItems](./UseCases/webUserItems/webUserItemsUCS.md)          | Oct. 2018  | KeepThings                 |
-| [UC16 webUserSettings](./UseCases/webUserSettings/webUserSettingsUCS.md)          | Apr. 2019  | KeepThings                 |
+| [UC1 webLogin](./UseCases/webLogin/webLoginUCS.md)              | Oct. 2018  | KeepThings                 |
+| [UC2 webMarketplace](./UseCases/webMarketplace/webMarketplaceUCS.md)          | Apr. 2019  | KeepThings                 |
+| [UC3 webMessages](./UseCases/webMessages/webMessagesUCS.md)          | Apr. 2019  | KeepThings                 |
+| [UC4 webNewRequest](./UseCases/webNewRequest/webNewRequestUCS.md)          | Oct. 2018  | KeepThings                 |
+| [UC5 webNewUserItem](./UseCases/webNewUserItem/webNewUserItemUCS.md)          | Oct. 2018  | KeepThings                 |
+| [UC6 webRegistration](./UseCases/webRegistration/webRegistrationUCS.md)          | Oct. 2018  | KeepThings                 |
+| [UC7 webUserItems](./UseCases/webUserItems/webUserItemsUCS.md)          | Oct. 2018  | KeepThings                 |
+| [UC8 webUserSettings](./UseCases/webUserSettings/webUserSettingsUCS.md)          | Apr. 2019  | KeepThings                 |
 | [Test Plan](./TestPlan.md)                                              | Apr. 2019  | KeepThings                 |
 | [SRS](./SoftwareRequirementSpecifications.md)                          | Oct. 2018  | KeepThings                 |
 | [SAD](./SoftwareArchitectureDocument/SoftwareArchitectureDocument.md)                               | Oct. 2018  | KeepThings                 |
@@ -53,12 +45,12 @@ Testing is one of the most important points of developing. It has to be guarante
 The tests are done to ensure quality and mitigate risks and fulfill functional requirements. Their purpose is to provide stability for our application.
 ## 3.	Target Test Items
 The listing below identifies those test items software, hardware, and supporting product elements that have been identified as targets for testing. This list represents what items will be tested.
--	Android Backend
 -	Angular Backend
 ## 4.	Outline of Planned Tests
 ### 4.1	Outline of Test Inclusions
 Front End: 
--	User Interface testing of views/fragments
+-	User Interface testing via survey
+-	Feature files of android fragments
 
 Backend: 
 -	Unit testing
@@ -82,13 +74,13 @@ Unit testing ensures, that the tested sourcecode works as expected. Therefore sm
 |Technique Objective    | Ensure that the implemented code works as expected                  |
 |Technique              | Implement test methods using JUnit Framework (Frontend & Backend)   |
 |Oracles                | Test execution logs results to the command line, logs in CI/CD Tool (Travis) |
-|Required Tools         | JUnit 4 & 5 Dependencies in Frontend and Backend                    |
+|Required Tools         | JUnit 4 & 5 and NUnit Dependencies  in Frontend and Backend                    |
 |Success Criteria       | All tests pass.                                                     |
 |Special Considerations | -                                                                   |
 
-#### 5.1.2 User Interface Testing
+#### 5.1.2 Functional Automated Testing
 
-By UI testing the application is tested from the perspective of the user. The goal of UI testing is to ensure that the UI behaves as expected.
+By functional automated testing the application is tested from the perspective of the user. The goal  is to ensure that the components behaves as expected.
 
 |                       | Description                                                          |
 |-----------------------|----------------------------------------------------------------------|
@@ -99,30 +91,89 @@ By UI testing the application is tested from the perspective of the user. The go
 |Success Criteria       | All UI tests pass.|
 |Special Considerations | - |
 
+#### 5.1.3 User Interface Testing (survey)
+
+In order to test the UI we created a survey where the users can give feedback on the convenience and the appealing of the UI. They are also given the option to give further feedback if they think something is missing. The goal of this is to use the feedback make the application better.
+
+|                       | Description                                                          |
+|-----------------------|----------------------------------------------------------------------|
+|Technique Objective    | Gather feedback of the users to improve application |
+|Technique              | Creating a form where the users can give feedback. Form: https://docs.google.com/forms/d/e/1FAIpQLSemQznFyR700t9joSKrizXcCjPdRBzJdsBiGA9bdvS6wL50sg/viewform?usp=sf_link |
+|Oracles                | Expect that the user gives usefull feedback and the developer consider implementing the feedback.|
+|Required Tools         | No tools required, the user just has to visit the website http://keepthingsweb.azurewebsites.net/ and create an account to test the application.|
+|Success Criteria       | Gettings useful feedback|
+|Special Considerations | - |
+
 ## 6.	Entry and Exit Criteria
 ### 6.1	Test Plan
 #### 6.1.1	Test Plan Entry Criteria
-n/a
+After a successfull build the testprocess will be executed.
 #### 6.1.2	Test Plan Exit Criteria
-n/a
+All tests pass without throwing an error.
 ## 7.	Deliverables
 ### 7.1	Test Evaluation Summaries
-tbd
+
+
+We are using Azure Pipelines to automate the tests every time something gets pushed to the master branch. The test result is then published to sonarCloud for our Angular App. For the API there is no test coverage integration in the free Visual Studio version which is why we have no evalutation of it. But we have 100% coverage in the API which we will show in the the test coverage reporting.
+In the picture below you can see our pipelines for the web-application and the api.
+
+![Alt-Text](APICIPipeline.png)
+
+![Alt-Text](AngularCIPipline.png)
+
 ### 7.2	Reporting on Test Coverage
-tbd
+
+![Alt-Text](KeepThingsWebTestCoverage.png)
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=coverage)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb) 
+
+This badge is for the angular app only.
+
+For the api we can't visualize the test coverage in sonarqube because we would need Visual Studio Enterprice to generate a Log-file, containing the test coverage. Instead you can see in the following picture all the working Unittest for the api. They cover 100% of it's funktionality.
+
+![Alt-Text](KeepThingsAPIUnitTests.png)
+
 ### 7.3	Perceived Quality Reports
-tbd
+We use sonarCloud.io for our quality reports. Here you can see the badges for our code quality, duplicated lines and the bugs.
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=alert_status)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=KeepThings_KeepThingsWeb&metric=bugs)](https://sonarcloud.io/dashboard?id=KeepThings_KeepThingsWeb)
 ### 7.4	Incident Logs and Change Requests
-tbd
+As soon as one task in the pipeline fails the other tasks are skipped and the pipeline is stopped. Nothing will be pushed to the live server.
+![Alt-Text](FailedAngularCIPipeline.png)
 ## 8.	Testing Workflow
-tbd
+Every developer can run tests inside the IDE manually. Whenever new commits are pushed or a new pull request is created all tests will be executed automatically.
 ## 9.	Environmental Needs
 ### 9.1	Base System Hardware
-tbd
+
+The following table sets forth the system resources for the test effort presented in this Test Plan.
+
+| Ressource | Quantity | Name |
+| -------- | -------- | -------- |
+| CI / CD Server     | 1     | AzureDevops Pipeline     |
+| Local testing machine     | 1     | Any computer more or less modern computer     |
+
 ### 9.2	Base Software Elements in the Test Environment
-tbd
+
+The following base software elements are required in the test environment for this Test Plan.
+
+| Software | Type and other info |
+| -------- |  -------- |
+| Jasmine / Karma     | Runs unit tests for Angular     |
+| NUnit    | Runs unit tests for .Net Core     |
+| Cucumber    | Runs functional user interface tests     |
+
 ### 9.3	Productivity and Support Tools
-tbd
+The following tools will be employed to support the test process for this Test Plan.
+
+
+| Tool Category or Type | 	Tool Brand Name |
+| -------- | -------- |
+| Repository Hoster     | [GitHub](https://github.com)     |
+| Test Coverage Monitor     | [SonarCloud](https://sonarcloud.io)     |
+| CI/CD Service     | [Azure DevOps](https://azure.microsoft.com/de-de/services/devops/)     |
+| Metrics Tool     | [SonarCloud](https://sonarcloud.io)     |
+
 ## 10.	Responsibilities, Staffing, and Training Needs
 ### 10.1	People and Roles
 
@@ -146,7 +197,13 @@ Our goal is to get 42% code coverage.
 | Code has lots of side effects | Refactor code (Clean Code principles) | publish new refactored tests |
 | Test Runner is not able to execute tests | Use standard libraries which include working Test Runner | fix test execution configuration |
 | Test data proves to be inadequate | Rewiev test data | Revise the test data |
+| Tools can not read test coverage | search for another tool | use the new tool |
 
 ## 13.	Management Process and Procedures
 n/a
+## 14 Metrics
+Further than making sure the code works, we want to ensure that it meets certain quality requirements. To meassure this we're using metrics. The tool for meassuring will be integrated in our build process.
 
+|Tool	|Description	|Integration|
+|-|-|-|
+|SonarCloud	|Tool static code analysis	|We integrated the tool in our Azure DevOps Pipelines|
