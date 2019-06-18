@@ -57,7 +57,7 @@ export class NewRequestFormComponent implements OnInit {
               this.snackBar.dismiss();
           }, 5000);
       } else {
-          const newItem = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: '', date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.fromFormControl.value)};
+          const newItem = {item_name: this.titleFormControl.value, item_desc: this.descFormControl.value, user_id: this.userService.user.id, borrower: '', date_from: this.transformDate(this.fromFormControl.value), date_to: this.transformDate(this.toFormControl.value)};
           this.addMarketplaceItem(newItem);
           this.titleFormControl.reset('');
           this.descFormControl.reset('');
