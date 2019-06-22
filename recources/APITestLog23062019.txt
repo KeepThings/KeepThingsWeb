@@ -1,0 +1,192 @@
+Gruppenname: KeepThingsAPITests
+Gruppieren nach: Hierarchy
+Vollständiger Gruppenname: KeepThingsAPITests
+Dauer: 0:00:12,724
+Fehler bei 0 Test(s).
+0 Test(s) übersprungen.
+23 Test(s) erfolgreich.
+
+Ergebnis1 Name:	TestChatDelete
+Ergebnis1 Ergebnis:	Bestanden
+Ergebnis1 Dauer:	0:00:00,618
+Ergebnis1 StackTrace:
+Ergebnis1 Meldung:
+Ergebnis1 StandardOutput:
+Ergebnis1 StandardError:
+
+Ergebnis2 Name:	TestChatGetWithId
+Ergebnis2 Ergebnis:	Bestanden
+Ergebnis2 Dauer:	0:00:00,091
+Ergebnis2 StackTrace:
+Ergebnis2 Meldung:
+Ergebnis2 StandardOutput:
+Ergebnis2 StandardError:
+
+Ergebnis3 Name:	TestChatPost
+Ergebnis3 Ergebnis:	Bestanden
+Ergebnis3 Dauer:	0:00:00,13
+Ergebnis3 StackTrace:
+Ergebnis3 Meldung:
+Ergebnis3 StandardOutput:
+Ergebnis3 StandardError:
+
+Ergebnis4 Name:	TestChatPut
+Ergebnis4 Ergebnis:	Bestanden
+Ergebnis4 Dauer:	0:00:00,103
+Ergebnis4 StackTrace:
+Ergebnis4 Meldung:
+Ergebnis4 StandardOutput:
+Ergebnis4 StandardError:
+
+Ergebnis5 Name:	TestMarketplaceItemDelete
+Ergebnis5 Ergebnis:	Bestanden
+Ergebnis5 Dauer:	0:00:00,108
+Ergebnis5 StackTrace:
+Ergebnis5 Meldung:
+Ergebnis5 StandardOutput:
+Ergebnis5 StandardError:
+
+Ergebnis6 Name:	TestMarketplaceItemGetWithId
+Ergebnis6 Ergebnis:	Bestanden
+Ergebnis6 Dauer:	0:00:00,115
+Ergebnis6 StackTrace:
+Ergebnis6 Meldung:
+Ergebnis6 StandardOutput:
+Ergebnis6 StandardError:
+
+Ergebnis7 Name:	TestMarketplaceItemPost
+Ergebnis7 Ergebnis:	Bestanden
+Ergebnis7 Dauer:	0:00:00,139
+Ergebnis7 StackTrace:
+Ergebnis7 Meldung:
+Ergebnis7 StandardOutput:
+Ergebnis7 StandardError:
+
+Ergebnis8 Name:	TestMarketplaceItemPut
+Ergebnis8 Ergebnis:	Bestanden
+Ergebnis8 Dauer:	0:00:00,106
+Ergebnis8 StackTrace:
+Ergebnis8 Meldung:
+Ergebnis8 StandardOutput:
+Ergebnis8 StandardError:
+
+Ergebnis9 Name:	TestMessageDelete
+Ergebnis9 Ergebnis:	Bestanden
+Ergebnis9 Dauer:	0:00:00,118
+Ergebnis9 StackTrace:
+Ergebnis9 Meldung:
+Ergebnis9 StandardOutput:
+Ergebnis9 StandardError:
+
+Ergebnis10 Name:	TestMessageGetWithId
+Ergebnis10 Ergebnis:	Bestanden
+Ergebnis10 Dauer:	0:00:00,102
+Ergebnis10 StackTrace:
+Ergebnis10 Meldung:
+Ergebnis10 StandardOutput:
+Ergebnis10 StandardError:
+
+Ergebnis11 Name:	TestMessagePost
+Ergebnis11 Ergebnis:	Bestanden
+Ergebnis11 Dauer:	0:00:00,159
+Ergebnis11 StackTrace:
+Ergebnis11 Meldung:
+Ergebnis11 StandardOutput:
+Ergebnis11 StandardError:
+
+Ergebnis12 Name:	TestMessagePut
+Ergebnis12 Ergebnis:	Bestanden
+Ergebnis12 Dauer:	0:00:00,096
+Ergebnis12 StackTrace:
+Ergebnis12 Meldung:
+Ergebnis12 StandardOutput:
+Ergebnis12 StandardError:
+
+Ergebnis13 Name:	TestUserDelete
+Ergebnis13 Ergebnis:	Bestanden
+Ergebnis13 Dauer:	0:00:00,095
+Ergebnis13 StackTrace:
+Ergebnis13 Meldung:
+Ergebnis13 StandardOutput:
+Ergebnis13 StandardError:
+
+Ergebnis14 Name:	TestUserGet
+Ergebnis14 Ergebnis:	Bestanden
+Ergebnis14 Dauer:	0:00:00,173
+Ergebnis14 StackTrace:
+Ergebnis14 Meldung:
+Ergebnis14 StandardOutput:
+Ergebnis14 StandardError:
+
+Ergebnis15 Name:	TestUserGetWithId
+Ergebnis15 Ergebnis:	Bestanden
+Ergebnis15 Dauer:	0:00:00,289
+Ergebnis15 StackTrace:
+Ergebnis15 Meldung:
+Ergebnis15 StandardOutput:
+Ergebnis15 StandardError:
+
+Ergebnis16 Name:	TestUserItemDelete
+Ergebnis16 Ergebnis:	Bestanden
+Ergebnis16 Dauer:	0:00:00,101
+Ergebnis16 StackTrace:
+Ergebnis16 Meldung:
+Ergebnis16 StandardOutput:
+Ergebnis16 StandardError:
+
+Ergebnis17 Name:	TestUserItemGetWithId
+Ergebnis17 Ergebnis:	Bestanden
+Ergebnis17 Dauer:	0:00:00,193
+Ergebnis17 StackTrace:
+Ergebnis17 Meldung:
+Ergebnis17 StandardOutput:
+Ergebnis17 StandardError:
+
+Ergebnis18 Name:	TestUserItemPost
+Ergebnis18 Ergebnis:	Bestanden
+Ergebnis18 Dauer:	0:00:00,146
+Ergebnis18 StackTrace:
+Ergebnis18 Meldung:
+Ergebnis18 StandardOutput:
+Ergebnis18 StandardError:
+
+Ergebnis19 Name:	TestUserItemPut
+Ergebnis19 Ergebnis:	Bestanden
+Ergebnis19 Dauer:	0:00:00,106
+Ergebnis19 StackTrace:
+Ergebnis19 Meldung:
+Ergebnis19 StandardOutput:
+Ergebnis19 StandardError:
+
+Ergebnis20 Name:	TestUserNameIDGet
+Ergebnis20 Ergebnis:	Bestanden
+Ergebnis20 Dauer:	0:00:00,09
+Ergebnis20 StackTrace:
+Ergebnis20 Meldung:
+Ergebnis20 StandardOutput:
+Ergebnis20 StandardError:
+
+Ergebnis21 Name:	TestUserNameIDGetWithId
+Ergebnis21 Ergebnis:	Bestanden
+Ergebnis21 Dauer:	0:00:00,093
+Ergebnis21 StackTrace:
+Ergebnis21 Meldung:
+Ergebnis21 StandardOutput:
+Ergebnis21 StandardError:
+
+Ergebnis22 Name:	TestUserPost
+Ergebnis22 Ergebnis:	Bestanden
+Ergebnis22 Dauer:	0:00:09,311
+Ergebnis22 StackTrace:
+Ergebnis22 Meldung:
+Ergebnis22 StandardOutput:
+Ergebnis22 StandardError:
+
+Ergebnis23 Name:	TestUserPut
+Ergebnis23 Ergebnis:	Bestanden
+Ergebnis23 Dauer:	0:00:00,242
+Ergebnis23 StackTrace:
+Ergebnis23 Meldung:
+Ergebnis23 StandardOutput:
+Ergebnis23 StandardError:
+
