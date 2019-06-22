@@ -32,52 +32,81 @@ This diagram describes the main aspects of the Angular architecture.
 
 ![Alt-Text](m-v-vm_angular.png)
 
-## 3. Architectural Goals and Constraints
+## 3. Tech Stack
+
+In the following picture you an see the tech stack with includes every tool used in the project.
+![Alt-Text](TechStack.svg)
+
+## 4. Architectural Goals and Constraints
 The architecture of Angular is slightly different to MVC. In Angular your View has the ability to change the Model and vise versa. This is a very important difference to the MVC.
 
 
-## 4. Use-Case View
+## 5. Use-Case View
 ![Alt-Text](../UCD-KeepThings.svg)
 
-### 4.1 Use-Case Realization
+### 5.1 Use-Case Realization
 N.a
 
 
-## 5. Logical View
+## 6. Logical View
 
-### 5.1 Overview
+### 6.1 Overview
 ![Alt-Text](ClassDiagramAngular.png)
 
-### 5.2	Architecturally Significant Design Packages
+### 6.2	Architecturally Significant Design Packages
 N.a
 
 
-## 6. Process View 
+## 7. Process View 
 N.a
 
 
-## 7. Deployment View 
+## 8. Deployment View 
 ![Alt-Text](DeploymentView.svg)
 
 
-## 8. Implementation View 
+## 9. Implementation View 
 
-### 8.1 Overview
+### 9.1 Overview
 N.a
 
-### 8.2 Layers
+### 9.2 Layers
 N.a
 
 
-## 9. Data View
+## 10. Data View
 We are using a MySQL database. Here you can see our database scheme.
 
 ![Alt-Text](DBSchema.png)
 
 
-## 10. Size and Performance
+## 11. Size and Performance
 N.a
 
 
-## 11. Quality
+## 12. Quality
 N.a
+
+## 13 Pattern
+We implemented a design pattern into our code. We chose to use the template pattern in which you create an abstract class and use it as the sceleton for the inheriting classes.
+
+Since MarketplaceEntryListAdapter and UserItemEntryListAdapter have a similar construction in methods we decided to use those to apply our pattern to.
+
+In the following screenshots you can see our old and the new class diagram for our adapters.
+
+Old:
+
+![Alt-Text](DesignPatternItemListAdapterold.png)
+
+New:
+
+![Alt-Text](DesignPatternItemListAdapternew.png)
+
+
+## 14 Metrics
+Further than making sure the code works, we want to ensure that it meets certain quality requirements. To meassure this we're using metrics. The tool for meassuring will be integrated in our build process.
+
+|Tool	|Description	|Integration|
+|-|-|-|
+|SonarCloud	|Tool static code analysis	|We integrated the tool in our Azure DevOps Pipelines|
+
